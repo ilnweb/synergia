@@ -1,0 +1,731 @@
+/*------------------------------------------------------------------------
+
+Template Name:  Sloze - Solar & Renewable Energy HTML5 Template
+Author:  ThemeOri
+Author URI: http://ThemeOri.com
+Version: 1.0.0
+Description: This Template is created for web template
+
+--------------------------------------------------------------------------
+TABLE OF CONTENTS
+--------------------------------------------------------------------------
+
+* Common CSS
+* Form CSS
+* Hedging CSS
+* Button And Title Styles CSS
+* Scroll Top CSS
+* Preloader CSS
+* Color & Font CSS
+* Video Animation CSS
+* Shape & Image Animation CSS
+* Icon Animation CSS
+* Image Overlay Animation CSS
+* Text Slider CSS
+* Space And Container CSS
+* TopBar One CSS
+* TopBar Two CSS
+* TopBar Three CSS
+* Menu Bar CSS
+* Menu Bar Sticky CSS
+* Menu Sidebar CSS
+* Responsive Menu Sidebar CSS
+* Menu Demo CSS
+* Banner One CSS
+* Banner Two CSS
+* Banner Three CSS
+* Features One CSS
+* Who We CSS
+* Consultation CSS
+* About One CSS
+* About Two CSS
+* About Three CSS
+* About Four CSS
+* Why Choose Us CSS
+* Why Choose Us Two CSS
+* Experience CSS
+* Skill Bar CSS
+* Circle Bar CSS
+* Text Slider One CSS
+* Text Slider Two CSS
+* Service One CSS
+* Service Two CSS
+* Service Three CSS
+* Service Details CSS
+* Video Area CSS
+* Team One CSS
+* Team Two CSS
+* Team Three CSS
+* Team Details CSS
+* Work Process CSS
+* Counter One CSS
+* Counter Two CSS
+* Portfolio One CSS
+* Portfolio Two CSS
+* Portfolio Three CSS
+* Portfolio Details CSS
+* FAQ Area CSS
+* FAQ One CSS
+* Testimonial One CSS
+* Testimonial Two CSS
+* Brand Area CSS
+* Pricing Plan CSS
+* Blog One CSS
+* Blog Two CSS
+* Blog Three CSS
+* Blog Standard CSS
+* Blog Details CSS
+* Request Quote Two CSS
+* Contact One CSS
+* Contact Two CSS
+* Cta One CSS
+* Footer One Cta CSS
+* Footer Two Cta CSS
+* Footer Three Cta CSS
+* Breadcrumb CSS
+* Error CSS
+* Theme Pagination CSS
+* Footer One CSS
+* Footer Two CSS
+* Footer Three CSS
+* Copyright One CSS
+* Copyright Two CSS
+* Copyright Three CSS
+* Dark Light Switch CSS
+* Dark CSS
+
+/*==========================================================================
+* Common CSS
+==========================================================================*/
+body {
+	font-family: var(--theme-font-1);
+	color: var(--body-color);
+	font-size: 18px;
+	line-height: 32px;
+  	font-weight: 400;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	transition: 0.4s;
+}
+a {  
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+}
+a,
+button,
+i {
+	text-decoration: none;
+	color: inherit;
+}
+a:focus,
+a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+.section-padding {
+	padding: 120px 0px;
+}
+.section-padding-two {
+	padding: 120px 0 95px 0;
+}
+.section-padding-three {
+	padding: 95px 0 120px 0;
+}
+@media (max-width: 575px) {
+	.section-padding {
+		padding: 90px 0px;
+	}
+	.section-padding-two {
+		padding: 90px 0 55px 0;
+	}
+	.section-padding-three {
+		padding: 55px 0 90px 0;
+	}
+}
+.display-none {
+	display: none;
+}
+.display-block {
+	display: block;
+}
+.img__full {
+	width: 100%;
+}
+/*==========================================================================
+* Form CSS
+==========================================================================*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background: var(--primary-color-1);
+	border-color: transparent;
+	border-radius: 5px;
+	color: var(--text-white);
+	padding: 17px 40px;
+}
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  	border-color: transparent;
+}
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+  	border-color: transparent;
+}
+input[type="text"],
+input[type="file"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: var(--body-color);
+	border-radius: 6px;
+	width: 100%;
+	height: 60px;
+	background: var(--color-3);
+	border: 1px solid var(--border-color-1);
+	padding: 0 15px;
+	&::placeholder {
+		color: var(--body-color);
+	}
+}
+input[type="text"]:focus,
+input[type="file"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: var(--body-color);
+	outline: none;
+	box-shadow: none;
+	border-color: var(--primary-color-1);
+}
+select {
+	border: 1px solid rgba(var(--border-color-2), .1);
+}
+textarea {
+	width: 100%;
+	height: 150px;
+	padding-top: 15px;
+}
+button,
+button:hover,
+button:focus {
+	box-shadow: none;
+	border: none;
+	outline: none;
+}
+/*==========================================================================
+* Hedging CSS
+==========================================================================*/
+$list: (h1, 84px, 94px, 0, 0, var(--text-heading-color), var(--theme-font-2), 800),
+(h2, 64px, 74px, 0, 0, var(--text-heading-color), var(--theme-font-2), 800),
+(h3, 40px, 50px, 0, 0, var(--text-heading-color), var(--theme-font-2), 800),
+(h4, 36px, 46px, 0, 0, var(--text-heading-color), var(--theme-font-2), 800),
+(h5, 28px, 38px, 0, 0, var(--text-heading-color), var(--theme-font-2), 800),
+(h6, 24px, 34px, 0, 0, var(--text-heading-color), var(--theme-font-2), 800);
+@each $name, $size, $height, $p, $m, $color, $font, $weight in $list {
+    #{$name}{
+      font-size: $size;
+      line-height: $height;
+      padding: $p;
+      margin: $m;
+      color: $color;
+      font-family: $font;
+      font-weight: $weight;
+    }
+}
+@media (max-width: 1399px) {
+	h2 {
+		font-size: 58px;
+		line-height: 68px;
+	}
+	h6 {
+		font-size: 22px;
+		line-height: 32px;
+	}
+	body {
+		font-size: 16px;
+		line-height: 28px;
+	}
+}
+@media (max-width: 1299px) {
+	h2 {
+		font-size: 54px;
+		line-height: 64px;
+	}
+}
+@media (max-width: 1199px) {
+	h6 {
+		font-size: 20px;
+		line-height: 30px;
+	}
+}
+@media (max-width: 580px) {
+	h2 {
+		font-size: 36px;
+		line-height: 46px;
+	}
+	h3 {
+		font-size: 32px;
+		line-height: 42px;
+	}
+}
+@media (max-width: 359px) {
+	h2 {
+		font-size: 32px;
+		line-height: 42px;
+	}
+	h3 {
+		font-size: 30px;
+		line-height: 40px;
+	}
+	h4 {
+		font-size: 28px;
+		line-height: 38px;
+	}
+	h5 {
+		font-size: 26px;
+		line-height: 36px;
+	}
+}
+/*==========================================================================
+* Button And Title Styles CSS
+==========================================================================*/
+.btn-one,
+.btn-three,
+.btn-two {
+	background: var(--primary-color-1);
+	color: var(--text-white);
+	display: inline-flex;
+	gap: 10px;
+	align-items: center;
+	font-size: 16px;
+	line-height: 26px;
+	padding: 17px 38px;
+	font-family: var(--theme-font-1);
+	position: relative;
+	z-index: 3;
+	overflow: hidden;
+	transition: 0.4s;
+	text-transform: uppercase;
+	font-weight: 500;
+	border-radius: 5px;
+    &::after,
+    &::before {
+		position: absolute;
+		top: 50%;
+		content: '';
+		width: 20px;
+		height: 20px;
+		background: var(--color-1);
+		border-radius: 50%;
+		left: -20px;
+		transform: translate(-50%, -50%);
+		z-index: -1;
+    }
+	&::after {
+		left: inherit;
+		right: -20px;
+		transform: translate(50%, -50%);
+	}
+	span {
+		position: relative;
+		z-index: 1;
+		overflow: hidden;
+		i {
+			transition: 0.4s;
+			font-weight: 600;
+		}
+		&::before {
+			position: absolute;
+			content: "\e09f";
+			font-family: "Font Awesome 6 Sharp";
+			font-weight: 400;
+			left: 0;
+			bottom: 0;
+			transition: 0.4s;
+			color: var(--text-white);
+			z-index: 1;
+			opacity: 0;
+			transform: translate(-10px, 10px);
+		}
+	}
+	&:hover {
+		color: var(--text-white);
+		border-color: var(--color-1);
+		&::before {
+			animation: criss-cross-left 0.8s both;
+			animation-direction: alternate;
+		}
+		&::after {
+			animation: criss-cross-right 0.8s both;
+			animation-direction: alternate;
+		}
+		span {
+			&::before {
+				transform: translate(0, 0);
+				opacity: 1;
+			}
+			i {
+				transform: translate(10px, -10px);
+				opacity: 0;
+			}
+		}
+	}
+	&:focus {
+		color: var(--text-white);
+	}
+}
+.btn-two {
+	background: var(--primary-color-2);
+}
+.btn-three {
+	background: var(--primary-color-3);
+}
+.subtitle-three,
+.subtitle-two,
+.subtitle-one {
+    color: var(--primary-color-1);
+    font-size: 16px;
+    line-height: 14px;
+    font-family: var(--theme-font-2);
+    position: relative;
+    z-index: 3;
+    text-transform: uppercase;
+    font-weight: 700;
+	margin-bottom: 15px;
+	display: inline-block;
+	letter-spacing: 0.48px;
+	padding-left: 14px;
+	&::after {
+		content: '';
+		position: absolute;
+		background: var(--primary-color-1);
+		width: 3px;
+		height: 100%;
+		left: 0;
+		top: 0;             
+	} 	
+}
+.subtitle-two {
+	color: var(--primary-color-2);
+	&::after {
+		background: var(--primary-color-2);
+	} 
+}
+.subtitle-three {
+	color: var(--primary-color-3);
+	&::after {
+		background: var(--primary-color-3);
+	} 
+}
+.simple-btn {
+	color: var(--text-heading-color);
+	display: inline-flex;
+	gap: 10px;
+	align-items: center;
+	font-size: 16px;
+	line-height: 26px;
+	font-family: var(--theme-font-2);
+	position: relative;
+	z-index: 3;
+	transition: 0.4s;
+	text-transform: uppercase;
+	font-weight: 700;
+	span {
+		position: relative;
+		z-index: 1;
+		overflow: hidden;
+		i {
+			transition: 0.4s;
+			font-weight: 600;
+		}
+		&::before {
+			position: absolute;
+			content: "\e09f";
+			font-family: "Font Awesome 6 Sharp";
+			font-weight: 400;
+			left: 0;
+			bottom: 0;
+			transition: 0.4s;
+			color: var(--text-white);
+			z-index: 1;
+			opacity: 0;
+			transform: translate(-10px, 10px);
+		}
+	}
+	&:hover {
+		color: var(--primary-color-1);
+		span {
+			&::before {
+				transform: translate(0, 0);
+				opacity: 1;
+				color: var(--primary-color-1);
+			}
+			i {
+				transform: translate(10px, -10px);
+				opacity: 0;
+			}
+		}
+	}
+	&:focus {
+		color: var(--text-heading-color);
+	}
+}
+.social__icon {
+	ul {
+		padding: 0;
+		margin: 0;
+		display: inline-flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 10px;
+		li {
+			list-style: none;
+			a i {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 50px;
+				height: 50px;
+				background: var(--color-1);
+				border-radius: 50%;
+				color: var(--text-white);
+				transition: 0.4s;                        
+				&:hover {
+					background: var(--primary-color-1);
+					border-color: var(--primary-color-1);
+				}
+			}
+		}
+	}
+}
+/*==========================================================================
+* Scroll Top CSS
+==========================================================================*/
+.scroll-up {
+	cursor: pointer;
+	display: block;
+	border-radius: 50px;
+	box-shadow: inset  0 0 0 2px var(--color-4);
+	z-index: 10000;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(15px);
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	height: 50px;
+	width: 50px;
+    transition: all 200ms linear;
+	&::after {
+		position: absolute;
+		font-family: 'Font Awesome 5 Pro';
+		content: "\f176";
+		text-align: center;
+		line-height: 50px;
+		font-size: 24px;
+		color: var(--primary-color-1);
+		left: 0;
+		top: 0;
+		font-size: 20px;
+		height: 50px;
+		width: 50px;
+		cursor: pointer;
+		display: block;
+		z-index: 1;
+		transition: all 200ms linear;
+	}
+	&.active-scroll {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+	svg path { 
+		fill: none; 
+	}
+	svg.scroll-circle path {
+		stroke: var(--primary-color-1);
+		stroke-width: 4;
+		box-sizing:border-box;
+		transition: all 200ms linear;
+	}
+	&.two {
+		&::after {
+			color: var(--primary-color-2);
+		}
+		svg.scroll-circle path {
+			stroke: var(--primary-color-2);
+		}
+	}
+	&.three {
+		&::after {
+			color: var(--primary-color-3);
+		}
+		svg.scroll-circle path {
+			stroke: var(--primary-color-3);
+		}
+	}
+}
+/*==========================================================================
+* Preloader CSS
+==========================================================================*/
+.theme-loader {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: var(--color-1);
+	z-index: 9999999999;
+}
+.spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	display: flex;
+}
+.spinner-bounce {
+	will-change: transform;
+	height: 45px;
+	width: 45px;
+	border-radius: 50%;
+	background: var(--primary-color-1);
+	display: inline-block;
+	animation: bounces 1s ease-in-out infinite alternate;
+	transform-origin: 50% 50%;
+	&.one {
+		margin-right: 15px;
+	}
+	&.two {
+		margin-right: 15px;
+		animation-delay: .4s;
+	}
+	&.three {
+		animation-delay: .8s;
+	}
+}
+@keyframes bounces {
+	0% {
+		transform: scale(1);
+		background: var(--primary-color-1);
+	}
+	50% {
+		background: var(--primary-color-3);
+	}
+	100% {
+		transform: scale(.2);
+		background: var(--primary-color-2);
+	}
+}
+.grid_two_column,
+.grid_three_column,
+.grid_four_column,
+.grid_five_column,
+.grid_six_column {
+    display: grid;
+    gap: 25px; 
+    grid-template-columns: repeat(2, 1fr);
+}
+.grid_three_column {    
+    grid-template-columns: repeat(3, 1fr);
+}
+.grid_four_column {    
+    grid-template-columns: repeat(4, 1fr);
+}
+.grid_five_column {    
+    grid-template-columns: repeat(5, 1fr);
+}
+.grid_six_column {    
+    grid-template-columns: repeat(6, 1fr);
+}
+@media (max-width: 1299px) {
+    .grid_two_column {    
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .grid_three_column {    
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid_four_column {    
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 767px) {
+    .grid_four_column,
+    .grid_three_column {    
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.author {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+	&-avatar {
+		img {
+			width: 60px;
+			height: 60px;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+	}	
+}
+.cursor {
+    position: fixed;
+    left: 0;
+    pointer-events: none;
+    font-weight: 400;
+    color: var(--text-white);
+    background: var(--color-5);
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    opacity: 0;
+    transition: all 0.3s;
+    i {
+        font-weight: 300;
+        font-size: 35px;
+    }
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+	display: none;
+}

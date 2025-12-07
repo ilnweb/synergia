@@ -1,0 +1,304 @@
+/*==========================================================================
+* Why Choose Us CSS
+==========================================================================*/
+.choose__us {
+    &-area {
+        position: relative;
+        &-image {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            z-index: -1;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &-title {
+            h2 {
+                max-width: 575px;
+                margin-bottom: 20px;
+            }
+            p {
+                max-width: 520px;
+                margin-bottom: 0;
+            }
+        }
+        &-list {
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color-1);
+            border-left: 1px solid var(--border-color-1);
+            display: inline-flex;
+            &-item {
+                padding: 35px 40px;
+                border-bottom: 1px solid var(--border-color-1);
+                border-right: 1px solid var(--border-color-1);
+                background: var(--bg-white);
+                padding-right: 75px;
+                > i {
+                    color: var(--primary-color-1);
+                    font-size: 35px;
+                    width: 60px;
+                    height: 60px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background: var(--color-7);
+                }
+                &-bottom {
+                    margin-top: 20px;
+                    h6 {
+                        font-size: 18px;
+                        line-height: 28px;
+                        font-weight: 700;
+                        max-width: 125px;
+                    }
+                }
+            }
+        }
+        &-bottom {
+            margin-top: 55px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            &-tel h6 {
+                font-size: 18px;
+                line-height: 28px;
+                font-weight: 600;
+                a {
+                    color: var(--primary-color-1);
+                }
+            }
+        }
+    }
+}
+/*==========================================================================
+* Why Choose Us Two CSS
+==========================================================================*/
+.choose__area {
+    background: var(--color-5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &-left {
+        &-title {
+            h2 {
+                color: var(--text-white);
+                margin-bottom: 20px;
+            }
+            p {
+                color: var(--color-4);
+                margin-bottom: 0;
+            }
+        }
+        &-list {
+            margin-top: 35px;
+            &-item {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+                i {
+                    width: 60px;
+                    height: 60px;
+                    min-width: 60px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background: var(--primary-color-2);
+                    color: var(--text-white);
+                    font-size: 35px;
+                }
+                h6 {
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 30px;
+                    max-width: 145px;
+                    color: var(--text-white);
+                }
+            }
+        }
+        &-skill {
+            margin-top: 40px;
+            padding-top: 35px;
+            border-top: 1px solid var(--body-color);
+            .skill__area-item {
+                &-count,
+                &-content h6 {
+                    color: var(--text-white);
+                }
+                &-inner {
+                    background: var(--color-1);
+                }
+                .skillbar-title,
+                .skillbar-bar {
+                    background: var(--primary-color-2);
+                }
+            }
+        }
+    }
+    &-right {
+        position: relative;
+        img {
+            max-width: 77%;
+        }
+        .content {
+            position: absolute;
+            background: var(--bg-white);
+            left: 60px;
+            bottom: 40px;
+            padding: 35px 40px;
+            text-align: left;
+            p {
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 30px;
+                margin: 20px 0 0 0;
+                color: var(--text-heading-color);
+                max-width: 200px;
+                span {
+                    color: var(--primary-color-2);
+                }             
+            }
+        }
+    }
+    &.services-page {
+        .choose__area {
+            &-left {
+                .subtitle-two {
+                    color: var(--primary-color-1);
+                }
+                .subtitle-two::after,
+                .skillbar-title,
+                .skillbar-bar,
+                &-list-item i {
+                    background: var(--primary-color-1);
+                }
+            }
+            &-right .content p span {
+                color: var(--primary-color-1);
+            }
+        }
+    }
+}
+/*==========================================================================
+* Experience CSS
+==========================================================================*/
+.experience__area {
+    position: relative;
+    z-index: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &-left {
+        margin-right: 40px;
+        &-title {
+            h2 {
+                margin-bottom: 20px;
+            }
+            p {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &-image {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        max-width: 48%;
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .choose__us-area-image {
+        width: 40%;
+    }
+    .choose__area {
+        padding: 120px 0 !important;
+        &-left {
+            margin-right: 50px;
+        }
+        &-right {
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}    
+@media (max-width: 991px) {
+    .choose__us-area {
+        &-image {
+            position: initial;
+            width: 100%;
+            height: 500px;
+            margin-top: 30px;
+        }
+        &-bottom {
+            gap: 20px;
+        }
+    }
+    .choose__area {
+        &-left {
+            margin-right: 0;
+        }
+        &-right .content {
+            left: 0;
+        }
+    }
+    .experience__area {
+        &-left {
+            margin-right: 0;
+        }
+        &-image {
+            position: relative;
+            max-width: 100%;
+        }
+    }
+}    
+@media (max-width: 767px) {
+    .choose__us-area-list-item {
+        padding: 30px 35px;
+    }
+}    
+@media (max-width: 575px) {
+    .choose__area-left-list-item {
+        display: grid;
+    }
+    .choose__us-area {
+        &-bottom {
+            display: block;
+            &-tel h6 {
+                font-size: 16px;
+                line-height: 26px;
+                font-weight: 600;
+            }
+        }
+        &-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &-image {
+            height: 300px;
+        }
+    }
+}    
+@media (max-width: 380px) {
+    .choose__us-area {
+        &-list {
+            grid-template-columns: repeat(1, 1fr);
+            &-item-bottom h6 {
+                max-width: initial;
+            }
+        }
+    }
+}    

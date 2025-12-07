@@ -1,0 +1,106 @@
+/*==========================================================================
+* Counter One CSS
+==========================================================================*/
+.counter__one {
+	&-grid {
+		display: flex;
+		justify-content: space-between;
+		gap: 30px;
+	}
+	&-item {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+		> span {
+			font-size: 22px;
+			font-weight: 600;
+			line-height: 34px;
+			max-width: 150px;
+		}
+	}
+}
+/*==========================================================================
+* Counter Two CSS
+==========================================================================*/
+.counter__two {
+	background: var(--color-5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+	padding: 80px 0;
+	&-grid {
+		display: flex;
+		justify-content: space-between;
+	}
+	&-item {
+		border-right: 1px solid var(--body-color);
+		padding-right: 130px;
+		&:last-child {
+			padding-right: 0;
+			border-right: 0;
+		}
+		i {
+			color: var(--primary-color-3);
+			font-size: 60px;
+			margin-bottom: 15px;
+			display: block;
+		}
+		h3 {
+			font-weight: 700;
+			color: var(--text-white);
+			b {
+				color: var(--primary-color-3);
+				font-size: 24px;
+				font-weight: 500;
+				position: relative;
+				top: -15px;
+				left: 8px;
+			}
+		}
+		p {
+			color: var(--color-4);
+			margin-bottom: 0;
+		}
+	}
+	&.page {
+		.counter__two-item h3 b,
+		.counter__two-item i {
+			color: var(--primary-color-1);
+		}
+	}
+}
+@media (max-width: 1150px) {
+	.counter__two-item {
+		padding-right: 80px;
+	}
+}
+@media (max-width: 991px) {
+	.counter__one-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.counter__two-item {
+		padding: 0;
+		border: 0;
+	}
+}
+@media (max-width: 575px) {
+	.counter__two {
+		&-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 30px;
+		}
+		&-item {
+			text-align: center;
+		}
+	}
+	.counter__one {
+		&-grid {
+			grid-template-columns: 100%;
+		}
+		&-item {
+			justify-content: center;
+		}
+	}
+}

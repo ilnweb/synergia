@@ -1,0 +1,205 @@
+/*==========================================================================
+* Footer One CSS
+==========================================================================*/
+.footer__area {
+    background: var(--color-5);
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    font-size: 16px;
+    line-height: 28px;
+    &-widget {
+        h6 {
+            margin-bottom: 25px;
+            color: var(--text-white);
+        }
+        .logo {
+            margin-bottom: 25px;
+            img {
+                max-width: 140px;
+            }
+        }
+        &-company {
+            p {
+                margin: 0;
+                max-width: 255px;
+                a {
+                    color: var(--color-4);
+                    transition: 0.4s;
+                    &:hover {
+                        color: var(--primary-color-1);
+                    }
+                }
+            }
+            .social__icon ul li a i {
+                width: 45px;
+                height: 45px;
+                background: var(--color-1);
+                &:hover {
+                    background: var(--primary-color-1);
+                }
+            }
+        }
+        &-info {
+            p {
+                margin: 0;
+                a {
+                    color: var(--color-4);
+                    transition: 0.4s;
+                    &:hover {
+                        color: var(--primary-color-1);
+                    }
+                }
+            }
+        }
+        &-subscribe {
+            transform: translateY(8px);
+            form {
+                position: relative;
+                input {
+                    color: var(--color-4);
+                    border-color: var(--color-1);
+                    background: var(--color-1);
+                    height: 60px;
+                    &:focus {
+                        color: var(--color-4);
+                        border-color: var(--primary-color-1);
+                    }
+                    &::placeholder {
+                        color: var(--color-4);
+                    }
+                }
+                button {
+                    padding: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 4px;
+                    font-size: 20px;
+                    text-align: center;
+                    background: var(--primary-color-1);
+                }
+                label {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: var(--color-4);
+                    margin-top: 15px;
+                    input {
+                        accent-color: var(--primary-color-1);
+                    }
+                }
+            } 
+        }
+    }
+}
+/*==========================================================================
+* Footer Two CSS
+==========================================================================*/
+.footer-widget-menu {
+    ul {
+        padding: 0;
+        margin: 0;
+        li {
+            padding: 0;
+            list-style: none;
+            margin-bottom: 10px;
+            &:last-child {
+                margin: 0;
+            }
+            a {
+                color: var(--color-4);
+                transition: 0.4s;
+                position: relative;
+                &::before {
+                    content: '\f324';
+                    color: var(--primary-color-1);
+                    font-size: 13px;
+                    line-height: 23px;
+                    position: absolute;
+                    opacity: 0;
+                    transition: 0.4s;
+                    left: 0px;
+                    font-family: 'Font Awesome 5 Pro';
+                    font-weight: 400;
+                    top: 0;
+                }
+                &:hover {
+                    color: var(--primary-color-1);
+                    padding-left: 18px;
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+.footer__area.two {
+    .post__item-title span i,
+    .post__item-title h6 a:hover,
+    .footer-widget-menu ul li a::before,
+    .footer-widget-menu ul li a:hover {
+        color: var(--primary-color-2);
+    }
+    .social__icon ul li a i:hover {
+        background: var(--primary-color-2);
+    }
+    .post__item-title span,
+    .footer__area-widget-company p {
+        color: var(--color-4);
+        max-width: 325px;
+    }
+    .post__item {
+        padding-bottom: 0;
+        border-bottom: none;
+        &-image {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+        }
+        &-title h6 a {
+            color: var(--text-white);
+        }
+    }
+}
+/*==========================================================================
+* Footer Three CSS
+==========================================================================*/
+.footer__area.three {
+    .footer-widget-menu ul li a::before,
+    .footer-widget-menu ul li a:hover {
+        color: var(--primary-color-3);
+    }
+    .footer__area-widget-subscribe form button,
+    .social__icon ul li a i:hover {
+        background: var(--primary-color-3);
+    }
+    .footer__area-widget-company p {
+        color: var(--color-4);
+        max-width: 325px;
+    }
+    .footer__area-widget-subscribe form input:focus {
+        border-color: var(--primary-color-3);
+    }
+    .footer__area-widget-subscribe form label input {
+        accent-color: var(--primary-color-3);
+    }
+}
+@media (max-width: 991px) {
+    .footer__area {
+        .order {
+            order: 1;
+        }
+        &-widget.center {
+            margin: 0;
+        }
+    }
+    .footer__two-widget-company {
+        margin-right: 0;
+    }
+}

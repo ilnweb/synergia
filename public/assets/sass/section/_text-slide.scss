@@ -1,0 +1,66 @@
+/*==========================================================================
+* Text Slider One CSS
+==========================================================================*/
+.text__slider {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	background: var(--color-1);
+	padding: 90px 0;
+	direction: ltr;
+	.scroll {
+		animation: scroll 20s linear infinite;
+	}
+	.text-slide {
+		--gap: 0.1px;
+		display: flex;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+		li {
+			display: inline-block;
+            a {
+				font-size: 70px;
+                line-height: 78px;
+                color: var(--text-white);
+                transition: 0.4s;
+				display: inline-flex;
+				align-items: center;
+				text-transform: uppercase;
+				font-weight: 700;
+                span {
+                    margin: 0 60px;
+					display: inline-block;
+					line-height: 0;
+					img {
+						max-width: 60px;
+					}
+                }
+                &:hover {
+					color: var(--primary-color-3);
+                }
+            }
+		}
+	}
+	&.services-page {
+		ul li a:hover {
+			color: var(--primary-color-1);
+		}
+	}
+}
+@media (max-width: 667px) {
+	.text__slider ul li a {
+		font-size: 30px;
+		line-height: 40px;
+		span {
+			margin: 0 30px;
+			img {
+				max-width: 40px;
+			}
+		}
+	}
+}
+/*==========================================================================
+* Text Slider Two CSS
+==========================================================================*/

@@ -1,0 +1,109 @@
+/*==========================================================================
+* Dark CSS
+==========================================================================*/
+.light-n {
+    display: none;
+}
+.light {
+	display: none;
+}
+.dark-mode {
+    color: #c6c8c9;
+    background: #1a1a1a;
+    --body-color: #c6c8c9;
+    --text-heading-color: #FFFFFF;
+    --color-1: #272727;
+    --color-2: #363636;
+    --color-3: #232323;
+    --color-5: #121213;
+
+    --color-4: #B4B4B9;
+    --color-6: #2f2f2f;
+    --color-7: #282828;
+    --color-8: #F9E9E0;
+    --border-color-1: #363636;
+    --bg-white: #1a1a1a;
+    iframe,
+    .dark_image img {
+        filter: grayscale(100%);
+    }
+    .light-n {
+        display: inline-block;
+    }
+    .dark-n {
+        display: none;
+    }
+    .choose__area-left-skill,
+    .banner__one-arrow-next i, .banner__one-arrow-prev i,
+    .counter__two-item,
+    .copyright__area {
+        border-color: var(--color-2);
+    }
+    .testimonial__two-item-content-bottom-brand img,
+    .testimonial__one-right-item-content-bottom-brand img {
+        filter: invert(1);        
+    }
+    .brand__area-item img {
+        filter: invert(0.1);
+    }
+    .footer__area,
+    .who__area-right-btn .btn-two,
+    .consultation__area-right-list-item,
+    .faq__one-title-box,
+    .footer__cta::after {
+        background-color: var(--color-3);
+    }
+    .who__area-right-btn .active {
+        background: var(--primary-color-2);
+    }
+    .service__two,
+    .service__one,
+    .about__three,
+    .consultation__area-right-list-item,
+    .pricing__area,
+    .about__two-area,
+    .experience__area,
+    .features__one-bg,
+    .service__one-item,
+    .testimonial__one {
+        background-image: none !important;
+    }
+    .header__area-menubar-center-menu ul li .sub-menu,
+    .testimonial__one-right-item:hover::after,
+    .footer__area-widget-company .social__icon ul li a i,
+    .testimonial__one-right-item:hover {
+        background: var(--bg-white);
+    }
+    .breadcrumb__area::before,
+    .banner__three-area-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: var(--text-white);
+        mix-blend-mode: color;
+    }
+    .banner__two {
+        background-image: url("../../assets/img/shape/shape-13-dark.jpg") !important;        
+    }
+    .service__one-item:hover {
+        background-image: url("../../assets/img/shape/shape-5.png") !important;
+    }
+    .header__area.three .header__area-menubar {
+        box-shadow: 0 0 50px rgba(var(--border-color-2), .03);
+    }
+    .mode__switch::before {
+        left: calc(100% - 31px); 
+    }
+    .mode__switch span {
+        &::before {
+            background-image: url('../../assets/img/icon/sun-white.png');
+        }
+        &::after {
+            background-image: url("../../assets/img/icon/moon-dark.png");
+        }
+    }
+}

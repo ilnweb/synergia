@@ -1,0 +1,122 @@
+/*==========================================================================
+* Work Process CSS
+==========================================================================*/
+.work__process {
+    &-item {
+        text-align: center;
+        border-top: 1px solid var(--border-color-1);
+        p {
+            margin-top: -18px;
+            margin-bottom: 40px;
+            span {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                color: var(--text-white);
+                background: var(--primary-color-1);
+                font-family: var(--theme-font-2);
+                border-radius: 8px;
+                font-size: 16px;
+                line-height: 28px;
+                padding: 0 8px;
+            }
+        }
+        img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border-color-1);
+            padding: 12px;
+            transition: 0.4s;
+            &:hover {
+                border-color: var(--primary-color-1);
+                padding: 10px;
+            }
+        }
+        h6 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .des {
+            max-width: 235px;
+            margin: 0 auto;
+        }
+    }
+}
+.work__area {
+    background: var(--primary-color-3);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;    
+    &-left {
+        margin-right: 40px;
+        &-title {
+            margin-bottom: 25px;
+            .subtitle-three {
+                color: var(--text-white);
+                &::after {
+                    background: var(--text-white);
+                }
+            }
+            h2 {
+                color: var(--text-white);
+                margin-bottom: 20px;
+            }
+            p {
+                color: var(--text-white);
+                margin-bottom: 0;
+            }
+        }
+        &-list {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 20px;
+            span {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                margin-bottom: 8px;
+                color: var(--text-white);
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .btn-three {
+            color: var(--text-heading-color);
+            margin-top: 40px;
+            background: var(--bg-white);
+            &:hover {
+                color: var(--text-white);
+            }
+        }
+    }
+    &-right {
+        position: relative;
+        img {
+            width: 100%;
+        }
+        &-icon {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            &.video span {
+                color: var(--text-white);
+                background: var(--color-5);
+                border-radius: 0;
+            }
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .work__area-left {
+        margin-right: 0;
+    }
+}
+@media (max-width: 480px) {
+    .work__area-left-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,98 @@
+/*==========================================================================
+* Pricing Plan CSS
+==========================================================================*/
+.pricing__area {
+    background: var(--color-3);
+    &-item {
+        background: var(--bg-white);
+        padding: 40px 50px 50px 50px;
+        border: 1px solid var(--border-color-1);
+        transition: 0.4s;
+        position: relative;
+        &:hover {
+            border-color: var(--primary-color-2);
+        }
+        > span {
+            background: var(--primary-color-2);
+            color: var(--text-white);
+            position: absolute;
+            right: 50px;
+            top: -16px;
+            font-weight: 500;
+            font-size: 14px;
+            border-radius: 4px;
+            padding: 2px 15px;
+        }
+        &-price {
+            border-bottom: 1px solid var(--border-color-1);
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+            h6 {
+                font-size: 20px;                
+            }
+            h2 {
+                span {
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+            }
+        }
+        &-list {
+            ul {
+                padding: 0;
+                margin: 0;
+                li {
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    margin-bottom: 10px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    i {
+                        color: var(--primary-color-2);
+                        width: 20px;
+                        height: 20px;
+                        border: 1px solid var(--primary-color-2);
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        &-btn {
+            margin-top: 40px;
+        }
+    }
+    &-page,
+    &.services-page {
+        .subtitle-two {
+            color: var(--primary-color-1);
+            &::after {
+                background: var(--primary-color-1);
+            }
+        }
+        .pricing__area-item {
+            .btn-two,
+            > span {
+                background: var(--primary-color-1);
+            }
+            &-list ul li i {
+                color: var(--primary-color-1);
+                border-color: var(--primary-color-1);
+            }
+            &:hover {
+                border-color: var(--primary-color-1);
+            }
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .pricing__area-item {
+        padding: 30px 30px 40px 30px;
+    }
+}

@@ -1,0 +1,311 @@
+/*==========================================================================
+* Testimonial One CSS
+==========================================================================*/
+.testimonial__one {
+    background: var(--color-3);
+    overflow: hidden;
+    margin-top: -100px;
+    padding-top: 230px;
+    &-right {
+        margin-right: -420px;
+        &-item {
+            background: var(--bg-white);
+            padding: 55px 50px;
+            display: flex;
+            gap: 30px;
+            transition: 0.4s;
+            position: relative;
+            margin-bottom: 25px;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 100px;
+                bottom: -24px;
+                background: var(--bg-white);
+                width: 40px;
+                height: 25px;
+                clip-path: polygon(0 0, 100% 100%, 100% 0);
+                z-index: 1;
+                transition: 0.4s;
+            }
+            &-avatar {
+                padding-top: 40px;
+                img {
+                    width: 80px;
+                    height: 80px;
+                    min-width: 80px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    padding: 8px;
+                    border: 1px solid var(--primary-color-1);
+                }
+            }
+            &-content {
+                .rating {
+                    margin-bottom: 5px;
+                    i {
+                        color: var(--primary-color-1);
+                        margin-right: 5px;
+                    }
+                }
+                p {
+                    margin-bottom: 0;
+                    max-width: 360px;
+                    transition: 0.4s;
+                }
+                &-bottom {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 30px;
+                    &-name {
+                        h6 {
+                            font-size: 20px;    
+                            line-height: 30px;  
+                            font-weight: 700;
+                            transition: 0.4s;
+                        }
+                        span {
+                            font-size: 14px;    
+                            line-height: 24px;
+                            transition: 0.4s;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                background: var(--color-5);
+                &::after {
+                    background: var(--color-5);
+                }
+                .testimonial__one-right-item-content p {
+                    color: var(--text-white);
+                }
+                .testimonial__one-right-item-content-bottom {
+                    &-name {
+                        span {
+                            color: var(--color-4);
+                        }
+                        h6 {
+                            color: var(--text-white);
+                        }
+                    }
+                    &-brand {
+                        img {
+                            filter: invert(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-arrow {
+        margin-top: 70px;
+        display: flex;
+        gap: 10px;
+        .testimonial_next, .testimonial_prev {
+            position: static;
+            margin: 0;
+            width: auto;
+            height: auto;
+        }        
+        &-next,
+        &-prev {		
+            display: inline-block;
+            i {
+                font-size: 22px;
+                width: 55px;
+                height: 55px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: var(--bg-white);
+                color: var(--text-heading-color);
+                transition: 0.4s;
+                cursor: pointer;
+                &:hover {
+                    background: var(--primary-color-1);
+                    color: var(--text-white);
+                }  
+            } 
+        }
+    }
+    &-two {
+        background: var(--color-3);
+    }
+}
+/*==========================================================================
+* Testimonial Two CSS
+==========================================================================*/
+.testimonial__two {
+    &-item {
+        background: var(--color-3);
+        padding: 50px 40px;
+        transition: 0.4s;
+        border-radius: 8px;
+        i {
+            color: var(--primary-color-3);
+            font-size: 64px;
+            display: block;
+            margin-bottom: 15px;
+        }
+        &-content {
+            p {
+                margin-bottom: 40px;
+                transition: 0.4s;
+            }
+            &-bottom {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                &-author {
+                    display: flex;
+                    align-items: center;
+                    gap: 25px;
+                    img {
+                        width: 60px;
+                        height: 60px;
+                        min-width: 60px;
+                        border-radius: 50%;
+                        border-radius: 50%;
+                    }
+                    &-info {
+                        span,
+                        h6 {
+                            transition: 0.4s;
+                        }
+                    }
+                }
+            }
+        }
+        &:hover {
+            background: var(--color-5);
+            .testimonial__two-item-content {
+                p {
+                    color: var(--text-white);
+                }
+                &-bottom {
+                    &-author-info {
+                        h6 {
+                            color: var(--text-white);
+                        }
+                        span {
+                            color: var(--color-4);
+                        }
+                    }
+                    &-brand {
+                        img {
+                            filter: invert(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-area {
+        .testimonial-pagination {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 50px;
+            .swiper-pagination-bullet {
+                border-radius: 5px;
+                background: var(--color-2);
+                width: 30px;
+                height: 4px;
+                margin: 0;
+                position: relative;
+                cursor: pointer;
+                opacity: 1;
+                &-active {
+                    background: var(--primary-color-3);
+                }
+            }
+        }
+    }
+    &.services-page {
+        .subtitle-three,
+        .testimonial__two-item i {
+            color: var(--primary-color-1);
+        }
+        .subtitle-three::after,
+        .testimonial__two-area .testimonial-pagination .swiper-pagination-bullet-active {
+            background: var(--primary-color-1);
+        }
+    }
+}
+.testimonial-service {
+    overflow: hidden;
+    .testimonial__one-arrow-next i, .testimonial__one-arrow-prev i,
+    .testimonial__one-right-item::after,
+    .testimonial__one-right-item {
+        background: var(--color-3);
+    }
+    .testimonial__one-arrow-next i:hover, .testimonial__one-arrow-prev i:hover {
+        background: var(--primary-color-1);
+    }
+    .testimonial__one-right-item:hover {
+        background: var(--color-5);
+        &::after {
+            background: var(--color-5);
+        }
+    }
+}
+/*==========================================================================
+* Brand Area CSS
+==========================================================================*/
+.brand__area {
+    border-bottom: 1px solid var(--border-color-1);
+    &-item {
+        padding: 80px 0;
+        border-right: 1px solid;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to bottom, var(--bg-white), var(--border-color-1));
+        text-align: center;
+        img {
+            filter: invert(1);
+            max-height: 30px;
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .testimonial__one-right-item {
+        padding: 30px 25px;
+        gap: 20px;
+    }
+}
+@media (max-width: 991px) {
+    .testimonial__one {
+        &-arrow {
+            margin-top: 30px;
+        }
+        &-right {
+            margin-right: 0;
+            &-item-content p {
+                max-width: initial;
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    .testimonial__one-right-item {
+        display: grid;
+        &-avatar {
+            padding-top: 0;
+        }
+    }
+    .testimonial__two-item {
+        padding: 30px 25px;
+        &-content-bottom-brand {
+            display: none;
+        }
+    }
+    .brand__area-item {
+        padding: 50px 0;
+        img {
+            max-height: 20px;
+        }
+    }
+}

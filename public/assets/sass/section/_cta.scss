@@ -1,0 +1,278 @@
+/*==========================================================================
+* Cta One CSS
+==========================================================================*/
+.cta__one {
+    position: relative;
+    z-index: 1;
+    margin-top: -100px;
+    &-title {
+        h3 {
+            color: var(--text-white);
+        }
+    }
+    &-area {
+        background: var(--primary-color-1);        
+        padding: 70px;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &-contact {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: end;
+        &-icon i {
+            position: relative;
+            z-index: 1;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            color: var(--primary-color-1);
+            font-size: 30px;
+            animation: icon-animation 2s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-white);
+        }
+        &-info {
+            span {
+                display: block;
+                color: var(--color-3);
+            }
+            h6 {
+                color: var(--text-white);
+                font-size: 22px;
+                line-height: 32px;
+                font-weight: 700;
+            }
+        }
+    }
+}
+/*==========================================================================
+* Footer One Cta CSS
+==========================================================================*/
+.footer__cta {
+    position: relative;
+    z-index: 1;
+    &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 50%;
+        background: var(--color-5);
+        z-index: -1;
+    }
+    &-area {
+        background: var(--primary-color-1);
+        padding: 0 60px;
+        border-radius: 10px;
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        &-left {
+            h3 {
+                color: var(--text-white);
+                max-width: 500px;
+            }
+            &-btn {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                margin-top: 30px;
+                .btn-one {
+                    background: var(--bg-white);
+                    color: var(--primary-color-1);
+                    &::after,
+                    &::before {
+                        background: var(--color-5);
+                    }
+                    &:hover {
+                        color: var(--text-white);
+                    }
+                }
+                &-tel {
+                    i {
+                        width: 60px;
+                        height: 60px;
+                        line-height: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: var(--primary-color-1);
+                        background: var(--bg-white);
+                        font-size: 30px;
+                        border-radius: 50%;
+                    }
+                    span {
+                        font-family: var(--theme-font-2);
+                        font-size: 16px;
+                        color: var(--text-white);
+                        font-weight: 600;
+                        line-height: 28px;                    
+                    }
+                    h6 {
+                        color: var(--text-white);
+                    }
+                }
+            }
+        }
+    }
+}
+/*==========================================================================
+* Footer Two Cta CSS
+==========================================================================*/
+.footer__cta.two {
+    .footer__cta-area {
+        background: var(--primary-color-2);
+        padding: 60px;
+    }
+    .footer__cta-form {
+        form {
+            position: relative;
+            z-index: 1;
+            input {
+                background: var(--bg-white);
+                border-color: var(--bg-white);
+            }
+            .btn-two {
+                position: absolute;
+                right: 0;
+                top: 0;
+                background: var(--color-5);
+                color: var(--text-white);
+            }
+        }
+    }
+}
+/*==========================================================================
+* Footer Three Cta CSS
+==========================================================================*/
+.footer__cta.three {
+    .footer__cta-area {
+        background: var(--primary-color-3);
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        &-item {
+            text-align: center;
+            width: 33.33%;
+            border-right: 2px solid #29955F;
+            padding: 40px 0;
+            &:last-child {
+                border-right: 0;
+            }
+            i {
+                width: 60px;
+                height: 60px;
+                line-height: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--primary-color-3);
+                background: var(--bg-white);
+                font-size: 30px;
+                border-radius: 50%;
+                margin: 0 auto;
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 14px;
+                text-transform: uppercase;
+                color: var(--text-white);
+                font-weight: 600;
+            }
+            h6 {
+                font-size: 20px;
+                line-height: 30px;
+                color: var(--text-white);
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .footer__cta {
+        &-area {
+            padding: 30px 20px 0 20px;
+            &-left h3 {
+                margin: 0 auto;
+                text-align: center;
+            }
+            &-left-btn-tel {
+                i {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 20px;
+                }
+                h6 {
+                    font-size: 18px;
+                    line-height: 28px;
+                }
+            }
+        }
+        &.three {
+            .footer__cta-area {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                overflow: hidden;
+                &-item {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    .cta__one-area {
+        padding: 30px 20px;
+        .cta__one-contact {
+            &-info h6 {
+                font-size: 18px;
+                line-height: 28px;
+            }
+            &-icon i {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+    }
+    .footer__cta.two .footer__cta-area {
+        padding: 30px 20px;
+        .btn-two {
+            font-size: 14px;
+            padding: 17px 12px;
+        }
+    }
+    .footer__cta-area-left-btn {
+        display: block;
+        margin-top: 30px;
+        text-align: center;
+        &-tel.author {
+            justify-content: center;
+            text-align: left;
+            margin-top: 20px;
+        }
+    }
+    .footer__cta.three .footer__cta-area {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 40px 30px;
+        &-item {
+            padding: 0;
+            border: 0;
+            border-bottom: 2px solid #29955F;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            &:last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border-bottom: 0;
+            }
+        }
+    }
+}

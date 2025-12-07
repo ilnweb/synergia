@@ -1,0 +1,334 @@
+/*==========================================================================
+* Video Animation CSS
+==========================================================================*/
+.video {
+	position: relative;
+	text-align: center;
+	display: inline-block;
+	z-index: 4;
+	span {
+		position: relative;
+		background: var(--primary-color-1);
+		font-size: 20px;
+		z-index: 1;
+		color: var(--text-white);
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+	}          
+}
+.video-pulse::after, .video-pulse::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	left: 0;
+	top: 0;
+	border-radius: 50%;
+	animation-duration: 2.4s;
+	animation-timing-function: linear;
+	animation-name: video-animation;
+	animation-iteration-count: infinite;
+}
+.video-pulse::before {
+	animation-delay: 1s;
+}
+.modal-video-close-btn {
+    padding: 0
+}
+@keyframes criss-cross-left {
+	0% {
+		left: -20px;
+	}
+
+	50% {
+		left: 50%;
+		width: 20px;
+		height: 20px;
+	}
+	100% {
+		left: 50%;
+		width: 375px;
+		height: 375px;
+	}
+}
+@keyframes criss-cross-right {
+	0% {
+		right: -20px;
+	}
+	50% {
+		right: 50%;
+		width: 20px;
+		height: 20px;
+	}
+	100% {
+		right: 50%;
+		width: 375px;
+		height: 375px;
+	}
+}
+
+@keyframes video-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+/*==========================================================================
+* Shape & Image Animation CSS
+==========================================================================*/
+@keyframes bounceRight {
+	0%, 20%, 50%, 80%, 100% {
+	  	transform: translateX(0);
+	}
+	30% {
+	  	transform: translateX(-95px);
+	}
+	10% {
+	  	transform: translateX(-5px);
+	}
+}
+@keyframes rollIn {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-359deg);
+	}
+}
+@keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+@keyframes upDown {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(50px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+.left-right-animate {
+	animation-name: left-right;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+@keyframes left-right {
+	0% {
+		transform: translateX(30px);
+	}
+	50% {
+		transform: translateX(5px);
+	}
+	100% {
+		transform: translateX(30px);
+	}
+}
+.bounce-y {    
+    animation: bounce-y 10s infinite linear;
+}
+.bounce-x {    
+    animation: bounce-x 10s infinite linear;
+}
+.zoom-one {    
+    animation: zoom-one 10s infinite linear;
+}
+.zoom-two {    
+    animation: zoom-two 5s infinite linear;
+}
+@keyframes bounce-y {
+    0% {        
+        transform: translateY(0);
+    }
+    50% {        
+        transform: translateY(-30px);
+    }
+    100% {        
+        transform: translateY(0);
+    }
+}
+@keyframes bounce-x {
+    0% {        
+        transform: translateX(0);
+    }
+    50% {        
+        transform: translateX(30px);
+    }
+    100% {        
+        transform: translateX(0);
+    }
+}
+@keyframes zoom-one {
+    0% {        
+        transform: scale(.95);
+    }
+    50% {        
+        transform: scale(1.05);
+    }
+    100% {        
+        transform: scale(.95);
+    }
+}
+@keyframes zoom-two {
+    0% {        
+        transform: scale(1);
+    }
+    50% {        
+        transform: scale(.95);
+    }
+    100% {        
+        transform: scale(1);
+    }
+}
+/*==========================================================================
+* Icon Animation CSS
+==========================================================================*/
+.icon-animation {	
+	animation: icon-animation 1.5s ease-in-out infinite;
+}
+@keyframes icon-animation {
+    from {
+        transform:rotate3d(0, 0, 1, 0deg);
+    }
+    20%, 32%, 44%, 56%, 68% {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+    23%, 35%, 47%, 59%, 71% {
+        transform: rotate3d(0,0,1,15deg);
+    }
+    26%, 38%, 50%, 62%, 74% {
+        transform: rotate3d(0,0,1,0deg);
+    }
+    29%, 41%, 53%, 65%, 77% {
+        transform: rotate3d(0,0,1,-15deg);
+    }
+    80% {
+        transform:rotate3d(0, 0, 1, 0deg);
+    }
+}
+/*==========================================================================
+* Image Overlay Animation CSS
+==========================================================================*/
+.image__overlay-two,
+.image__overlay {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		content: '';
+		transition: 0.5s;
+		width: 0;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.053);
+	}
+	&:hover::after {
+		left: inherit;
+		right: 0;
+		width: 100%;
+	}
+}
+.image__overlay-two {
+	&::after {
+		width: 100%;
+		height: 0;
+		bottom: 0;
+		top: auto;
+	}
+	&:hover::after {
+		height: 100%;
+		bottom: initial;
+		top: 0;		
+	}
+}
+@keyframes animation {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes rotateY {
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+@keyframes rotate {
+	100% {
+		transform: rotate(90deg);
+	}
+}
+/*==========================================================================
+* Text Slider CSS
+==========================================================================*/
+.sliders {
+	flex-shrink: 0;
+}
+.scroll {
+	animation: scroll 70s linear infinite;
+}
+@keyframes scroll {
+	from {
+	  	transform: translateX(0);
+	}
+	to {
+	  	transform: translateX(calc(-100% - var(--gap)));
+	}
+}
+@keyframes activeBar {
+    0% {width: 0;}
+    100% {width:100%;}
+}
+@keyframes wobble-vertical {
+    16.65% {
+        transform: translateY(4px);
+    }
+    33.3% {
+        transform: translateY(-4px);
+    }
+    49.95% {
+        transform: translateY(4px);
+    }
+    66.6% {
+        transform: translateY(-2px);
+    }
+    83.25% {
+        transform: translateY(1px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

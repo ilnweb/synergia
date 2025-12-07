@@ -1,0 +1,222 @@
+@font-face {
+  font-family: "flaticon_slaze";
+  src: url("./flaticon_slaze.woff2?a8273c860f22254ebfcf2c53ea38b440") format("woff2"), url("./flaticon_slaze.woff?a8273c860f22254ebfcf2c53ea38b440") format("woff"), url("./flaticon_slaze.eot?a8273c860f22254ebfcf2c53ea38b440#iefix") format("embedded-opentype"), url("./flaticon_slaze.ttf?a8273c860f22254ebfcf2c53ea38b440") format("truetype"), url("./flaticon_slaze.svg?a8273c860f22254ebfcf2c53ea38b440#flaticon_slaze") format("svg");
+}
+i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
+  font-family: flaticon_slaze !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-solar-panel:before {
+  content: "\f101";
+}
+
+.flaticon-solar-panels:before {
+  content: "\f102";
+}
+
+.flaticon-solar-energy:before {
+  content: "\f103";
+}
+
+.flaticon-wind-energy:before {
+  content: "\f104";
+}
+
+.flaticon-solar-panel-1:before {
+  content: "\f105";
+}
+
+.flaticon-twitter:before {
+  content: "\f106";
+}
+
+.flaticon-envelope:before {
+  content: "\f107";
+}
+
+.flaticon-location:before {
+  content: "\f108";
+}
+
+.flaticon-placeholder:before {
+  content: "\f109";
+}
+
+.flaticon-loupe:before {
+  content: "\f10a";
+}
+
+.flaticon-menu:before {
+  content: "\f10b";
+}
+
+.flaticon-menu-1:before {
+  content: "\f10c";
+}
+
+.flaticon-hamburger:before {
+  content: "\f10d";
+}
+
+.flaticon-menu-2:before {
+  content: "\f10e";
+}
+
+.flaticon-saving:before {
+  content: "\f10f";
+}
+
+.flaticon-profit:before {
+  content: "\f110";
+}
+
+.flaticon-best-customer-experience:before {
+  content: "\f111";
+}
+
+.flaticon-rating:before {
+  content: "\f112";
+}
+
+.flaticon-solar-panel-2:before {
+  content: "\f113";
+}
+
+.flaticon-solar-energy-1:before {
+  content: "\f114";
+}
+
+.flaticon-ecology:before {
+  content: "\f115";
+}
+
+.flaticon-power:before {
+  content: "\f116";
+}
+
+.flaticon-renewable-energy:before {
+  content: "\f117";
+}
+
+.flaticon-renewable-energy-1:before {
+  content: "\f118";
+}
+
+.flaticon-system:before {
+  content: "\f119";
+}
+
+.flaticon-energy:before {
+  content: "\f11a";
+}
+
+.flaticon-solar-panel-3:before {
+  content: "\f11b";
+}
+
+.flaticon-battery-charge:before {
+  content: "\f11c";
+}
+
+.flaticon-solar-panel-4:before {
+  content: "\f11d";
+}
+
+.flaticon-reputation:before {
+  content: "\f11e";
+}
+
+.flaticon-deal:before {
+  content: "\f11f";
+}
+
+.flaticon-talk:before {
+  content: "\f120";
+}
+
+.flaticon-global-shipping:before {
+  content: "\f121";
+}
+
+.flaticon-right-up:before {
+  content: "\f122";
+}
+
+.flaticon-hashtag:before {
+  content: "\f123";
+}
+
+.flaticon-telephone-call:before {
+  content: "\f124";
+}
+
+.flaticon-phone-call:before {
+  content: "\f125";
+}
+
+.flaticon-check:before {
+  content: "\f126";
+}
+
+.flaticon-close:before {
+  content: "\f127";
+}
+
+.flaticon-trust:before {
+  content: "\f128";
+}
+
+.flaticon-mail:before {
+  content: "\f129";
+}
+
+.flaticon-location-1:before {
+  content: "\f12a";
+}
+
+.flaticon-project:before {
+  content: "\f12b";
+}
+
+.flaticon-customer-review:before {
+  content: "\f12c";
+}
+
+.flaticon-link:before {
+  content: "\f12d";
+}
+
+.flaticon-trophy:before {
+  content: "\f12e";
+}
+
+.flaticon-trophy-1:before {
+  content: "\f12f";
+}
+
+.flaticon-maintenance:before {
+  content: "\f130";
+}
+
+.flaticon-targeting:before {
+  content: "\f131";
+}
+
+.flaticon-achievement:before {
+  content: "\f132";
+}
+
+.flaticon-wall-clock:before {
+  content: "\f133";
+}
+
+.flaticon-straight-quotes:before {
+  content: "\f134";
+}/*# sourceMappingURL=flaticon_slaze.css.map */

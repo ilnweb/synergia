@@ -1,0 +1,332 @@
+/*==========================================================================
+* Features One CSS
+==========================================================================*/
+.features__one {
+    &-bg {
+        background: var(--color-3);
+        padding: 50px;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &-left {
+        h4 {
+            max-width: 345px;
+        }
+        &-client {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 35px;
+            h6 {
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 28px;
+                max-width: 170px;
+            }
+        }
+    }
+    &-right {
+        display: flex;
+        justify-content: end;
+        &-item {
+            border-right: 1px solid var(--color-2);
+            padding-right: 40px;
+            margin-right: 50px;
+            &-icon {
+                width: 70px;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: var(--color-6);
+                margin-bottom: 20px;
+                i {
+                    line-height: 0;
+                    color: var(--primary-color-1);
+                    font-size: 40px;
+                }
+            }
+            &-content {
+                h6 {
+                    margin-bottom: 10px;
+                }
+                p {
+                    margin-bottom: 0;
+                    max-width: 300px;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+                padding-right: 0;
+                border-right: 0;
+            }
+        }
+    }
+}
+/*==========================================================================
+* Who We CSS
+==========================================================================*/
+.who__area {
+    background: var(--color-5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &-left {
+        margin-right: 60px;
+        &-image {
+            position: relative;
+            padding-bottom: 140px;
+            &-shape {
+                position: absolute;
+                left: 5%;
+                animation: bounce-x 7s infinite linear;
+                bottom: 10%;
+                filter: invert(0.3);              
+            }
+            &-two {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                border-top: 15px solid var(--color-5);                
+                border-left: 15px solid var(--color-5);                
+            }
+        }
+    }
+    &-right {
+        &-title {
+            h2 {
+                color: var(--text-white);
+                margin-bottom: 40px;
+            }
+        }
+        &-btn {
+            margin-bottom: 30px;
+            .btn-two {
+                background: var(--bg-white);
+                padding: 11px 24px;
+                text-transform: capitalize;
+                color: var(--text-heading-color);
+                &::before,
+                &::after {
+                    background: var(--primary-color-2);
+                }
+                &:hover {
+                    color: var(--text-white);
+                }
+            }
+            .active {
+                background: var(--primary-color-2);
+                color: var(--text-white);
+            }
+        }
+        &-tab {
+            p {
+                color: var(--color-4);
+                margin-bottom: 30px;
+                max-width: 570px;
+            }
+            &-list {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                column-gap: 20px;
+                span {
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+                    margin-bottom: 8px;
+                    color: var(--text-white);
+                    i {
+                        color: var(--primary-color-2);
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    &.services-page {
+        .who__area-right {
+            .subtitle-two::after {
+                background: var(--primary-color-1);
+            }
+            .subtitle-two,
+            &-tab-list span i {
+                color: var(--primary-color-1);
+            }
+        }
+        .who__area-right-btn {
+            .btn-two::before, 
+            .btn-two::after,
+            .active {
+                background: var(--primary-color-1);
+            }
+        }
+    }
+}
+/*==========================================================================
+* Consultation CSS
+==========================================================================*/
+.consultation__area {
+    position: relative;
+    &-left {
+        position: relative;
+        margin-right: 30px;
+        img {
+            max-width: 77%;
+        }
+        .content {
+            position: absolute;
+            background: var(--bg-white);
+            left: 60px;
+            bottom: 40px;
+            padding: 35px 40px;
+            text-align: left;
+            box-shadow: 0 10px 50px rgb(var(--border-color-3), 0.08);
+            p {
+                font-weight: 600;
+                margin: 20px 0 0 0;
+                color: var(--text-heading-color);
+                max-width: 200px;
+                span {
+                    color: var(--primary-color-3);
+                }             
+            }
+        }        
+    }
+    &-right {
+        margin-left: 30px;
+        &-title {
+            h2 {
+                margin-bottom: 20px;
+            }
+            p {
+                margin-bottom: 0;
+            }
+        }
+        &-list {
+            margin-top: 30px;
+            &-item {
+                padding: 40px 25px;
+                box-shadow: 0 0 50px rgba(var(--border-color-3), .05);
+                background: var(--bg-white);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                &-icon {
+                    position: relative;
+                    z-index: 1;
+                    padding: 15px 0 0 15px;
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        left: 0;
+                        top: 0;
+                        width: 50px;
+                        height: 50px;
+                        background: var(--primary-color-3);
+                        opacity: 0.1;
+                        border-radius: 50%;
+                    }
+                    i {
+                        font-size: 50px;
+                        line-height: 50px;
+                        color: var(--primary-color-3);
+                        display: inline-block;
+                    }
+                }
+                &-content {
+                    h6 {
+                        margin-bottom: 10px;
+                    }
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+                &:hover {
+                    .consultation__area-right-list-item-icon i {
+                        animation-name: wobble-vertical;
+                        animation-duration: 1s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: 4;
+                    }
+                }
+            }
+        }
+    }
+    &.page {
+        .subtitle-three::after,
+        .consultation__area-right-list-item-icon::after {
+            background: var(--primary-color-1);
+        }
+        .subtitle-three,
+        .consultation__area-right-list-item-icon i,
+        .consultation__area-left .content p span {
+            color: var(--primary-color-1);
+        }
+    }
+}
+
+@media (max-width: 1299px) {
+    .features__one-bg {
+        padding: 50px 15px;
+    }
+}
+@media (max-width: 1199px) {
+    .features__one-right-item {
+        padding-right: 20px;
+        margin-right: 20px;
+    }
+    .who__area-left {
+        margin-right: 0;
+        &-image-two {
+            max-width: 280px;
+        }
+    }
+    .consultation__area-left {
+        margin-right: 0;
+    }
+    .consultation__area-right {
+        margin-left: 0;
+    }
+}
+@media (max-width: 991px) {
+    .features__one {
+        &-left h4 {
+            max-width: 345px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        &-right {
+            gap: 30px;
+            &-item {
+                margin-right: 0;
+                padding-right: 0;
+                border-right: 0;
+                text-align: center;
+                &-icon {
+                    margin: 0 auto;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    .consultation__area-left .content {
+        left: 0;
+    }
+}
+@media (max-width: 575px) {
+    .features__one {
+        &-bg {
+            padding: 35px 10px;
+        }
+        &-right {
+            display: grid;
+        }
+    }
+    .who__area-right-tab-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

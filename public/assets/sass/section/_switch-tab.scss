@@ -1,0 +1,82 @@
+
+/*==========================================================================
+* Dark Light Switch CSS
+==========================================================================*/
+.switch__tab {
+    position: fixed;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    right: 0;
+    top: 52%;
+    transform: translateY(-50%) translateX(50px) rotate(90deg);
+    z-index: 3; 
+    cursor: pointer;
+}
+.light-mode-title,
+.dark-mode-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-heading-color);
+    display: flex;
+    align-items: center;
+}    
+.mode__switch {
+    height: 34px;
+    width: 80px;
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+    background: var(--primary-color-1);
+    transform: translateY(0px);
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease-out 0s; 
+    &::before {
+        content: "";
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        background: var(--text-white);
+        width: 28px;
+        height: 28px;
+        z-index: -1;
+        border-radius: 50%;
+        transition: all 0.3s ease-out 0s;
+    }
+    &.two {
+        background: var(--primary-color-2);
+    } 
+    &.three {
+        background: var(--primary-color-3);
+    } 
+}    
+.mode__switch span {
+    position: relative;
+    z-index: 1;
+    width: 80px;
+    height: 34px;
+    display: block;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        right: 54px;
+        background-image: url('../../assets/img/icon/sun.png');
+        background-repeat: no-repeat;
+        width: 18px;
+        height: 18px;
+        background-size: cover;            
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 54px;
+        background-image: url("../../assets/img/icon/moon.png");
+        background-repeat: no-repeat;
+        width: 18px;
+        height: 18px;
+        background-size: cover;
+    }
+}
