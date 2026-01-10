@@ -2,11 +2,11 @@ import ContactTwo from '@/components/pages/contacts/contact-two';
 import React from 'react';
 
 const ContactPage = () => {
-    return (
-        <>
-            <ContactTwo />
-        </>
-    );
+  return (
+    <>
+      <ContactTwo />
+    </>
+  );
 };
 
 export default ContactPage;

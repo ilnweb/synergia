@@ -1,12 +1,11 @@
-import BlogGrid from "@/components/pages/blogs/blog";
-
+import BlogGrid from '@/components/pages/blogs/blog';
 
 const Blog = () => {
-    return (
-        <>
-            <BlogGrid />
-        </>
-    );
+  return (
+    <>
+      <BlogGrid />
+    </>
+  );
 };
 
 export default Blog;

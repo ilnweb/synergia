@@ -1,11 +1,11 @@
-import Testimonial from "@/components/pages/testimonial";
+import Testimonial from '@/components/pages/testimonial';
 
 const TestimonialPage = () => {
-    return (
-        <>
-            <Testimonial />
-        </>
-    );
+  return (
+    <>
+      <Testimonial />
+    </>
+  );
 };
 
 export default TestimonialPage;

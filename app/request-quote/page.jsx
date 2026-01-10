@@ -1,11 +1,11 @@
-import RequestQuote from "@/components/pages/request-quote";
+import RequestQuote from '@/components/pages/request-quote';
 
 const RequestQuotePage = () => {
-    return (
-        <>
-            <RequestQuote />
-        </>
-    );
+  return (
+    <>
+      <RequestQuote />
+    </>
+  );
 };
 
 export default RequestQuotePage;

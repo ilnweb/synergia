@@ -1,11 +1,11 @@
-import BlogStandardPage from "@/components/pages/blogs/blog-standard";
+import BlogStandardPage from '@/components/pages/blogs/blog-standard';
 
 const BlogStandard = () => {
-    return (
-        <>
-            <BlogStandardPage />
-        </>
-    );
+  return (
+    <>
+      <BlogStandardPage />
+    </>
+  );
 };
 
 export default BlogStandard;

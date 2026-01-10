@@ -867,7 +867,7 @@ h6 {
 :root {
   --theme-font-1: "Inter", sans-serif;
   --theme-font-2: "Plus Jakarta Sans", sans-serif;
-  --primary-color-1: #16193d;
+  --primary-color-1: #4855e9;
   --primary-color-2: #ff7029;
   --primary-color-3: rgb(13, 90, 232);
   --text-white: #ffffff;
@@ -3508,7 +3508,7 @@ h6 {
   z-index: -1;
 }
 .header__area-menubar-left-logo {
-  padding: 27px 60px 27px 0;
+  padding: 17px 60px 17px 0;
 }
 .header__area-menubar-left-logo a {
   display: inline-block;

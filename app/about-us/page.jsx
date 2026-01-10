@@ -1,11 +1,11 @@
-import AboutUs from "@/components/pages/about";
+import AboutUs from '@/components/pages/about';
 
 const About = () => {
-    return (
-        <>
-            <AboutUs />
-        </>
-    );
+  return (
+    <>
+      <AboutUs />
+    </>
+  );
 };
 
 export default About;
