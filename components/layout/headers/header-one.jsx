@@ -62,24 +62,14 @@ const HeaderOne = () => {
               </div>
             </div>
             <div className='header__area-menubar-right'>
-              <div className='header__area-menubar-right-search'>
-                <div className='search'>
-                  <span
-                    className='header__area-menubar-right-search-icon open'
-                    onClick={() => setSearch(true)}
-                  >
-                    <i className='fal fa-search'></i>
-                  </span>
-                </div>
-              </div>
-              <div className='header__area-menubar-right-sidebar'>
+              {/* <div className='header__area-menubar-right-sidebar'>
                 <div
                   className='header__area-menubar-right-sidebar-popup-icon'
                   onClick={() => setSidebarOpen(true)}
                 >
                   <i className='flaticon-menu-2'></i>
                 </div>
-              </div>
+              </div> */}
               <div className='header__area-menubar-right-btn'>
                 <Link className='btn-one' href='/request-quote'>
                   Talk with us

@@ -1,18 +1,23 @@
 import Link from 'next/link';
 import servicesData from '@/components/data/services-data';
-import shape from '../../../../public/assets/img/shape/shape-5.png';
 
 const ServicesMain = () => {
   return (
     <>
-      <div className='service-one section-padding-three'>
+      <div className='service__two services section-padding-three'>
         <div className='container'>
-          <div className='row'>
+          <div className='row dark_image'>
             {servicesData?.map((data, id) => (
               <div className='col-lg-4 col-md-6' key={id}>
-                <div className='service__one-item' style={{ backgroundImage: `url(${shape.src})` }}>
-                  <div className='service__one-item-icon'>{data.icon}</div>
-                  <div className='service__one-item-content'>
+                <div className='service__two-item'>
+                  <div className='service__two-item-image'>
+                    <img src={data.image.src} alt='service' />
+                  </div>
+                  <div className='service__two-item-content'>
+                    <div className='service__two-item-content-icon'>{data.icon}</div>
+                    <span>
+                      <i className='fa-regular fa-horizontal-rule'></i>0{id + 1}
+                    </span>
                     <h6>
                       <Link href={`/services/${data.id}`}>{data.title}</Link>
                     </h6>

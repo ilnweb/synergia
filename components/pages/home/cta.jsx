@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import ctaBg from '../../../../public/assets/img/shape/shape-6.png';
+import ctaBg from '../../../public/assets/img/shape/shape-6.png';
 
 const CtaArea = () => {
   return (

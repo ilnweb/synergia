@@ -1,7 +1,7 @@
 import testimonialData from '@/components/data/testimonial-data';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Autoplay, Navigation } from 'swiper/modules';
-import brand from '../../../../public/assets/img/brand/brand-1.png';
+import brand from '../../../public/assets/img/brand/brand-1.png';
 
 const Testimonial = () => {
   const slideControl = {

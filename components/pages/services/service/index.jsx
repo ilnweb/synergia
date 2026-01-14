@@ -6,9 +6,9 @@ import ServicesMain from './services';
 import FooterOne from '@/components/layout/footers/footer-one';
 import ScrollToTop from '../../common/scroll/scroll-to-top';
 import SwitchTab from '../../common/dark-light';
-import ChooseUs from '../../homes/home-2/choose-us';
-import Pricing from '../../homes/home-2/pricing';
-import Testimonial from '../../homes/home/testimonial';
+import ChooseUs from '../../home/choose-us';
+import Pricing from '../../pricing-plans/pricing-plans';
+import Testimonial from '../../home/testimonial';
 
 const ServicePage = () => {
   return (

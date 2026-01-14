@@ -1,6 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import './globals.css';
+import QueryProvider from '../providers/QueryProvider';
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -12,7 +13,9 @@ export default function RootLayout({ children }) {
       <head>
         <link rel='icon' type='image/png' href='../favicon.ico' />
       </head>
-      <body>{children}</body>
+      <body>
+        <QueryProvider>{children}</QueryProvider>
+      </body>
     </html>
   );
 }

@@ -1,4 +1,4 @@
-import HomeOne from '@/components/pages/homes/home';
+import HomeOne from '@/components/pages/home';
 
 export default function Home() {
   return (

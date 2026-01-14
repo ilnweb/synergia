@@ -1,25 +1,43 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import servicesData from '@/components/data/services-data';
-import serviceBg from '../../../../public/assets/img/shape/shape-9.png';
-import shape from '../../../../public/assets/img/shape/shape-5.png';
 
 const Services = () => {
   return (
-    <div className='service__one' style={{ backgroundImage: `url(${serviceBg.src})` }}>
+    <div className='service__one'>
+      <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: -1 }}>
+        <Image
+          src='/assets/img/shape/shape-9.png'
+          alt='Service background'
+          fill
+          sizes='100vw'
+          style={{ objectFit: 'cover' }}
+          priority
+        />
+      </div>
       <div className='container'>
         <div className='row mb-35'>
           <div className='col-xl-12'>
             <div className='service__one-title t-center'>
-              <span className='subtitle-one'>We're the best</span>
-              <h2>Solar Energy Services</h2>
+              <span className='subtitle-one'>Nasze usługi</span>
+              <h2>Usługi Energetyczne</h2>
             </div>
           </div>
         </div>
         <div className='row'>
           {servicesData?.slice(0, 3)?.map((data, id) => (
             <div className='col-lg-4 col-md-6' key={id}>
-              <div className='service__one-item' style={{ backgroundImage: `url(${shape.src})` }}>
+              <div className='service__one-item'>
+                <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: -1 }}>
+                  <Image
+                    src='/assets/img/shape/shape-5.png'
+                    alt='Service item background'
+                    fill
+                    sizes='(max-width: 768px) 100vw, 33vw'
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
                 <div className='service__one-item-icon'>{data.icon}</div>
                 <div className='service__one-item-content'>
                   <h6>
@@ -27,7 +45,7 @@ const Services = () => {
                   </h6>
                   <p>{data.des}</p>
                   <Link className='simple-btn' href={`/services/${data.id}`}>
-                    Details More{' '}
+                    Więcej szczegółów{' '}
                     <span>
                       <i className='fa-sharp fa-regular fa-arrow-up-right'></i>
                     </span>

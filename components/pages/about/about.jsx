@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import SkillBarItem from '../common/skill-bar';
 import bg2 from '../../../public/assets/img/shape/shape-20.jpg';
 import CounterSection from '../common/counter';
-import Team from '../homes/home/team';
-import Consultation from '../homes/home-3/consultation';
+import Team from '../home/team';
+import Consultation from '../common/consultation';
 
 const AboutMain = () => {
   return (
@@ -15,10 +16,22 @@ const AboutMain = () => {
               <div className='about__four-left'>
                 <div className='about__four-left-image dark_image'>
                   <div className='about__four-left-image-one'>
-                    <img src='assets/img/about/about-5.jpg' alt='about' />
+                    <Image
+                      src='/assets/img/about/about-5.jpg'
+                      alt='about'
+                      width={500}
+                      height={500}
+                      style={{ width: '100%', height: 'auto' }}
+                    />
                   </div>
                   <div className='about__four-left-image-two'>
-                    <img src='assets/img/about/about-6.jpg' alt='about' />
+                    <Image
+                      src='/assets/img/about/about-6.jpg'
+                      alt='about'
+                      width={300}
+                      height={300}
+                      style={{ width: '100%', height: 'auto' }}
+                    />
                   </div>
                 </div>
               </div>

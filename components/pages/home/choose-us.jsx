@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import image from '../../../../public/assets/img/pages/choose-us-1.jpg';
+import image from '../../../public/assets/img/pages/choose-us-1.jpg';
 
 const ChooseUs = () => {
   return (

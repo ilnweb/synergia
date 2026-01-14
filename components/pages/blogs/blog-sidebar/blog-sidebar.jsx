@@ -6,17 +6,6 @@ const BlogSidebar = () => {
   return (
     <div className='all__sidebar dark_image ml-25 xl-ml-0'>
       <div className='all__sidebar-item'>
-        <h6>Search</h6>
-        <div className='all__sidebar-item-search'>
-          <form action='#'>
-            <input type='text' placeholder='Search.....' />
-            <button type='submit'>
-              <i className='fal fa-search'></i>
-            </button>
-          </form>
-        </div>
-      </div>
-      <div className='all__sidebar-item'>
         <h6>Recent Post</h6>
         <div className='all__sidebar-item-post'>
           {blogPost.map((data, id) => (
@@ -36,23 +25,6 @@ const BlogSidebar = () => {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-      <div className='all__sidebar-item'>
-        <h6>Popular Tag</h6>
-        <div className='all__sidebar-item-tag'>
-          <ul>
-            {blogData.map((data, id) => {
-              const words = data.title.split(' ');
-              const firstWord = words[0];
-              const newTitle = words.find(word => word.length > 3) || firstWord;
-              return (
-                <li key={id}>
-                  <Link href={`/blog/${data.id}`}>{newTitle}</Link>
-                </li>
-              );
-            })}
-          </ul>
         </div>
       </div>
     </div>

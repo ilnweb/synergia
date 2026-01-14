@@ -9,13 +9,27 @@ import ScrollToTop from '../../common/scroll/scroll-to-top';
 import SwitchTab from '../../common/dark-light';
 
 const BlogDetails = ({ singleData }) => {
-  const firstThreeWords = singleData?.title.split(' ').slice(0, 3).join(' ') + '...';
+  // Handle both Strapi v5 flat structure and legacy structure
+  const blog = singleData.attributes || singleData;
+  const firstThreeWords = blog.Title
+    ? blog.Title.split(' ').slice(0, 3).join(' ') + '...'
+    : 'Blog...';
+
+  // Get the HeaderImage URL for the breadcrumb background
+  const headerImage = blog.HeaderImage?.url
+    ? `http://72.60.17.88:1337${blog.HeaderImage.url}`
+    : null;
+
   return (
     <>
-      <SEO pageTitle={singleData?.title} />
+      <SEO pageTitle={blog.Title || 'Blog Details'} />
       <SwitchTab />
       <HeaderOne />
-      <BreadCrumb title={firstThreeWords} innerTitle={singleData?.title} />
+      <BreadCrumb
+        title={firstThreeWords}
+        innerTitle={blog.Title || 'Blog'}
+        backgroundImage={headerImage}
+      />
       <BlogSingleMain singleData={singleData} />
       <FooterOne />
       <ScrollToTop />

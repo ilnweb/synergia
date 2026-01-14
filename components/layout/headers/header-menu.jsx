@@ -5,26 +5,24 @@ const MainMenu = () => {
   return (
     <>
       <ul>
-        <li className='menu-item-has-children'>
-          <Link href='#'>Home</Link>
-          <ul className='sub-menu'>
-            <li>
-              <Link href='/'>Solar Energy</Link>
-            </li>
-            <li>
-              <Link href='/home-two'>Wind Energy</Link>
-            </li>
-            <li>
-              <Link href='/home-three'>Renewable Energy</Link>
-            </li>
-          </ul>
+        <li>
+          <Link href='/'>Home</Link>
+        </li>
+        <li>
+          <Link href='/services'>Services</Link>
+        </li>
+        <li>
+          <Link href='/about-us'>About</Link>
+        </li>
+        <li>
+          <Link href='/blog'>Blog</Link>
+        </li>
+        <li>
+          <Link href='/contact'>Contact</Link>
         </li>
         <li className='menu-item-has-children'>
           <Link href='#'>Pages</Link>
           <ul className='sub-menu'>
-            <li>
-              <Link href='/about-us'>About Us</Link>
-            </li>
             <li className='menu-item-has-children'>
               <Link href='#'>Services</Link>
               <ul className='sub-menu'>
@@ -38,6 +36,9 @@ const MainMenu = () => {
                   <Link href='/services/panel-installation'>Services Details</Link>
                 </li>
               </ul>
+            </li>
+            <li>
+              <Link href='/pricing-plans'>Price Plans</Link>
             </li>
             <li>
               <Link href='/pricing-plans'>Price Plans</Link>
@@ -92,31 +93,6 @@ const MainMenu = () => {
             </li>
             <li>
               <Link href='/portfolio/agricultural-facilities'>Project Details</Link>
-            </li>
-          </ul>
-        </li>
-        <li className='menu-item-has-children'>
-          <Link href='#'>Blog</Link>
-          <ul className='sub-menu'>
-            <li>
-              <Link href='/blog'>Blog Grid</Link>
-            </li>
-            <li>
-              <Link href='/blog-standard'>Blog Standard</Link>
-            </li>
-            <li>
-              <Link href='/blog/impact-of-energy-on-reducing-carbon-footprint'>Blog Details</Link>
-            </li>
-          </ul>
-        </li>
-        <li className='menu-item-has-children'>
-          <Link href='#'>Contact</Link>
-          <ul className='sub-menu'>
-            <li>
-              <Link href='/contact'>Contact Style 01</Link>
-            </li>
-            <li>
-              <Link href='/contact-two'>Contact Style 02</Link>
             </li>
           </ul>
         </li>

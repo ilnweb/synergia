@@ -6,7 +6,7 @@ import AboutMain from './about';
 import ScrollToTop from '../common/scroll/scroll-to-top';
 import SwitchTab from '../common/dark-light';
 import FooterOne from '@/components/layout/footers/footer-one';
-import Features from '../homes/home/features';
+import Features from '../home/features';
 
 const AboutUs = () => {
   return (

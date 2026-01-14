@@ -1,5 +1,5 @@
-import bgImage from '../../../../public/assets/img/shape/shape-10.png';
-import avatar from '../../../../public/assets/img/avatar/user.png';
+import bgImage from '../../../public/assets/img/shape/shape-10.png';
+import avatar from '../../../public/assets/img/avatar/user.png';
 
 const Features = () => {
   return (
