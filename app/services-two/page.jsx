@@ -1,10 +1,10 @@
-import ServicePageTwo from '@/components/pages/services/service-two';
+import ServicePage from '@/components/pages/services/service';
 import React from 'react';
 
 const ServiceTwo = () => {
   return (
     <>
-      <ServicePageTwo />
+      <ServicePage />
     </>
   );
 };
