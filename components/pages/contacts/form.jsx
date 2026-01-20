@@ -1,36 +1,128 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 
 const FormArea = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ success: null, message: '' });
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ success: null, message: '' });
+
+    try {
+      const response = await fetch('https://n8n.srv1036332.hstgr.cloud/webhook/contact-from', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus({
+          success: true,
+          message: 'Thank you for your message! We will get back to you soon.',
+        });
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        const error = await response.text();
+        throw new Error(error || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus({
+        success: false,
+        message: 'There was an error sending your message. Please try again later.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
-      <form action='#'>
+      <form onSubmit={handleSubmit}>
         <div className='row'>
           <div className='col-md-6 mb-30'>
             <div className='contact__form-area-item'>
-              <input type='text' name='name' placeholder='Full Name' required='required' />
+              <input
+                type='text'
+                name='name'
+                value={formData.name}
+                onChange={handleChange}
+                placeholder='Full Name'
+                required
+              />
             </div>
           </div>
           <div className='col-md-6 md-mb-30'>
             <div className='contact__form-area-item'>
-              <input type='email' name='email' placeholder='Email Address' required='required' />
+              <input
+                type='email'
+                name='email'
+                value={formData.email}
+                onChange={handleChange}
+                placeholder='Email Address'
+                required
+              />
             </div>
           </div>
           <div className='col-md-12 mb-30'>
             <div className='contact__form-area-item'>
-              <input type='text' name='subject' placeholder='Subject' />
+              <input
+                type='text'
+                name='subject'
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder='Subject'
+              />
             </div>
           </div>
           <div className='col-md-12 mb-30'>
             <div className='contact__form-area-item'>
-              <textarea name='message' placeholder='Message'></textarea>
+              <textarea
+                name='message'
+                value={formData.message}
+                onChange={handleChange}
+                placeholder='Message'
+                required
+              ></textarea>
             </div>
           </div>
           <div className='col-md-12'>
             <div className='contact__two-right-form-item'>
-              <button className='btn-one' type='submit'>
-                Submit Now
+              <button className='btn-one' type='submit' disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Submit Now'}
               </button>
             </div>
+            {submitStatus.message && (
+              <div className={`mt-3 ${submitStatus.success ? 'text-success' : 'text-danger'}`}>
+                {submitStatus.message}
+              </div>
+            )}
           </div>
         </div>
       </form>

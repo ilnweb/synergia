@@ -1,3 +1,4 @@
+// components/pages/blogs/blog/index.jsx
 'use client';
 
 import SEO from '@/components/data/seo';
@@ -8,14 +9,14 @@ import FooterOne from '@/components/layout/footers/footer-one';
 import ScrollToTop from '../../common/scroll/scroll-to-top';
 import SwitchTab from '../../common/dark-light';
 
-const BlogGrid = () => {
+const BlogGrid = ({ initialBlogs = [], error = null }) => {
   return (
     <>
-      <SEO pageTitle='Blog Grid' />
+      <SEO pageTitle='Blog Synergia Energia' />
       <SwitchTab />
       <HeaderOne />
-      <BreadCrumb title='Blog Grid' innerTitle='Blog Grid' />
-      <BlogGridMain />
+      <BreadCrumb title='Blog' innerTitle='Blog' />
+      <BlogGridMain initialBlogs={initialBlogs} error={error} />
       <FooterOne />
       <ScrollToTop />
     </>
