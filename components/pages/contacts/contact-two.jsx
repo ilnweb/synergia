@@ -72,8 +72,10 @@ const ContactTwo = () => {
       </div>
       <div className='contact__two-map'>
         <iframe
-          src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830894606!2d-74.11976383964463!3d40.69766374865767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1652012644726!5m2!1sen!2sbd'
+          src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d156395.40191753332!2d20.921111000000002!3d52.2319581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2sWarsaw%2C%20Poland!5e0!3m2!1sen!2s!4v1705598400000!5m2!1sen!2s&markers=color:red%7C52.2319581,20.921111'
           loading='lazy'
+          allowFullScreen
+          referrerPolicy='no-referrer-when-downgrade'
         ></iframe>
       </div>
       <FooterOne />
