@@ -12,7 +12,7 @@ const ContactUs = () => {
   return (
     <>
       <SEO pageTitle='Contact Us' />
-      <SwitchTab />
+     {/* <SwitchTab /> */} 
       <HeaderOne />
       <BreadCrumb title='Contact Us' innerTitle='Contact Us' />
       <div className='contact__one section-padding-three'>

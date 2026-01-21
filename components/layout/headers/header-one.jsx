@@ -23,13 +23,17 @@ const HeaderOne = () => {
               <div className='topBar__one-left lg-t-center'>
                 <ul>
                   <li>
-                    <Link href='mailto:need.help@gmail.com'>
-                      <i className='flaticon-envelope'></i>need.help@gmail.com
+                    <Link href='mailto:buiro@synergiaenergia.pl'>
+                      <i className='flaticon-envelope'></i>buiro@synergiaenergia.pl
                     </Link>
                   </li>
                   <li>
-                    <Link href='https://google.com/maps'>
-                      <i className='flaticon-placeholder'></i>2464 Royal Ln. Mesa, New Jersey 45463
+                    <Link
+                      href='https://www.google.com/maps/place/Synergia+energia/@50.890887,20.672871,996m/data=!3m1!1e3!4m6!3m5!1s0x471827b8062ebb57:0xce5a6c93a76ee922!8m2!3d50.8908871!4d20.6728707!16s%2Fg%2F11n85vxb7g?hl=pl&entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D'
+                      target='_blank'
+                    >
+                      <i className='flaticon-placeholder'></i>Jana Nowaka-Jeziorańskiego 121, 25-408
+                      Kielce
                     </Link>
                   </li>
                 </ul>
@@ -38,7 +42,7 @@ const HeaderOne = () => {
             <div className='col-lg-4'>
               <div className='topBar__one-right t-right lg-t-center'>
                 <div className='topBar__one-right-social'>
-                  <h6>Follow Us</h6>
+                  <h6>Obserwuj nas</h6>
                   <Social />
                 </div>
               </div>
@@ -72,7 +76,7 @@ const HeaderOne = () => {
               </div> */}
               <div className='header__area-menubar-right-btn'>
                 <Link className='btn-one' href='/request-quote'>
-                  Talk with us
+                  Porozmawiajmy
                 </Link>
               </div>
               <div className='header__area-menubar-right-responsive-menu menu__bar'>

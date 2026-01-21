@@ -14,15 +14,15 @@ const ServicePage = () => {
   return (
     <>
       <SEO pageTitle='Our Services' />
-      <SwitchTab />
+      {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb title='Our Services' innerTitle='Our Services' />
       <ServicesMain />
       <ChooseUs addClass='services-page' />
-      <Pricing addClass='services-page' />
+      {/* <Pricing addClass='services-page' />
       <div className='testimonial-service section-padding'>
         <Testimonial />
-      </div>
+      </div> */}
       <FooterOne />
       <ScrollToTop />
     </>

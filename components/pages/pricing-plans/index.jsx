@@ -11,7 +11,7 @@ const PricingPages = () => {
   return (
     <>
       <SEO pageTitle='Pricing Plan' />
-      <SwitchTab />
+      {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb title='Pricing Plan' innerTitle='Pricing Plan' />
       <div className='pricing__area-page section-padding'>

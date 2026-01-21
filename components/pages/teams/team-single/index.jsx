@@ -11,7 +11,7 @@ const TeamSingle = ({ teamDetails }) => {
   return (
     <>
       <SEO pageTitle={teamDetails?.name} />
-      <SwitchTab />
+      {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb title={teamDetails?.name} innerTitle={teamDetails?.name} />
       <TeamSingleMain teamDetails={teamDetails} />

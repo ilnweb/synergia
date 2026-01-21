@@ -22,23 +22,24 @@ const HomeOne = () => {
     <div>
       <SEO pageTitle='Solar Energy' />
       <HeaderOne />
-      <SwitchTab />
+      {/* <SwitchTab /> */}
       <BannerOne />
-      <Features />
-      <About />
       <Services />
+      {/* <Features /> */}
+      {/* <About /> */}
+
       <CtaArea />
       <ChooseUs />
-      <Portfolio />
-      <WorkArea />
-      <Team />
-      <div
+      {/* <Portfolio /> */}
+      {/* <WorkArea /> */}
+      {/* <Team /> */}
+      {/* <div
         className='testimonial__one section-padding'
         style={{ backgroundImage: `url(${bgImage.src})` }}
       >
         <Testimonial />
-      </div>
-      <Blog />
+      </div> */}
+      {/* <Blog /> */}
       <FooterOne />
       <ScrollToTop />
     </div>

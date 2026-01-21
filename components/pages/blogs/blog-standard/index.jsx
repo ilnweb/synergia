@@ -11,7 +11,7 @@ const BlogStandardPage = () => {
   return (
     <>
       <SEO pageTitle='Blog Standard' />
-      <SwitchTab />
+      {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb title='Blog Standard' innerTitle='Blog Standard' />
       <BlogStandardMain />

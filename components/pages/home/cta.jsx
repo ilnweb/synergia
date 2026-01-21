@@ -12,11 +12,9 @@ const CtaArea = () => {
               <div className='row align-items-center'>
                 <div className='col-lg-7 lg-mb-25'>
                   <div className='cta__one-title lg-t-center'>
-                    <h3>
-                      Harness the Sun
-                      <br />
-                      Get Solar Power Today!
-                    </h3>
+                    <h3>Synergia technologii i słońca.</h3>
+                    <div style={{ marginBottom: '20px' }} />
+                    <h4>Włącz własny prąd dzisiaj.</h4>
                   </div>
                 </div>
                 <div className='col-lg-5'>
@@ -25,9 +23,9 @@ const CtaArea = () => {
                       <i className='flaticon-phone-call'></i>
                     </div>
                     <div className='cta__one-contact-info'>
-                      <span>Free contact 24/7</span>
+                      <span>Jesteśmy otwarci</span>
                       <h6>
-                        <Link href='tel:+123(568)584856'>+123 (568) 584 856</Link>
+                        <Link href='tel:+123(568)584856'>+48 123 445 789</Link>
                       </h6>
                     </div>
                   </div>
