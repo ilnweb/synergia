@@ -11,7 +11,7 @@ const Faq = () => {
   return (
     <>
       <SEO pageTitle='FAQ' />
-      <SwitchTab />
+      {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb title='Question & Ans.' innerTitle="FAQ's" />
       <FaqPage />

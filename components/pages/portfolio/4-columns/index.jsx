@@ -11,7 +11,7 @@ const PortfolioFourColumns = () => {
   return (
     <>
       <SEO pageTitle='Portfolio Grid - 04 Columns' />
-      <SwitchTab />
+      {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb title='04 Columns' innerTitle='Portfolio Grid' />
       <FourColumns />

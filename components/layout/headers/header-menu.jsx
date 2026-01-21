@@ -6,21 +6,21 @@ const MainMenu = () => {
     <>
       <ul>
         <li>
-          <Link href='/'>Home</Link>
+          <Link href='/'>Strona główna</Link>
         </li>
+        {/* <li>
+          <Link href='/services'>Usługi </Link>
+        </li> */}
         <li>
-          <Link href='/services'>Services</Link>
+          <Link href='/about-us'>O nas</Link>
         </li>
-        <li>
-          <Link href='/about-us'>About</Link>
-        </li>
-        <li>
+        {/* <li>
           <Link href='/blog'>Blog</Link>
-        </li>
+        </li> */}
         <li>
-          <Link href='/contact'>Contact</Link>
+          <Link href='/contact'>Kontakt</Link>
         </li>
-        <li className='menu-item-has-children'>
+        {/* <li className='menu-item-has-children'>
           <Link href='#'>Pages</Link>
           <ul className='sub-menu'>
             <li className='menu-item-has-children'>
@@ -95,7 +95,7 @@ const MainMenu = () => {
               <Link href='/portfolio/agricultural-facilities'>Project Details</Link>
             </li>
           </ul>
-        </li>
+        </li> */}
       </ul>
     </>
   );

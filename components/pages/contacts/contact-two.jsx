@@ -11,20 +11,24 @@ import FormArea from './form';
 const ContactTwo = () => {
   return (
     <>
-      <SEO pageTitle='Contact Two' />
-      <SwitchTab />
+      <SEO pageTitle='Kontakt' />
+      {/* <SwitchTab /> */}
       <HeaderOne />
-      <BreadCrumb title='Contact Two' innerTitle='Contact Two' />
+      <BreadCrumb
+        title='Kontakt'
+        innerTitle='Kontakt'
+        backgroundImage='/assets/img/banner/banner-2.jpg'
+      />
       <div className='contact__two section-padding'>
         <div className='container'>
           <div className='row al-center'>
             <div className='col-xl-6 col-lg-5 lg-mb-25'>
               <div className='contact__two-area mr-50 xl-mr-0'>
-                <span className='subtitle-one'>Contact us</span>
-                <h2>Do you have any question?</h2>
+                <span className='subtitle-one'>Skontaktuj się z nami</span>
+                <h2>Masz pytania?</h2>
                 <p>
-                  For your car we will do everything advice, repairs and maintenance. We are the
-                  some preferred choice by many car owners because
+                  Jesteśmy tu, aby pomóc Ci w każdej kwestii związanej z energią odnawialną.
+                  Skontaktuj się z nami, a odpowiemy na wszystkie Twoje pytania.
                 </p>
                 <FormArea />
               </div>
@@ -34,35 +38,35 @@ const ContactTwo = () => {
                 <div className='col-md-6 mb-25'>
                   <div className='contact__one-item'>
                     <i className='flaticon-telephone-call'></i>
-                    <span>Phone :</span>
+                    <span>Telefon :</span>
                     <h6>
-                      <Link href='tel:+123(254)65858'>+123(254)658 58</Link>
+                      <Link href='tel:+48123445789'>+48 123 445 789</Link>
                     </h6>
                   </div>
                 </div>
                 <div className='col-md-6 md-mb-25'>
                   <div className='contact__one-item'>
                     <i className='flaticon-mail'></i>
-                    <span>Email Address :</span>
+                    <span>Email :</span>
                     <h6>
-                      <Link href='mailto:help@gmail.com'>help@gmail.com</Link>
+                      <Link href='mailto:biuro@synergiaenergia.pl'>biuro@synergiaenergia.pl</Link>
                     </h6>
                   </div>
                 </div>
                 <div className='col-md-6 md-mb-25'>
                   <div className='contact__one-item'>
                     <i className='flaticon-location-1'></i>
-                    <span>Location :</span>
+                    <span>Lokalizacja :</span>
                     <h6>
-                      <Link href='https://google.com/maps'>New Jersey 45463</Link>
+                      <Link href='https://google.com/maps'>Warszawa, Polska</Link>
                     </h6>
                   </div>
                 </div>
                 <div className='col-md-6'>
                   <div className='contact__one-item'>
                     <i className='flaticon-wall-clock'></i>
-                    <span>Opening Hours :</span>
-                    <h6>Mon-Fri 09 am-05 PM</h6>
+                    <span>Godziny otwarcia :</span>
+                    <h6>Pon-Pt 09:00-17:00</h6>
                   </div>
                 </div>
               </div>
@@ -72,7 +76,7 @@ const ContactTwo = () => {
       </div>
       <div className='contact__two-map'>
         <iframe
-          src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d156395.40191753332!2d20.921111000000002!3d52.2319581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2sWarsaw%2C%20Poland!5e0!3m2!1sen!2s!4v1705598400000!5m2!1sen!2s&markers=color:red%7C52.2319581,20.921111'
+          src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1991!2d20.670532!3d50.891334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471827b8062ebb57%3A0xce5a6c93a76ee922!2sSynergia%20energia!5e0!3m2!1spl!2spl!4v1705598400000!5m2!1spl!2spl'
           loading='lazy'
           allowFullScreen
           referrerPolicy='no-referrer-when-downgrade'

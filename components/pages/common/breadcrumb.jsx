@@ -35,10 +35,12 @@ const BreadCrumb = ({ title, innerTitle, backgroundImage }) => {
               <h1>{title}</h1>
               <ul>
                 <li>
-                  <Link href='/'>Home</Link>
-                  <i className='fa-regular fa-angle-right'></i>
+                  <Link href='/'>
+                    <span>Strona główna</span>
+                  </Link>
+                  <i className='fa-regular fa-angle-right' style={{ color: '#f33633' }}></i>
                 </li>
-                <li>{innerTitle}</li>
+                <li style={{ color: '#f33633' }}>{innerTitle}</li>
               </ul>
             </div>
           </div>

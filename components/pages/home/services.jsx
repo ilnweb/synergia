@@ -16,17 +16,18 @@ const Services = () => {
           priority
         />
       </div>
+
       <div className='container'>
         <div className='row mb-35'>
           <div className='col-xl-12'>
             <div className='service__one-title t-center'>
               <span className='subtitle-one'>Nasze usługi</span>
-              <h2>Usługi Energetyczne</h2>
+              <h2>W czym możemy Ci pomóc?</h2>
             </div>
           </div>
         </div>
         <div className='row'>
-          {servicesData?.slice(0, 3)?.map((data, id) => (
+          {servicesData?.map((data, id) => (
             <div className='col-lg-4 col-md-6' key={id}>
               <div className='service__one-item'>
                 <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: -1 }}>
@@ -44,12 +45,12 @@ const Services = () => {
                     <Link href={`/services/${data.id}`}>{data.title}</Link>
                   </h6>
                   <p>{data.des}</p>
-                  <Link className='simple-btn' href={`/services/${data.id}`}>
-                    Więcej szczegółów{' '}
+                  {/* <Link className='simple-btn' href={`/services/${data.id}`}>
+                    DOWIEDZ SIĘ WIĘCEJ{' '}
                     <span>
                       <i className='fa-sharp fa-regular fa-arrow-up-right'></i>
                     </span>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>

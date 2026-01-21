@@ -13,7 +13,7 @@ const BlogGrid = ({ initialBlogs = [], error = null }) => {
   return (
     <>
       <SEO pageTitle='Blog Synergia Energia' />
-      <SwitchTab />
+{/* <SwitchTab /> */}  
       <HeaderOne />
       <BreadCrumb title='Blog' innerTitle='Blog' />
       <BlogGridMain initialBlogs={initialBlogs} error={error} />

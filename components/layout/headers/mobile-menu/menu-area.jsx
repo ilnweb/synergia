@@ -6,8 +6,12 @@ const MobileMenuPopup = ({ isOpen, setIsOpen, addClass, popupLogo }) => {
     <div className={`menu__bar-popup ${addClass} ${isOpen ? 'show' : ''}`}>
       <div className='menu__bar-popup-top'>
         <div className='logo'>
-          <Link href='/'>
-            <img src={popupLogo?.src} alt='logo' />
+          <Link href='/' className='mobile-logo'>
+            <img
+              src='/assets/svg/synergia-logo.svg'
+              alt='Synergia Logo'
+              style={{ width: '100%' }}
+            />
           </Link>
         </div>
         <div className='close' onClick={() => setIsOpen(false)}>

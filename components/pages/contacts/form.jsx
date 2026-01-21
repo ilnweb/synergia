@@ -73,7 +73,7 @@ const FormArea = () => {
                 name='name'
                 value={formData.name}
                 onChange={handleChange}
-                placeholder='Full Name'
+                placeholder='Imię i nazwisko'
                 required
               />
             </div>
@@ -85,7 +85,7 @@ const FormArea = () => {
                 name='email'
                 value={formData.email}
                 onChange={handleChange}
-                placeholder='Email Address'
+                placeholder='Adres email'
                 required
               />
             </div>
@@ -97,7 +97,7 @@ const FormArea = () => {
                 name='subject'
                 value={formData.subject}
                 onChange={handleChange}
-                placeholder='Subject'
+                placeholder='Temat'
               />
             </div>
           </div>
@@ -107,7 +107,7 @@ const FormArea = () => {
                 name='message'
                 value={formData.message}
                 onChange={handleChange}
-                placeholder='Message'
+                placeholder='Wiadomość'
                 required
               ></textarea>
             </div>
@@ -115,7 +115,7 @@ const FormArea = () => {
           <div className='col-md-12'>
             <div className='contact__two-right-form-item'>
               <button className='btn-one' type='submit' disabled={isSubmitting}>
-                {isSubmitting ? 'Sending...' : 'Submit Now'}
+                {isSubmitting ? 'Wysyłanie...' : 'Wyślij teraz'}
               </button>
             </div>
             {submitStatus.message && (

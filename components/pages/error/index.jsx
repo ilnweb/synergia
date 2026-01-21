@@ -11,7 +11,7 @@ const ErrorPage = () => {
   return (
     <>
       <SEO pageTitle='Not Found' />
-      <SwitchTab />
+      {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb title='Not Found' innerTitle='404' />
       <Error />

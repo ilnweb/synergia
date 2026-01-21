@@ -11,7 +11,7 @@ const ServicesSingle = ({ serviceDetails }) => {
   return (
     <>
       <SEO pageTitle={serviceDetails?.title} />
-      <SwitchTab />
+      {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb title={serviceDetails?.title} innerTitle={serviceDetails?.title} />
       <ServicesSingleMain serviceDetails={serviceDetails} />

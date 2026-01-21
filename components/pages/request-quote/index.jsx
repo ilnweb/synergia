@@ -11,7 +11,7 @@ const RequestQuotePage = () => {
   return (
     <>
       <SEO pageTitle='Request Quote' />
-      <SwitchTab />
+      {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb title='Request Quote' innerTitle='Request Quote' />
       <RequestQuoteMain />

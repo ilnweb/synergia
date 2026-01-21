@@ -11,7 +11,7 @@ const Testimonial = () => {
   return (
     <>
       <SEO pageTitle='Testimonials' />
-      <SwitchTab />
+      {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb title='Testimonials' innerTitle='Testimonials' />
       <TestimonialMain addClass='services-page' />

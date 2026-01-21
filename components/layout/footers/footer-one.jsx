@@ -1,7 +1,7 @@
 import Social from '@/components/data/social';
 import Link from 'next/link';
-import logo from '../../../public/assets/img/logo-2.png';
-import ctaBg from '../../../public/assets/img/shape/shape-7.png';
+import logo from '../../../public/assets/img/logo-1.png';
+import ctaBg from '../../../public/assets/img/shape/shape-6.png';
 import avatar from '../../../public/assets/img/avatar/avatar-5.png';
 import footerBg from '../../../public/assets/img/shape/shape-13.png';
 
@@ -12,21 +12,23 @@ const FooterOne = () => {
         <div className='container'>
           <div className='row'>
             <div className='col-xl-12'>
-              <div className='footer__cta-area' style={{ backgroundImage: `url(${ctaBg.src})` }}>
+              <div
+                className='footer__cta-area'
+                style={{ backgroundColor: '#0D3A57', backgroundImage: `url(${ctaBg.src})` }}
+              >
                 <div className='row al-center'>
                   <div className='col-lg-9'>
                     <div className='footer__cta-area-left'>
-                      <h3>Harness the Sun Get Solar Power Today!</h3>
+                      <h3>Skontaktuj się z nami, a my zajmiemy się resztą!</h3>
                       <div className='footer__cta-area-left-btn lg-jc-center'>
                         <Link className='btn-one' href='/request-quote'>
-                          Start Today
+                          Zacznij już dziś
                         </Link>
                         <div className='footer__cta-area-left-btn-tel author'>
                           <i className='flaticon-phone-call'></i>
                           <div className='info'>
-                            <span>Need any help</span>
                             <h6>
-                              <Link href='tel:+123(548)5256'>+123 (548) 5256</Link>
+                              <Link href='tel:+48123445789'>+48 123 445 789</Link>
                             </h6>
                           </div>
                         </div>
@@ -35,9 +37,10 @@ const FooterOne = () => {
                   </div>
                   <div className='col-lg-3 lg-mt-25'>
                     <div className='footer__cta-area-right t-right lg-t-center'>
-                      <div className='footer__cta-area-right-image dark_image'>
-                        <img src={avatar.src} alt='avatar' />
-                      </div>
+                      <div
+                        className='footer__cta-area-right-image dark_image'
+                        style={{ backgroundImage: `url(${avatar.src})` }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -53,13 +56,17 @@ const FooterOne = () => {
               <div className='footer__area-widget'>
                 <div className='logo'>
                   <Link href='/'>
-                    <img src={logo.src} alt='Logo-image' />
+                    <img src='/assets/svg/synergia-logo.svg' alt='Synergia Logo' />
                   </Link>
                 </div>
                 <div className='footer__area-widget-company'>
                   <p>
-                    <Link href='https://google.com/maps'>
-                      8502 Preston Rd. Inglewood, Maine 98380 US
+                    <Link
+                      href='https://www.google.com/maps/place/Synergia+energia/@50.890887,20.672871,996m/data=!3m1!1e3!4m6!3m5!1s0x471827b8062ebb57:0xce5a6c93a76ee922!8m2!3d50.8908871!4d20.6728707!16s%2Fg%2F11n85vxb7g?hl=pl&entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D'
+                      target='_blank'
+                    >
+                      <i className='flaticon-placeholder'></i>Jana Nowaka-Jeziorańskiego 121, 25-408
+                      Kielce
                     </Link>
                   </p>
                   <div className='social__icon mt-60'>
@@ -72,67 +79,37 @@ const FooterOne = () => {
               <div className='row'>
                 <div className='col-sm-6 col-12 sm-mt-25'>
                   <div className='footer__area-widget'>
-                    <h6>Phone</h6>
+                    <h6>Telefon</h6>
                     <div className='footer__area-widget-info mb-35'>
                       <p>
-                        <Link href='tel:+12(456)65878'>+12(456)658 78</Link>
-                      </p>
-                      <p>
-                        <Link href='tel:+12(518)45145'>+12(518)451 45</Link>
+                        <Link href='tel:+48123445789'>+48 123 445 789</Link>
                       </p>
                     </div>
                     <h6>Email</h6>
                     <div className='footer__area-widget-info'>
                       <p>
-                        <Link href='mailto:hello.help@gmail.com'>hello.help@gmail.com</Link>
+                        <Link href='mailto:hello.help@gmail.com'>buiro@synergiaenergia.pl</Link>
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className='col-sm-6 col-12 sm-mt-25'>
                   <div className='footer__area-widget'>
-                    <h6>Resources</h6>
+                    <h6>Zasoby</h6>
                     <div className='footer-widget-menu'>
                       <ul>
                         <li>
-                          <Link href='/about-us'>About Us</Link>
+                          <Link href='/about-us'>O nas</Link>
                         </li>
+                        <li>{/* <Link href='/blog'>Blog</Link> */}</li>
+                        <li>{/* <Link href='/testimonial'>Testimonials</Link> */}</li>
+                        <li>{/* <Link href='/faq'>Faqs</Link> */}</li>
                         <li>
-                          <Link href='/blog'>Blog</Link>
-                        </li>
-                        <li>
-                          <Link href='/testimonial'>Testimonials</Link>
-                        </li>
-                        <li>
-                          <Link href='/faq'>Faqs</Link>
-                        </li>
-                        <li>
-                          <Link href='/contact'>Contact Us</Link>
+                          <Link href='/contact'>Kontakt</Link>
                         </li>
                       </ul>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className='col-lg-4 col-md-6 lg-mt-25'>
-              <div className='footer__area-widget'>
-                <h6>Subscribe</h6>
-                <div className='footer__area-widget-subscribe'>
-                  <form action='#'>
-                    <input
-                      type='email'
-                      name='email'
-                      placeholder='Email Address'
-                      required='required'
-                    />
-                    <button type='submit'>
-                      <i className='fas fa-paper-plane'></i>
-                    </button>
-                    <label>
-                      <input type='checkbox' />I agree with the terms and conditions
-                    </label>
-                  </form>
                 </div>
               </div>
             </div>
@@ -143,19 +120,19 @@ const FooterOne = () => {
             <div className='row'>
               <div className='col-lg-6'>
                 <p>
-                  Copyright 2024 - All Rights Reserved By{' '}
-                  <Link href='https://themeforest.net/user/themeori/portfolio'>ThemeOri</Link>
+                  Copyright 2025 - All Rights Reserved{' '}
+                  {/* <Link href='https://themeforest.net/user/themeori/portfolio'>ThemeOri</Link> */}
                 </p>
               </div>
               <div className='col-lg-6'>
                 <div className='copyright__area-menu t-right lg-t-center lg-mt-5'>
                   <ul>
-                    <li>
-                      <Link href='/contact-two'>Privacy & Policy</Link>
+                    <li style={{ color: '#f4f4f4' }}>
+                      Created by <span style={{ color: '#f33633' }}>DigitalSurf</span>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link href='/contact-two'>Terms and Conditions</Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>

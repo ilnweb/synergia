@@ -12,10 +12,14 @@ const AboutUs = () => {
   return (
     <>
       <SEO pageTitle='About Us' />
-      <SwitchTab />
+      {/* <SwitchTab /> */}
       <HeaderOne />
-      <BreadCrumb title='About Us' innerTitle='Company About' />
-      <Features />
+      <BreadCrumb
+        title='O nas'
+        innerTitle='O nas firma'
+        backgroundImage='/assets/img/banner/banner-4.jpg'
+      />
+      {/* <Features /> */}
       <AboutMain />
       <FooterOne />
       <ScrollToTop />
