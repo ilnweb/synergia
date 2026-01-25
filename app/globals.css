@@ -6,3 +6,20 @@
 @import 'react-modal-video/css/modal-video.min.css';
 @import '../public/assets/css/meanmenu.min.css';
 @import '../public/assets/sass/style.css';
+
+/* Prevent horizontal scroll on mobile */
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

@@ -5958,6 +5958,7 @@ Responsive Menu Css
 ==========================================================================*/
 .choose__us-area {
   position: relative;
+  overflow: hidden;
 }
 .choose__us-area-image {
   position: absolute;
@@ -6180,6 +6181,7 @@ Responsive Menu Css
     position: initial;
     width: 100%;
     height: 500px;
+    overflow: hidden;
     margin-top: 30px;
   }
   .choose__us-area-bottom {

@@ -94,6 +94,9 @@ const ChooseUs = () => {
                     style={{ maxWidth: '100%', height: 'auto', margin: '0 auto' }}
                   />
                 </div>
+                <div className='choose__us-area-image dark_image'>
+                  <img src={image.src} alt='image' />
+                </div>
               </div>
             </div>
           </div>
