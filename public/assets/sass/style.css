@@ -9341,7 +9341,8 @@ Responsive Menu Css
 
 @media (max-width: 991px) {
   .footer__cta-area {
-    padding: 30px 20px 0 20px;
+    margin-bottom: 30px;
+    padding: 30px 20px;
   }
   .footer__cta-area-left h3 {
     margin: 0 auto;

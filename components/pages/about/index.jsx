@@ -11,7 +11,13 @@ import Features from '../home/features';
 const AboutUs = () => {
   return (
     <>
-      <SEO pageTitle='About Us' />
+      <SEO
+        pageTitle='O nas | Synergia Energia - Fotowoltaika i Odnawialne Źródła Energii'
+        pageDescription='Poznaj historię Synergia Energia - firmy specjalizującej się w fotowoltaice, pompach ciepła i systemach grzewczych w Polsce. Od boomu na fotowoltaikę po certyfikowanego audytora energetycznego. Zaufanie, pasja i najwyższa jakość.'
+        keywords='o nas, Synergia Energia, historia firmy, fotowoltaika Polska, pompy ciepła, audytor energetyczny, energia odnawialna, ogrzewanie ekologiczne, RED SNEKE, folie grzewcze, doświadczenie w OZE'
+        canonicalUrl='https://synergiaenergia.pl/o-nas'
+        ogImage='/assets/img/banner/banner-4.jpg'
+      />
       {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb

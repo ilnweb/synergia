@@ -2,25 +2,28 @@ import Social from '@/components/data/social';
 import Link from 'next/link';
 import logo from '../../../public/assets/img/logo-1.png';
 import ctaBg from '../../../public/assets/img/shape/shape-6.png';
-import avatar from '../../../public/assets/img/avatar/avatar-5.png';
+import avatar from '../../../public/assets/img/avatar/avatar-5.jpg';
 import footerBg from '../../../public/assets/img/shape/shape-13.png';
 
 const FooterOne = () => {
   return (
     <>
       <div className='footer__cta'>
-        <div className='container'>
+        <div
+          className='container-fluid'
+          style={{ maxWidth: '100%', paddingLeft: '20px', paddingRight: '20px' }}
+        >
           <div className='row'>
             <div className='col-xl-12'>
               <div
                 className='footer__cta-area'
                 style={{ backgroundColor: '#0D3A57', backgroundImage: `url(${ctaBg.src})` }}
               >
-                <div className='row al-center'>
-                  <div className='col-lg-9'>
+                <div className='row al-center justify-content-center'>
+                  <div className='col-12 col-lg-9 text-center text-lg-left'>
                     <div className='footer__cta-area-left'>
                       <h3>Skontaktuj się z nami, a my zajmiemy się resztą!</h3>
-                      <div className='footer__cta-area-left-btn lg-jc-center'>
+                      <div className='footer__cta-area-left-btn justify-content-center justify-content-lg-start'>
                         <Link className='btn-one' href='/request-quote'>
                           Zacznij już dziś
                         </Link>
@@ -35,14 +38,14 @@ const FooterOne = () => {
                       </div>
                     </div>
                   </div>
-                  <div className='col-lg-3 lg-mt-25'>
+                  {/* <div className='col-lg-3 lg-mt-25 d-none d-lg-block'>
                     <div className='footer__cta-area-right t-right lg-t-center'>
                       <div
                         className='footer__cta-area-right-image dark_image'
                         style={{ backgroundImage: `url(${avatar.src})` }}
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -55,7 +58,7 @@ const FooterOne = () => {
             <div className='col-lg-3 col-md-5 lg-mb-25'>
               <div className='footer__area-widget'>
                 <div className='logo'>
-                  <Link href='/'>
+                  <Link href='/' aria-label='Synergia Energia - Strona główna'>
                     <img src='/assets/svg/synergia-logo.svg' alt='Synergia Logo' />
                   </Link>
                 </div>

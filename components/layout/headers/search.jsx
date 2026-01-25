@@ -8,7 +8,7 @@ const Search = ({ isOpen, setIsOpen, addClass }) => {
       >
         <form>
           <input type='search' placeholder='Search Here.....' />
-          <button type='submit'>
+          <button type='submit' aria-label='Szukaj'>
             <i className='fal fa-search'></i>
           </button>
         </form>

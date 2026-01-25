@@ -19,8 +19,8 @@ const AboutMain = () => {
                     <Image
                       src='/assets/img/about/about-6.jpg'
                       alt='about'
-                      width={500}
-                      height={500}
+                      width={1200}
+                      height={800}
                       style={{ width: '90%', height: '600px', objectFit: 'cover' }}
                     />
                   </div>
@@ -28,9 +28,9 @@ const AboutMain = () => {
                     <Image
                       src='/assets/img/about/about-5.jpg'
                       alt='about'
-                      width={300}
-                      height={300}
-                      style={{ width: '120%', height: '300px', objectFit: 'cover' }}
+                      width={1200}
+                      height={800}
+                      style={{ width: '100%', height: '300px', objectFit: 'cover' }}
                     />
                   </div>
                 </div>
