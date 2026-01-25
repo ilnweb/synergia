@@ -5,7 +5,7 @@ import servicesData from '@/components/data/services-data';
 
 const Services = () => {
   return (
-    <div className='service__one'>
+    <div className='service__one' style={{ overflow: 'hidden' }}>
       <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: -1 }}>
         <Image
           src='/assets/img/shape/shape-9.png'
@@ -17,19 +17,19 @@ const Services = () => {
         />
       </div>
 
-      <div className='container'>
-        <div className='row mb-35'>
-          <div className='col-xl-12'>
+      <div className='container' style={{ overflow: 'hidden' }}>
+        <div className='row mb-35' style={{ overflow: 'hidden' }}>
+          <div className='col-xl-12' style={{ overflow: 'hidden' }}>
             <div className='service__one-title t-center'>
               <span className='subtitle-one'>Nasze usługi</span>
               <h2>W czym możemy Ci pomóc?</h2>
             </div>
           </div>
         </div>
-        <div className='row'>
+        <div className='row' style={{ overflow: 'hidden' }}>
           {servicesData?.map((data, id) => (
-            <div className='col-lg-4 col-md-6' key={id}>
-              <div className='service__one-item'>
+            <div className='col-lg-4 col-md-6' key={id} style={{ overflow: 'hidden' }}>
+              <div className='service__one-item' style={{ overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: -1 }}>
                   <Image
                     src='/assets/img/shape/shape-5.png'

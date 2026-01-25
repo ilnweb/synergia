@@ -6,6 +6,8 @@ const ScrollToTop = ({ addClass }) => {
   const { stick, onClickHandler } = useScrollToTop();
   useEffect(() => {
     const scrollPath = document.querySelector('.scroll-up path');
+    if (!scrollPath) return;
+
     const pathLength = scrollPath.getTotalLength();
     scrollPath.style.transition = 'none';
     scrollPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
@@ -28,7 +30,10 @@ const ScrollToTop = ({ addClass }) => {
   }, []);
 
   return (
-    <div className={`scroll-up ${addClass} ${stick && 'active-scroll'}`} onClick={onClickHandler}>
+    <div
+      className={`scroll-up d-none d-md-block ${addClass} ${stick && 'active-scroll'}`}
+      onClick={onClickHandler}
+    >
       <svg className='scroll-circle svg-content' width='100%' height='100%' viewBox='-1 -1 102 102'>
         <path d='M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98' />
       </svg>

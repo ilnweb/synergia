@@ -49,7 +49,7 @@ const FooterTwo = () => {
                 <div className='col-lg-8 col-sm-7 sm-mb-25'>
                   <div className='footer__area-widget'>
                     <div className='logo'>
-                      <Link href='/'>
+                      <Link href='/' aria-label='Synergia Energia - Strona główna'>
                         <img src={logo.src} alt='Logo-image' />
                       </Link>
                     </div>

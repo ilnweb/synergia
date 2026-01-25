@@ -112,7 +112,7 @@ const FooterThree = () => {
                           placeholder='Email Address'
                           required='required'
                         />
-                        <button type='submit'>
+                        <button type='submit' aria-label='Zapisz się do newslettera'>
                           <i className='fas fa-paper-plane'></i>
                         </button>
                         <label>

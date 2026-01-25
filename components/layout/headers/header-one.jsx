@@ -55,7 +55,7 @@ const HeaderOne = () => {
           <div className='header__area-menubar'>
             <div className='header__area-menubar-left one'>
               <div className='header__area-menubar-left-logo'>
-                <Link href='/'>
+                <Link href='/' aria-label='Synergia Energia - Strona główna'>
                   <SynergyLogo />
                 </Link>
               </div>

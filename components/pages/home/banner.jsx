@@ -33,18 +33,18 @@ const BannerOne = () => {
                 <div className='row'>
                   <div className='col-xl-7'>
                     <div className='banner__one-content'>
-                      <span className='subtitle-one'>Green Energy</span>
+                      <span className='subtitle-one'>Energia Słoneczna</span>
                       <h1>
-                        Eco Friendly
-                        <br /> Power
+                        Oszczędzaj na
+                        <br /> Rachunkach
                       </h1>
                       <p>
-                        we stand at the forefront of the eco-friendly power movement, dedicated to
-                        harnessing sustainable energy
+                        Zainwestuj w fotowoltaikę i zmniejsz rachunki za prąd nawet o 90%.
+                        Profesjonalne instalacje z gwarancją i dofinansowaniem.
                       </p>
                       <div className='banner__one-content-button'>
                         <Link className='btn-one' href='/about-us'>
-                          Discover More
+                          Dowiedz się więcej
                         </Link>
                       </div>
                     </div>
@@ -65,17 +65,18 @@ const BannerOne = () => {
                 <div className='row'>
                   <div className='col-xl-7'>
                     <div className='banner__one-content'>
-                      <span className='subtitle-one'>We're the best</span>
+                      <span className='subtitle-one'>Ekologiczna Energia</span>
                       <h1>
-                        Larges <br /> Solar energy
+                        Pełna
+                        <br /> Niezależność
                       </h1>
                       <p>
-                        Our design philosophy is more than aesthetics it's a dynamic process that
-                        delves into
+                        Produkuj własny prąd z słońca i ciesz się niezależnością energetyczną. Pompy
+                        ciepła i folie grzewcze to przyszłość ogrzewania.
                       </p>
                       <div className='banner__one-content-button'>
                         <Link className='btn-one' href='/about-us'>
-                          Discover More
+                          Sprawdź ofertę
                         </Link>
                       </div>
                     </div>
@@ -99,17 +100,17 @@ const BannerOne = () => {
                     <div className='col-md-4 col-sm-5 sm-mb-15'>
                       <div className='banner__one-capacity-item sm-t-center'>
                         <h3>
-                          <Count number={3886} />
+                          <Count number={286} />
                         </h3>
-                        <h6>Successfully done</h6>
+                        <h6>Zakończonych projektów</h6>
                       </div>
                     </div>
                     <div className='col-md-4 col-sm-5'>
                       <div className='banner__one-capacity-item sm-t-center'>
                         <h3>
-                          <Count number={24456} />
+                          <Count number={2456} />
                         </h3>
-                        <h6>INSTALLED CAPACITY</h6>
+                        <h6>Zainstalowana moc (kW)</h6>
                       </div>
                     </div>
                   </div>
