@@ -9,21 +9,18 @@ const FooterOne = () => {
   return (
     <>
       <div className='footer__cta'>
-        <div
-          className='container-fluid'
-          style={{ maxWidth: '100%', paddingLeft: '20px', paddingRight: '20px' }}
-        >
+        <div className='container'>
           <div className='row'>
             <div className='col-xl-12'>
               <div
                 className='footer__cta-area'
                 style={{ backgroundColor: '#0D3A57', backgroundImage: `url(${ctaBg.src})` }}
               >
-                <div className='row al-center justify-content-center'>
-                  <div className='col-12 col-lg-9 text-center text-lg-left'>
+                <div className='row al-center'>
+                  <div className='col-lg-9'>
                     <div className='footer__cta-area-left'>
                       <h3>Skontaktuj się z nami, a my zajmiemy się resztą!</h3>
-                      <div className='footer__cta-area-left-btn justify-content-center justify-content-lg-start'>
+                      <div className='footer__cta-area-left-btn'>
                         <Link className='btn-one' href='/request-quote'>
                           Zacznij już dziś
                         </Link>
