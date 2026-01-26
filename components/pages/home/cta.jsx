@@ -25,7 +25,7 @@ const CtaArea = () => {
                     <div className='cta__one-contact-info'>
                       <span>Jesteśmy otwarci</span>
                       <h6>
-                        <Link href='tel:+123(568)584856'>+48 123 445 789</Link>
+                        <Link href='tel:+48698454913'>+48 698 454 913</Link>
                       </h6>
                     </div>
                   </div>
