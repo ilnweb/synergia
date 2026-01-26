@@ -75,7 +75,7 @@ const HeaderOne = () => {
                 </div>
               </div> */}
               <div className='header__area-menubar-right-btn'>
-                <Link className='btn-one' href='/request-quote'>
+                <Link className='btn-one' href='/contact'>
                   Porozmawiajmy
                 </Link>
               </div>

@@ -21,7 +21,7 @@ const FooterOne = () => {
                     <div className='footer__cta-area-left'>
                       <h3>Skontaktuj się z nami, a my zajmiemy się resztą!</h3>
                       <div className='footer__cta-area-left-btn'>
-                        <Link className='btn-one' href='/request-quote'>
+                        <Link className='btn-one' href='/contact'>
                           Zacznij już dziś
                         </Link>
                         <div className='footer__cta-area-left-btn-tel author'>
