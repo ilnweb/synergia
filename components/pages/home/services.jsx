@@ -41,9 +41,7 @@ const Services = () => {
                 </div>
                 <div className='service__one-item-icon'>{data.icon}</div>
                 <div className='service__one-item-content'>
-                  <h6>
-                    <Link href={`/services/${data.id}`}>{data.title}</Link>
-                  </h6>
+                  <h6>{data.title}</h6>
                   <p>{data.des}</p>
                   {/* <Link className='simple-btn' href={`/services/${data.id}`}>
                     DOWIEDZ SIĘ WIĘCEJ{' '}
