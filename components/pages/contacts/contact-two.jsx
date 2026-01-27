@@ -64,7 +64,7 @@ const ContactTwo = () => {
                     <i className='flaticon-location-1'></i>
                     <span>Lokalizacja :</span>
                     <h6>
-                      <Link href='https://google.com/maps'>Warszawa, Polska</Link>
+                      <Link href='https://google.com/maps'>Kielce, Polska</Link>
                     </h6>
                   </div>
                 </div>
