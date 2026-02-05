@@ -98,6 +98,7 @@ const FormArea = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder='Temat'
+                required
               />
             </div>
           </div>
