@@ -13,16 +13,21 @@ const FormArea = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ success: null, message: '' });
 
-  const handleChange = e => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
   const handleSubmit = async e => {
     e.preventDefault();
+
+    // 1. CLIENT-SIDE VALIDATION – BEFORE API CALL
+    const hasEmptyField = Object.values(formData).some(value => value.trim() === '');
+
+    if (hasEmptyField) {
+      setSubmitStatus({
+        success: false,
+        message: 'Proszę uzupełnić wszystkie wymagane pola.',
+      });
+      return; // ⛔ prevents webhook call
+    }
+
+    // 2. PROCEED ONLY IF FORM DATA IS VALID
     setIsSubmitting(true);
     setSubmitStatus({ success: null, message: '' });
 
@@ -40,7 +45,8 @@ const FormArea = () => {
           success: true,
           message: 'Thank you for your message! We will get back to you soon.',
         });
-        // Reset form
+
+        // Reset form after successful submission
         setFormData({
           name: '',
           email: '',
@@ -98,6 +104,7 @@ const FormArea = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder='Temat'
+                required
               />
             </div>
           </div>
