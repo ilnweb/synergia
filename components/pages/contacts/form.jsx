@@ -51,7 +51,7 @@ const FormArea = () => {
       if (response.ok) {
         setSubmitStatus({
           success: true,
-          message: 'Thank you for your message! We will get back to you soon.',
+          message: 'Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.',
         });
 
         // Reset form after successful submission
@@ -69,7 +69,7 @@ const FormArea = () => {
       console.error('Error submitting form:', error);
       setSubmitStatus({
         success: false,
-        message: 'There was an error sending your message. Please try again later.',
+        message: 'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.',
       });
     } finally {
       setIsSubmitting(false);
