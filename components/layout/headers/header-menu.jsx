@@ -14,9 +14,9 @@ const MainMenu = () => {
         <li>
           <Link href='/about-us'>O nas</Link>
         </li>
-        {/* <li>
+        <li>
           <Link href='/blog'>Blog</Link>
-        </li> */}
+        </li>
         <li>
           <Link href='/contact'>Kontakt</Link>
         </li>

@@ -5,16 +5,17 @@ export const blogService = {
   // Fetch all blogs
   getBlogs: async () => {
     try {
-      const response = await fetch(`${STRAPI_URL}/api/blogs?populate=*`, {
+      const response = await fetch(`${STRAPI_URL}/api/blogs?populate=*&sort=createdAt:desc`, {
         headers: {
           Authorization: `Bearer ${STRAPI_TOKEN}`,
           'Content-Type': 'application/json',
         },
       });
+
       if (!response.ok) {
-        console.log(response);
         throw new Error('Failed to fetch blogs');
       }
+
       const data = await response.json();
       return data.data;
     } catch (error) {
