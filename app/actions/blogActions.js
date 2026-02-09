@@ -2,11 +2,8 @@
 
 import { STRAPI_TOKEN, STRAPI_URL } from '../../constants';
 
-console.log('Debug - STRAPI_URL:', STRAPI_URL);
-
 export async function getBlogs() {
   const url = `${STRAPI_URL}/api/blogs?populate=*&sort=createdAt:desc`;
-  console.log('Debug - Full URL:', url);
 
   try {
     const response = await fetch(url, {

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { STRAPI_URL } from '@/constants';
+import { STRAPI_URL } from '../../../../constants';
 import { useQuery } from '@tanstack/react-query';
 import { blogService } from '@/services/blogService';
 import dayjs from 'dayjs';

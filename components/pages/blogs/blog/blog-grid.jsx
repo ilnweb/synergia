@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import BlogItem from './blog-item';
 import Pagination from './pagination';
-import { STRAPI_URL } from '@/constants';
+import { STRAPI_URL } from '../../../../constants';
 
 const BlogGridMain = ({ initialBlogs = [], error: serverError }) => {
   const blogItemShow = 5;
