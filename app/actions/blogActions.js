@@ -3,11 +3,8 @@
 const STRAPI_URL = 'https://simdashai.cloud';
 const STRAPI_TOKEN = process.env.STRAPI_TOKEN || process.env.NEXT_PUBLIC_STRAPI_TOKEN;
 
-console.log('Strapi URL:', STRAPI_URL);
-console.log('Token exists:', !!STRAPI_TOKEN);
-
 export async function getBlogs() {
-  const url = `${STRAPI_URL}/api/blogs?populate=*`;
+  const url = `${STRAPI_URL}/api/blogs?populate=*&sort=createdAt:desc`;
 
   try {
     const response = await fetch(url, {
