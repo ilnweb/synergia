@@ -1,4 +1,4 @@
-const STRAPI_URL = 'http://72.60.17.88:1337';
+export const STRAPI_URL = 'https://simdashai.cloud';
 const STRAPI_TOKEN = process.env.NEXT_PUBLIC_STRAPI_TOKEN || 'your-api-token-here';
 
 export const blogService = {
@@ -12,6 +12,7 @@ export const blogService = {
         },
       });
       if (!response.ok) {
+        console.log(response);
         throw new Error('Failed to fetch blogs');
       }
       const data = await response.json();

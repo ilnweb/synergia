@@ -1,7 +1,10 @@
 'use server';
 
-const STRAPI_URL = 'http://72.60.17.88:1337';
+const STRAPI_URL = 'https://simdashai.cloud';
 const STRAPI_TOKEN = process.env.STRAPI_TOKEN || process.env.NEXT_PUBLIC_STRAPI_TOKEN;
+
+console.log('Strapi URL:', STRAPI_URL);
+console.log('Token exists:', !!STRAPI_TOKEN);
 
 export async function getBlogs() {
   const url = `${STRAPI_URL}/api/blogs?populate=*`;
@@ -16,7 +19,9 @@ export async function getBlogs() {
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch blogs: ${response.status}`);
+      const errorText = await response.text();
+      console.error('Fetch failed:', response.status, errorText);
+      throw new Error(`Failed to fetch blogs: ${response.status} - ${errorText}`);
     }
 
     const data = await response.json();

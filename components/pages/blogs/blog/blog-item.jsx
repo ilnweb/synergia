@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import dayjs from 'dayjs';
 
 const BlogItem = ({ currentBlogItems }) => {
   return (
@@ -14,14 +15,22 @@ const BlogItem = ({ currentBlogItems }) => {
             </div>
             <div className='blog__one-item-content'>
               <div className='blog__one-item-content-date'>
-                <h6>{data.date}</h6>
-                <span>Apr</span>
+                <h6>{dayjs(data.date).format('DD')}</h6>
+                <span>{dayjs(data.date).format('MMM')}</span>
               </div>
               <h6>
                 <Link href={`/blog/${data.id}`}>{data.title}</Link>
               </h6>
-              <Link className='simple-btn' href={`/blog/${data.id}`}>
-                Read More<i className='fa-sharp fa-regular fa-arrow-up-right'></i>
+              <Link
+                className='simple-btn'
+                href={`/blog/${data.id}`}
+                style={{ color: 'rgb(18, 89, 136)' }}
+              >
+                Read More
+                <i
+                  style={{ color: '#E63331' }}
+                  className='fa-sharp fa-regular fa-arrow-up-right'
+                ></i>
               </Link>
             </div>
           </div>
