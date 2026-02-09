@@ -2,6 +2,8 @@
 import { useEffect } from 'react';
 import './globals.css';
 import QueryProvider from '../providers/QueryProvider';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { NEXT_PUBLIC_GA_ID } from '@/constants';
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -55,6 +57,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <QueryProvider>{children}</QueryProvider>
+        <GoogleAnalytics gaId={NEXT_PUBLIC_GA_ID} />
       </body>
     </html>
   );

@@ -1,5 +1,4 @@
-export const STRAPI_URL = 'https://simdashai.cloud';
-const STRAPI_TOKEN = process.env.NEXT_PUBLIC_STRAPI_TOKEN || 'your-api-token-here';
+import { STRAPI_URL, STRAPI_TOKEN } from '../constants';
 
 export const blogService = {
   // Fetch all blogs
