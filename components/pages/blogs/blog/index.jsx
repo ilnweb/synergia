@@ -13,9 +13,9 @@ const BlogGrid = ({ initialBlogs = [], error = null }) => {
   return (
     <>
       <SEO pageTitle='Blog Synergia Energia' />
-{/* <SwitchTab /> */}  
+      {/* <SwitchTab /> */}
       <HeaderOne />
-      <BreadCrumb title='Blog' innerTitle='Blog' />
+      <BreadCrumb title='Blog' innerTitle='Blog' backgroundImage='/assets/img/blog/blog-1.jpg' />
       <BlogGridMain initialBlogs={initialBlogs} error={error} />
       <FooterOne />
       <ScrollToTop />

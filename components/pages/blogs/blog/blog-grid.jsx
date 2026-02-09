@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import BlogItem from './blog-item';
 import Pagination from './pagination';
+import { STRAPI_URL } from '@/services/blogService';
 
 const BlogGridMain = ({ initialBlogs = [], error: serverError }) => {
   const blogItemShow = 5;
@@ -47,13 +48,11 @@ const BlogGridMain = ({ initialBlogs = [], error: serverError }) => {
   const transformedBlogs = blogs.map((blog, index) => ({
     number: String(index + 1).padStart(2, '0'),
     id: blog.documentId || blog.id || `blog-${index}`,
-    date: blog.publishedAt
-      ? new Date(blog.publishedAt).getDate().toString()
-      : new Date().getDate().toString(),
+    date: blog.createdAt || new Date().toISOString(),
     comment: '0',
     title: blog.Title || 'Untitled Blog',
     image: blog.HeaderImage?.url
-      ? { src: `http://72.60.17.88:1337${blog.HeaderImage.url}` }
+      ? { src: `${STRAPI_URL}${blog.HeaderImage.url}` }
       : '/assets/img/blog/blog-1.jpg',
     avatar: '/assets/img/avatar/avatar-1.jpg',
     name: 'Admin',
