@@ -23,6 +23,19 @@ const FormArea = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
+
+    // 1. CLIENT-SIDE VALIDATION – BEFORE API CALL
+    const hasEmptyField = Object.values(formData).some(value => value.trim() === '');
+
+    if (hasEmptyField) {
+      setSubmitStatus({
+        success: false,
+        message: 'Proszę uzupełnić wszystkie wymagane pola.',
+      });
+      return; // ⛔ prevents webhook call
+    }
+
+    // 2. PROCEED ONLY IF FORM DATA IS VALID
     setIsSubmitting(true);
     setSubmitStatus({ success: null, message: '' });
 
@@ -38,9 +51,10 @@ const FormArea = () => {
       if (response.ok) {
         setSubmitStatus({
           success: true,
-          message: 'Thank you for your message! We will get back to you soon.',
+          message: 'Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.',
         });
-        // Reset form
+
+        // Reset form after successful submission
         setFormData({
           name: '',
           email: '',
@@ -55,7 +69,7 @@ const FormArea = () => {
       console.error('Error submitting form:', error);
       setSubmitStatus({
         success: false,
-        message: 'There was an error sending your message. Please try again later.',
+        message: 'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.',
       });
     } finally {
       setIsSubmitting(false);
