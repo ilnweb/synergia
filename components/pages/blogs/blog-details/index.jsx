@@ -7,7 +7,7 @@ import HeaderOne from '@/components/layout/headers/header-one';
 import FooterOne from '@/components/layout/footers/footer-one';
 import ScrollToTop from '../../common/scroll/scroll-to-top';
 import SwitchTab from '../../common/dark-light';
-import { STRAPI_URL } from '@/services/blogService';
+import { STRAPI_URL } from '@/constants';
 
 const BlogDetails = ({ singleData }) => {
   // Handle both Strapi v5 flat structure and legacy structure

@@ -1,6 +1,5 @@
 import BlogSidebar from '../blog-sidebar/blog-sidebar';
-import image1 from '../../../../public/assets/img/blog/details.jpg';
-import { STRAPI_URL } from '@/services/blogService';
+import { STRAPI_URL } from '@/constants';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import './markdown-styles.css';
