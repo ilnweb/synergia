@@ -16,7 +16,11 @@ const ServicePage = () => {
       <SEO pageTitle='Our Services' />
       {/* <SwitchTab /> */}
       <HeaderOne />
-      <BreadCrumb title='Our Services' innerTitle='Our Services' />
+      <BreadCrumb
+        title='Nasze Usługi'
+        innerTitle='Nasze Usługi'
+        backgroundImage='/assets/img/service/services-header.jpg'
+      />
       <ServicesMain />
       <ChooseUs addClass='services-page' />
       {/* <Pricing addClass='services-page' />

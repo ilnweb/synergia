@@ -1,8 +1,23 @@
 import React from 'react';
 import Link from 'next/link';
-import servicesData from '@/components/data/services-data';
+import { useQuery } from '@tanstack/react-query';
+import { serviceService } from '@/services/serviceService';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import ctaBg from '../../../../public/assets/img/shape/shape-6.png';
+import './markdown-styles.css';
 
 const ServicesSingleMain = ({ serviceDetails }) => {
+  const { data: services = [] } = useQuery({
+    queryKey: ['services'],
+    queryFn: async () => {
+      const data = await serviceService.getServices();
+      // Sort by createdAt date (oldest first)
+      return [...data].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+    },
+    staleTime: 1000 * 60 * 5,
+  });
+
   return (
     <>
       <div className='service__details section-padding'>
@@ -11,13 +26,13 @@ const ServicesSingleMain = ({ serviceDetails }) => {
             <div className='col-xl-4 col-lg-4 lg-mb-50'>
               <div className='all__sidebar mr-25'>
                 <div className='all__sidebar-item'>
-                  <h6>Our Solutions</h6>
+                  <h6>Nasze Usługi</h6>
                   <div className='all__sidebar-item-category'>
                     <ul>
-                      {servicesData.slice(0, 5).map((data, id) => (
-                        <li key={id}>
-                          <Link href={`/services/${data.id}`}>
-                            {data.title}
+                      {services.slice(0, 5).map(service => (
+                        <li key={service.id}>
+                          <Link href={`/services/${service.documentId || service.id}`}>
+                            {service.title}
                             <i className='fa-regular fa-arrow-right'></i>
                           </Link>
                         </li>
@@ -25,43 +40,93 @@ const ServicesSingleMain = ({ serviceDetails }) => {
                     </ul>
                   </div>
                 </div>
-                <div className='all__sidebar-item'>
-                  <h6>Download</h6>
-                  <div className='all__sidebar-item-download'>
-                    <ul>
-                      <li>
-                        <Link href='#'>
-                          <div>
-                            <i className='fa-light fa-file-word'></i>Company Details
-                          </div>
-                          <span className='fal fa-arrow-to-bottom'></span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href='#'>
-                          <div>
-                            <i className='fa-light fa-file-pdf'></i>Our Brochures
-                          </div>
-                          <span className='fal fa-arrow-to-bottom'></span>
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
                 <div
-                  className='all__sidebar-item-help mt-30'
-                  style={{ backgroundImage: `url(${serviceDetails.image.src})` }}
+                  className='all__sidebar-item-help mt-30 cta__one-area'
+                  style={{
+                    backgroundImage: `url(${ctaBg.src})`,
+                    backgroundPosition: 'right top',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    borderRadius: '10px',
+                    position: 'relative',
+                    zIndex: '1',
+                    overflow: 'hidden',
+                    padding: '30px',
+                  }}
                 >
-                  <div className='all__sidebar-item-help-icon'>
-                    <i className='fal fa-phone-alt'></i>
-                  </div>
-                  <h5> Easy solutions to your home beauty</h5>
-                  <div className='all__sidebar-item-help-contact'>
-                    <div className='all__sidebar-item-help-contact-content'>
-                      <span>Quick Help</span>
-                      <h6>
-                        <Link href='tel:+125(895)658568'>+125 (895) 658 568</Link>
-                      </h6>
+                  <div
+                    style={{
+                      position: 'relative',
+                      zIndex: '2',
+                    }}
+                  >
+                    <div className='all__sidebar-item-help-icon'>
+                      <i
+                        className='fal fa-phone-alt'
+                        style={{
+                          position: 'relative',
+                          zIndex: '1',
+                          width: '90px',
+                          height: '90px',
+                          lineHeight: '90px',
+                          textAlign: 'center',
+                          background: 'var(--bg-white)',
+                          color: 'var(--primary-color-1)',
+                          borderRadius: '50%',
+                          fontSize: '40px',
+                          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.15)',
+                          transition: 'all 0.3s ease-in-out',
+                        }}
+                      ></i>
+                    </div>
+                    <h5
+                      style={{
+                        color: 'var(--text-white)',
+                        marginBottom: '15px',
+                        fontSize: '24px',
+                        lineHeight: '34px',
+                        position: 'relative',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.1)',
+                      }}
+                    >
+                      Potrzebujesz pomocy?
+                    </h5>
+                    <div className='all__sidebar-item-help-contact'>
+                      <div className='all__sidebar-item-help-contact-content'>
+                        <span
+                          style={{
+                            display: 'block',
+                            color: 'rgba(255, 255, 255, 0.9)',
+                            marginBottom: '5px',
+                            fontSize: '16px',
+                            fontWeight: '500',
+                            textShadow: '0 1px 1px rgba(0,0,0,0.1)',
+                          }}
+                        >
+                          Zadzwoń do nas
+                        </span>
+                        <h6
+                          style={{
+                            margin: '0',
+                            fontSize: '22px',
+                            lineHeight: '32px',
+                            position: 'relative',
+                          }}
+                        >
+                          <Link
+                            href='tel:+48698454913'
+                            style={{
+                              color: 'var(--text-white)',
+                              textDecoration: 'none',
+                              transition: 'all 0.4s ease-in-out',
+                              fontWeight: '700',
+                              textShadow: '0 1px 2px rgba(0,0,0,0.2)',
+                            }}
+                          >
+                            +48 698 454 913
+                          </Link>
+                        </h6>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -69,120 +134,86 @@ const ServicesSingleMain = ({ serviceDetails }) => {
             </div>
             <div className='col-xl-8 col-lg-8'>
               <div className='service__details-content'>
-                <div className='service__details-content-image dark_image'>
-                  <img src={serviceDetails?.image.src} alt='image' />
-                </div>
-                <h3>{serviceDetails?.title}</h3>
-                <p>
-                  Product UI/UX Design is a critical aspect of developing digital products,
-                  including websites, mobile apps, and software applications. UI stands for User
-                  Interface, while UX stands for User Experience. Both UI and UX design work
-                  together to ensure that a product is not only visually appealing but also
-                  user-friendly and functional. Here's a detailed description of each
-                </p>
-                <p>
-                  UI design focuses on the aesthetics and visual elements of a digital product. It
-                  involves creating the layout, look, and feel of the user interface, including
-                  elements such as buttons, icons, typography, color schemes, and images. UI
-                  designers aim to make the product visually appealing, cohesive, and in line with
-                  the brand's identity. Consistency and clear visual hierarchy
-                </p>
-                <h4>Our Core features</h4>
-                <p>
-                  Product UI/UX Design is a critical aspect of developing digital products,
-                  including websites, mobile apps, and software applications. UI stands for User
-                  Interface, while UX stands for User Experience. Both UI and UX design work
-                  together to ensure that a product is not only visually appealing but also
-                  user-friendly and functional. Here's a detailed description of each
-                </p>
-                <div className='row mb-30 mt-30'>
-                  <div className='col-md-4 col-sm-6 md-mb-25'>
-                    <div className='service__details-content-list'>
-                      <i className='flaticon-reputation'></i>
-                      <h6>Well Experience</h6>
-                    </div>
-                  </div>
-                  <div className='col-md-4 col-sm-6 sm-mb-25'>
-                    <div className='service__details-content-list'>
-                      <i className='flaticon-talk'></i>
-                      <h6>Client Satisfaction</h6>
-                    </div>
-                  </div>
-                  <div className='col-md-4 col-sm-6'>
-                    <div className='service__details-content-list'>
-                      <i className='flaticon-global-shipping'></i>
-                      <h6>Global Expertise</h6>
-                    </div>
-                  </div>
-                </div>
-                <p>
-                  Product UI/UX Design is a critical aspect of developing digital products,
-                  including websites, mobile apps, and software applications. UI stands for User
-                  Interface, while UX stands for User Experience. Both UI and UX design work
-                  together to ensure that a product is not only visually appealing but also
-                  user-friendly and functional. Here's a detailed description of each
-                </p>
-                <h4>Frequently Asked Questions & answer</h4>
-                <div className='service__details-content-faq'>
-                  <div id='accordionExample'>
-                    <div className='faq__area-item'>
-                      <h6 className='icon' data-bs-toggle='collapse' data-bs-target='#collapseOne'>
-                        <span>01.</span>How much solar energy is needed?
-                      </h6>
-                      <div
-                        id='collapseOne'
-                        className='faq__area-item-body collapse show'
-                        data-bs-parent='#accordionExample'
-                      >
-                        <p>
-                          Solar energy is generated when sunlight strikes solar panels, creating
-                          electricity through the photovoltaic effect. The availability of solar
-                          energy is tied
-                        </p>
+                {serviceDetails?.content && (
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {serviceDetails.content}
+                  </ReactMarkdown>
+                )}
+                {serviceDetails?.servicesFAQ && (
+                  <>
+                    <h4>Najczęściej zadawane pytania</h4>
+                    <div className='service__details-content-faq'>
+                      <div className='accordion' id='accordionExample'>
+                        {serviceDetails.servicesFAQ.QuestionOne && (
+                          <div className='faq__area-item'>
+                            <h6
+                              className='icon'
+                              data-bs-toggle='collapse'
+                              data-bs-target='#collapseOne'
+                              aria-expanded='true'
+                            >
+                              <span>01.</span>
+                              {serviceDetails.servicesFAQ.QuestionOne}
+                            </h6>
+                            <div
+                              id='collapseOne'
+                              className='accordion-collapse collapse show'
+                              data-bs-parent='#accordionExample'
+                            >
+                              <div className='accordion-body'>
+                                <p>{serviceDetails.servicesFAQ.QuestionOneAnswer}</p>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                        {serviceDetails.servicesFAQ.QuestionTwo && (
+                          <div className='faq__area-item'>
+                            <h6
+                              className='icon collapsed'
+                              data-bs-toggle='collapse'
+                              data-bs-target='#collapseTwo'
+                              aria-expanded='false'
+                            >
+                              <span>02.</span>
+                              {serviceDetails.servicesFAQ.QuestionTwo}
+                            </h6>
+                            <div
+                              id='collapseTwo'
+                              className='accordion-collapse collapse'
+                              data-bs-parent='#accordionExample'
+                            >
+                              <div className='accordion-body'>
+                                <p>{serviceDetails.servicesFAQ.QuestionTwoAnswer}</p>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                        {serviceDetails.servicesFAQ.QuestionThree && (
+                          <div className='faq__area-item'>
+                            <h6
+                              className='icon collapsed'
+                              data-bs-toggle='collapse'
+                              data-bs-target='#collapseThree'
+                              aria-expanded='false'
+                            >
+                              <span>03.</span>
+                              {serviceDetails.servicesFAQ.QuestionThree}
+                            </h6>
+                            <div
+                              id='collapseThree'
+                              className='accordion-collapse collapse'
+                              data-bs-parent='#accordionExample'
+                            >
+                              <div className='accordion-body'>
+                                <p>{serviceDetails.servicesFAQ.QuestionThreeAnswer}</p>
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
-                    <div className='faq__area-item'>
-                      <h6
-                        className='icon collapsed'
-                        data-bs-toggle='collapse'
-                        data-bs-target='#collapseThree'
-                      >
-                        <span>03.</span>How much solar power is enough?
-                      </h6>
-                      <div
-                        id='collapseThree'
-                        className='faq__area-item-body collapse'
-                        data-bs-parent='#accordionExample'
-                      >
-                        <p>
-                          Solar energy is generated when sunlight strikes solar panels, creating
-                          electricity through the photovoltaic effect. The availability of solar
-                          energy is tied
-                        </p>
-                      </div>
-                    </div>
-                    <div className='faq__area-item'>
-                      <h6
-                        className='icon collapsed'
-                        data-bs-toggle='collapse'
-                        data-bs-target='#collapseFour'
-                      >
-                        <span>04.</span>How many solar panels can I have?
-                      </h6>
-                      <div
-                        id='collapseFour'
-                        className='faq__area-item-body collapse'
-                        data-bs-parent='#accordionExample'
-                      >
-                        <p>
-                          Solar energy is generated when sunlight strikes solar panels, creating
-                          electricity through the photovoltaic effect. The availability of solar
-                          energy is tied
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
