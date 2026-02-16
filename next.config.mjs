@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['simdashai.cloud'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'simdashai.cloud',
+        port: '',
+        pathname: '/uploads/**',
+      },
+    ],
   },
 };
 

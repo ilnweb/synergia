@@ -18,6 +18,9 @@ const MainMenu = () => {
           <Link href='/blog'>Blog</Link>
         </li>
         <li>
+          <Link href='/projects'>Realizacje</Link>
+        </li>
+        <li>
           <Link href='/contact'>Kontakt</Link>
         </li>
         {/* <li className='menu-item-has-children'>
