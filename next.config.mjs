@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: ['simdashai.cloud'],
+  },
+};
 
 export default nextConfig;

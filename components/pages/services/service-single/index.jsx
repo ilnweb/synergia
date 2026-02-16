@@ -6,6 +6,7 @@ import SEO from '@/components/data/seo';
 import ScrollToTop from '../../common/scroll/scroll-to-top';
 import FooterOne from '@/components/layout/footers/footer-one';
 import SwitchTab from '../../common/dark-light';
+import { STRAPI_URL } from '@/constants';
 
 const ServicesSingle = ({ serviceDetails }) => {
   return (
@@ -13,7 +14,11 @@ const ServicesSingle = ({ serviceDetails }) => {
       <SEO pageTitle={serviceDetails?.title} />
       {/* <SwitchTab /> */}
       <HeaderOne />
-      <BreadCrumb title={serviceDetails?.title} innerTitle={serviceDetails?.title} />
+      <BreadCrumb
+        title={serviceDetails?.title}
+        innerTitle={serviceDetails?.title}
+        backgroundImage={`${STRAPI_URL}${serviceDetails?.headerImage?.formats?.medium?.url}`}
+      />
       <ServicesSingleMain serviceDetails={serviceDetails} />
       <FooterOne />
       <ScrollToTop />

@@ -8,9 +8,9 @@ const MainMenu = () => {
         <li>
           <Link href='/'>Strona główna</Link>
         </li>
-        {/* <li>
+        <li>
           <Link href='/services'>Usługi </Link>
-        </li> */}
+        </li>
         <li>
           <Link href='/about-us'>O nas</Link>
         </li>

@@ -1,0 +1,64 @@
+/* Make the entire card clickable and remove hover effects */
+.service-card-link {
+  transition: none !important;
+}
+
+.service-card-link:hover {
+  text-decoration: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove any hover effects from the card */
+.service__two-item {
+  transition: none !important;
+  padding-bottom: 20px !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: visible !important;
+}
+
+.service__two-item:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Add light shadow to the inner content area */
+.service__two-item-content {
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  padding: 20px !important;
+  background: white !important;
+}
+
+/* Ensure links inside the card don't show underline */
+.service__two-item a {
+  text-decoration: none !important;
+}
+
+/* Make sure the cursor is pointer for better UX */
+.service__two-item {
+  cursor: pointer;
+}
+
+/* Ensure the details button is always visible */
+.details-button {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: none !important;
+  transform: none !important;
+  display: inline-block !important;
+  margin-top: auto !important;
+}
+
+/* Ensure the button is visible on hover */
+.service__two-item:hover .details-button {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}

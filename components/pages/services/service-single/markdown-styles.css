@@ -1,0 +1,143 @@
+/* Markdown styles for service details */
+.service__details-content h1 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.service__details-content h2,
+.service__details-content h3,
+.service__details-content h4,
+.service__details-content h5,
+.service__details-content h6 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.service__details-content h2 {
+  font-size: 2rem;
+}
+
+.service__details-content h3 {
+  font-size: 1.75rem;
+}
+
+.service__details-content h4 {
+  font-size: 1.5rem;
+}
+
+.service__details-content h5 {
+  font-size: 1.25rem;
+}
+
+.service__details-content h6 {
+  font-size: 1.1rem;
+}
+
+.service__details-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #666;
+}
+
+.service__details-content ul,
+.service__details-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.service__details-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.service__details-content blockquote {
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  background-color: #f8f9fa;
+  border-left: 4px solid #f33633;
+  font-style: italic;
+  color: #666;
+}
+
+.service__details-content code {
+  background-color: #f8f9fa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  color: #e83e8c;
+}
+
+.service__details-content pre {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.service__details-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.service__details-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.service__details-content th,
+.service__details-content td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.service__details-content th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.service__details-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  border-radius: 5px;
+}
+
+.service__details-content a {
+  color: #f33633;
+  text-decoration: none;
+}
+
+.service__details-content a:hover {
+  text-decoration: underline;
+}
+
+.service__details-content hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #dee2e6;
+}
+
+.service__details-content-faq {
+  min-height: 500px;
+}
+
+.service__details-content-faq .accordion-body {
+  padding: 0 0 20px 50px;
+}
+
+.service__details-content-faq .accordion-body p {
+  margin: 0;
+  padding: 0;
+}
