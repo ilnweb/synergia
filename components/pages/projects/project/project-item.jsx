@@ -22,6 +22,7 @@ const ProjectItem = ({ currentProjectItems }) => {
               borderRadius: '12px',
               backgroundColor: '#fff',
               transition: 'all 0.3s ease',
+              minHeight: '500px',
             }}
             onMouseEnter={e => {
               e.currentTarget.style.boxShadow =
