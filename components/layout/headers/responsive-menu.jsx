@@ -12,7 +12,13 @@ const ResponsiveMenu = () => {
         <Link href='/about-us'>O nas</Link>
       </li>
       <li>
+        <Link href='/services'>Usługi</Link>
+      </li>
+      <li>
         <Link href='/blog'>Blog</Link>
+      </li>
+      <li>
+        <Link href='/projects'>Realizacje</Link>
       </li>
       <li>
         <Link href='/contact'>Kontakt</Link>

@@ -21,7 +21,7 @@ const AboutMain = () => {
                       alt='about'
                       width={1200}
                       height={800}
-                      style={{ width: '90%', height: '600px', objectFit: 'cover' }}
+                      style={{ width: '90%', height: '510px', objectFit: 'cover' }}
                     />
                   </div>
                   <div className='about__four-left-image-two'>
