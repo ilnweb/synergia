@@ -13,9 +13,9 @@ const BlogDetail = () => {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['blog', params.id],
-    queryFn: () => blogService.getBlogBySlug(params.id),
-    enabled: !!params.id,
+    queryKey: ['blog', params.slug],
+    queryFn: () => blogService.getBlogBySlug(params.slug),
+    enabled: !!params.slug,
   });
 
   if (isLoading) {

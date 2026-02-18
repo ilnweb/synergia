@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { serviceService } from '@/services/serviceService';
 import { STRAPI_URL } from '@/constants';
+import { generateSlug } from '@/utils/slugUtils';
 import './services.css';
 
 const ServicesMain = () => {
@@ -18,8 +19,18 @@ const ServicesMain = () => {
     queryKey: ['services'],
     queryFn: async () => {
       const data = await serviceService.getServices();
-      // Sort by createdAt date (newest first)
-      return [...data].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      // Transform services to include slug and sort by createdAt date (newest first)
+      const transformedServices = data.map(service => {
+        const title = service.Title || service.title || 'Untitled Service';
+        const slug = generateSlug(title, `service-${service.id || service.documentId}`);
+        console.log(`Service: "${title}" -> Slug: "${slug}"`);
+        return {
+          ...service,
+          slug,
+          title, // Ensure we have a normalized title field
+        };
+      });
+      return transformedServices.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     },
     staleTime: 1000 * 60 * 5, // 5 minutes
     retry: 2,
@@ -82,7 +93,7 @@ const ServicesMain = () => {
                 style={{ cursor: 'pointer', minHeight: '600px' }}
               >
                 <Link
-                  href={`/services/${service.documentId || service.id}`}
+                  href={`/services/${service.slug}`}
                   className='text-decoration-none d-block h-100 service-card-link'
                   style={{ color: 'inherit' }}
                   onClick={e => {
@@ -122,7 +133,7 @@ const ServicesMain = () => {
                         {service.shortDescription || 'No description available.'}
                       </p>
                       <Link
-                        href={`/services/${service.documentId || service.id}`}
+                        href={`/services/${service.slug}`}
                         className='simple-btn details-button'
                         onClick={e => e.stopPropagation()}
                         style={{ marginBottom: '0px !important', color: 'rgb(18, 89, 136)' }}

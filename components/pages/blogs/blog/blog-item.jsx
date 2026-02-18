@@ -9,7 +9,7 @@ const BlogItem = ({ currentBlogItems }) => {
         <div className='col-xl-4 col-lg-6' key={id}>
           <div className='blog__one-item'>
             <div className='blog__one-item-image'>
-              <Link href={`/blog/${data.id}`}>
+              <Link href={`/blog/${data.slug}`}>
                 <img src={data.image.src} alt='blog' />
               </Link>
             </div>
@@ -19,11 +19,11 @@ const BlogItem = ({ currentBlogItems }) => {
                 <span>{dayjs(data.date).format('MMM')}</span>
               </div>
               <h6>
-                <Link href={`/blog/${data.id}`}>{data.title}</Link>
+                <Link href={`/blog/${data.slug}`}>{data.title}</Link>
               </h6>
               <Link
                 className='simple-btn'
-                href={`/blog/${data.id}`}
+                href={`/blog/${data.slug}`}
                 style={{ color: 'rgb(18, 89, 136)' }}
               >
                 Read More
