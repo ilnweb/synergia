@@ -9,7 +9,7 @@ const BlogGridMain = ({ initialBlogs = [], error: serverError }) => {
   const blogItemShow = 5;
   const [currentPage, setCurrentPage] = useState(0);
   const blogs = initialBlogs || [];
-
+  console.log(blogs);
   // Show error message if there was an error
   if (serverError) {
     return (

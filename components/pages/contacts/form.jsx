@@ -6,6 +6,7 @@ const FormArea = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: '',
   });
@@ -58,6 +59,7 @@ const FormArea = () => {
         setFormData({
           name: '',
           email: '',
+          phone: '',
           subject: '',
           message: '',
         });
@@ -78,12 +80,23 @@ const FormArea = () => {
 
   return (
     <>
+      <style jsx>{`
+        input::placeholder,
+        textarea::placeholder {
+          color: #cccccc !important;
+          opacity: 1;
+        }
+      `}</style>
       <form onSubmit={handleSubmit}>
         <div className='row'>
-          <div className='col-md-6 mb-30'>
+          <div className='col-md-12 mb-30'>
             <div className='contact__form-area-item'>
+              <label htmlFor='name' className='form-label'>
+                Imię i nazwisko <span style={{ color: '#f33633' }}>*</span>
+              </label>
               <input
                 type='text'
+                id='name'
                 name='name'
                 value={formData.name}
                 onChange={handleChange}
@@ -94,8 +107,12 @@ const FormArea = () => {
           </div>
           <div className='col-md-6 md-mb-30'>
             <div className='contact__form-area-item'>
+              <label htmlFor='email' className='form-label'>
+                Adres email <span style={{ color: '#f33633' }}>*</span>
+              </label>
               <input
                 type='email'
+                id='email'
                 name='email'
                 value={formData.email}
                 onChange={handleChange}
@@ -104,10 +121,29 @@ const FormArea = () => {
               />
             </div>
           </div>
+          <div className='col-md-6 md-mb-30 mb-30'>
+            <div className='contact__form-area-item'>
+              <label htmlFor='phone' className='form-label'>
+                Telefon
+              </label>
+              <input
+                type='tel'
+                id='phone'
+                name='phone'
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder='Telefon'
+              />
+            </div>
+          </div>
           <div className='col-md-12 mb-30'>
             <div className='contact__form-area-item'>
+              <label htmlFor='subject' className='form-label'>
+                Temat <span style={{ color: '#f33633' }}>*</span>
+              </label>
               <input
                 type='text'
+                id='subject'
                 name='subject'
                 value={formData.subject}
                 onChange={handleChange}
@@ -118,7 +154,11 @@ const FormArea = () => {
           </div>
           <div className='col-md-12 mb-30'>
             <div className='contact__form-area-item'>
+              <label htmlFor='message' className='form-label'>
+                Wiadomość <span style={{ color: '#f33633' }}>*</span>
+              </label>
               <textarea
+                id='message'
                 name='message'
                 value={formData.message}
                 onChange={handleChange}

@@ -1,6 +1,6 @@
 'use server';
 
-import { STRAPI_TOKEN, STRAPI_URL } from '../../constants';
+import { STRAPI_TOKEN, STRAPI_URL } from '../../constants/index.js';
 
 export async function getServices() {
   const url = `${STRAPI_URL}/api/services?populate=*&sort=createdAt:desc`;
