@@ -1,4 +1,5 @@
 import { STRAPI_URL, STRAPI_TOKEN } from '../constants';
+import { generateSlug } from '../utils/slugUtils';
 
 export const serviceService = {
   // Fetch all services
@@ -23,27 +24,33 @@ export const serviceService = {
     }
   },
 
-  // Fetch single service by documentId
-  getServiceBySlug: async documentId => {
+  // Fetch single service by slug
+  getServiceBySlug: async slug => {
     try {
-      const response = await fetch(
-        `${STRAPI_URL}/api/services?filters[documentId][$eq]=${documentId}&populate=*`,
-        {
-          headers: {
-            Authorization: `Bearer ${STRAPI_TOKEN}`,
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-
+      // First fetch all services
+      const response = await fetch(`${STRAPI_URL}/api/services?populate=*&sort=createdAt:desc`, {
+        headers: {
+          Authorization: `Bearer ${STRAPI_TOKEN}`,
+          'Content-Type': 'application/json',
+        },
+      });
       if (!response.ok) {
-        throw new Error(`Failed to fetch service with documentId: ${documentId}`);
+        throw new Error('Failed to fetch services');
       }
-
       const data = await response.json();
-      return data.data[0]; // Return first (and should be only) matching service
+
+      // Generate slug for each service and find the matching one
+      const service = data.data.find(service => {
+        const generatedSlug = generateSlug(service.title);
+        console.log(
+          `Service Service: "${service.title}" -> Slug: "${generatedSlug}" (looking for: "${slug}")`
+        );
+        return generatedSlug === slug;
+      });
+
+      return service;
     } catch (error) {
-      console.error(`Error fetching service with documentId ${documentId}:`, error);
+      console.error(`Error fetching service with slug ${slug}:`, error);
       throw error;
     }
   },

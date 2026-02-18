@@ -5,6 +5,7 @@ import { serviceService } from '@/services/serviceService';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import ctaBg from '../../../../public/assets/img/shape/shape-6.png';
+import { generateSlug } from '@/utils/slugUtils';
 import './markdown-styles.css';
 
 const ServicesSingleMain = ({ serviceDetails }) => {
@@ -12,8 +13,18 @@ const ServicesSingleMain = ({ serviceDetails }) => {
     queryKey: ['services'],
     queryFn: async () => {
       const data = await serviceService.getServices();
-      // Sort by createdAt date (oldest first)
-      return [...data].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+      // Transform services to include slug and sort by createdAt date (oldest first)
+      const transformedServices = data.map(service => {
+        const title = service.Title || service.title || 'Untitled Service';
+        const slug = generateSlug(title, `service-${service.id || service.documentId}`);
+        console.log(`Service Single: "${title}" -> Slug: "${slug}"`);
+        return {
+          ...service,
+          slug,
+          title, // Ensure we have a title field for display
+        };
+      });
+      return transformedServices.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
     },
     staleTime: 1000 * 60 * 5,
   });
@@ -31,8 +42,8 @@ const ServicesSingleMain = ({ serviceDetails }) => {
                     <ul>
                       {services.slice(0, 5).map(service => (
                         <li key={service.id}>
-                          <Link href={`/services/${service.documentId || service.id}`}>
-                            {service.title}
+                          <Link href={`/services/${service.slug}`}>
+                            {service.title || 'No Title'}
                             <i className='fa-regular fa-arrow-right'></i>
                           </Link>
                         </li>

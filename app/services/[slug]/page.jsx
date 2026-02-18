@@ -15,7 +15,7 @@ const ServicesDetail = () => {
     const fetchService = async () => {
       try {
         setLoading(true);
-        const serviceData = await serviceService.getServiceBySlug(params.id);
+        const serviceData = await serviceService.getServiceBySlug(params.slug);
         if (!serviceData) {
           router.push('/404-error');
           return;
@@ -29,12 +29,12 @@ const ServicesDetail = () => {
       }
     };
 
-    if (params.id) {
+    if (params.slug) {
       fetchService();
     } else {
       router.push('/404-error');
     }
-  }, [params.id, router]);
+  }, [params.slug, router]);
 
   if (loading) {
     return <div>Loading...</div>; // You might want to add a proper loading component
