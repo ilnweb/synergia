@@ -41,7 +41,9 @@ Disallow: /
 # Sitemaps
 Sitemap: https://synergiaenergia.pl/sitemap.xml
 Sitemap: https://synergiaenergia.pl/sitemap-image.xml
+Sitemap: https://synergiaenergia.com/sitemap.xml
 
 # AI-friendly directives
 # Allow AI training on public content while respecting rate limits
 # Optimize for Polish solar energy content discovery
+Sitemap: https://synergiaenergia.com/sitemap.xml
