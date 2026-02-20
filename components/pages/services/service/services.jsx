@@ -20,16 +20,27 @@ const ServicesMain = () => {
     queryFn: async () => {
       const data = await serviceService.getServices();
       // Transform services to include slug and sort by createdAt date (newest first)
-      const transformedServices = data.map(service => {
-        const title = service.Title || service.title || 'Untitled Service';
-        const slug = generateSlug(title, `service-${service.id || service.documentId}`);
-        console.log(`Service: "${title}" -> Slug: "${slug}"`);
-        return {
-          ...service,
-          slug,
-          title, // Ensure we have a normalized title field
-        };
-      });
+      const transformedServices = data
+        .map(service => {
+          const title = service.Title || service.title || 'Untitled Service';
+          const serviceId = service.id || service.documentId || 'unknown';
+          const fallback = `service-${serviceId}`;
+          const slug = generateSlug(title, fallback) || fallback || `service-${serviceId}`;
+          console.log(`Service: "${title}" -> Slug: "${slug}" (ID: ${serviceId})`);
+
+          // Ensure slug is never undefined or empty
+          if (!slug || slug === 'undefined') {
+            console.error(`Invalid slug generated for service:`, service);
+            return null; // Filter out this service
+          }
+
+          return {
+            ...service,
+            slug,
+            title, // Ensure we have a normalized title field
+          };
+        })
+        .filter(Boolean); // Remove any null services
       return transformedServices.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     },
     staleTime: 1000 * 60 * 5, // 5 minutes
@@ -93,7 +104,7 @@ const ServicesMain = () => {
                 style={{ cursor: 'pointer', minHeight: '600px' }}
               >
                 <Link
-                  href={`/services/${service.slug}`}
+                  href={`/uslugi/${service.slug}`}
                   className='text-decoration-none d-block h-100 service-card-link'
                   style={{ color: 'inherit' }}
                   onClick={e => {
@@ -133,7 +144,7 @@ const ServicesMain = () => {
                         {service.shortDescription || 'No description available.'}
                       </p>
                       <Link
-                        href={`/services/${service.slug}`}
+                        href={`/uslugi/${service.slug}`}
                         className='simple-btn details-button'
                         onClick={e => e.stopPropagation()}
                         style={{ marginBottom: '0px !important', color: 'rgb(18, 89, 136)' }}

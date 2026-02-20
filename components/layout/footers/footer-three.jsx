@@ -94,7 +94,7 @@ const FooterThree = () => {
                       <ul>
                         {servicesData?.slice(0, 5)?.map((data, id) => (
                           <li key={id}>
-                            <Link href={`/services/${data.id}`}>{data.title}</Link>
+                            <Link href={`/uslugi/${data.id}`}>{data.title}</Link>
                           </li>
                         ))}
                       </ul>

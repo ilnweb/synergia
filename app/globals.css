@@ -7,6 +7,40 @@
 @import '../public/assets/css/meanmenu.min.css';
 @import '../public/assets/sass/style.css';
 
+/* Language Switcher Styles */
+.topBar__one-right-language {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.language-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.language-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-decoration: none;
+}
+
+.language-link:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.language-separator {
+  color: #fff;
+  opacity: 0.7;
+}
+
 /* Prevent horizontal scroll on mobile */
 html,
 body {
