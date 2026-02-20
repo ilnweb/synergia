@@ -1,9 +1,9 @@
 'use client';
 import Social from '@/components/data/social';
 import Link from 'next/link';
+import { useState } from 'react';
 import MainMenu from './header-menu';
 import Search from './search';
-import { useState } from 'react';
 import SideBar from './offcanvas';
 import logo1 from '../../../public/assets/img/logo-1.png';
 import logo2 from '../../../public/assets/img/logo-2.png';
@@ -75,7 +75,7 @@ const HeaderOne = () => {
                 </div>
               </div> */}
               <div className='header__area-menubar-right-btn'>
-                <Link className='btn-one' href='/contact'>
+                <Link className='btn-one' href='/kontakt'>
                   Porozmawiajmy
                 </Link>
               </div>

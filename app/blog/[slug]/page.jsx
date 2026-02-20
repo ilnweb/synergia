@@ -1,46 +1,25 @@
-'use client';
-import { useParams, useRouter } from 'next/navigation';
-import { useQuery } from '@tanstack/react-query';
 import BlogDetails from '@/components/pages/blogs/blog-details';
 import { blogService } from '../../../services/blogService';
+import { notFound } from 'next/navigation';
 
-const BlogDetail = () => {
-  const params = useParams();
-  const router = useRouter();
+// Server component for proper 404 handling
+const BlogDetail = async ({ params }) => {
+  const { slug } = params;
 
-  const {
-    data: blog,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ['blog', params.slug],
-    queryFn: () => blogService.getBlogBySlug(params.slug),
-    enabled: !!params.slug,
-  });
+  try {
+    // Fetch blog data on server side
+    const blog = await blogService.getBlogBySlug(slug);
 
-  if (isLoading) {
-    return (
-      <div className='blog__details dark__image section-padding'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-12 text-center'>
-              <p>Loading blog...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+    // If blog is not found, return proper 404
+    if (!blog) {
+      notFound();
+    }
+
+    return <BlogDetails singleData={blog} />;
+  } catch (error) {
+    console.error('Error fetching blog:', error);
+    notFound();
   }
-
-  if (error || !blog) {
-    return router.push('/404-error');
-  }
-
-  return (
-    <>
-      <BlogDetails singleData={blog} />
-    </>
-  );
 };
 
 export default BlogDetail;

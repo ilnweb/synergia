@@ -14,20 +14,55 @@ const ServicesSingleMain = ({ serviceDetails }) => {
     queryFn: async () => {
       const data = await serviceService.getServices();
       // Transform services to include slug and sort by createdAt date (oldest first)
-      const transformedServices = data.map(service => {
-        const title = service.Title || service.title || 'Untitled Service';
-        const slug = generateSlug(title, `service-${service.id || service.documentId}`);
-        console.log(`Service Single: "${title}" -> Slug: "${slug}"`);
-        return {
-          ...service,
-          slug,
-          title, // Ensure we have a title field for display
-        };
-      });
+      const transformedServices = data
+        .map(service => {
+          const title = service.Title || service.title || 'Untitled Service';
+          const serviceId = service.id || service.documentId || 'unknown';
+          const fallback = `service-${serviceId}`;
+          const slug = generateSlug(title, fallback) || fallback || `service-${serviceId}`;
+          console.log(`Service Single: "${title}" -> Slug: "${slug}" (ID: ${serviceId})`);
+
+          // Ensure slug is never undefined or empty
+          if (!slug || slug === 'undefined') {
+            console.error(`Invalid slug generated for service:`, service);
+            return null; // Filter out this service
+          }
+
+          return {
+            ...service,
+            slug,
+            title, // Ensure we have a title field for display
+          };
+        })
+        .filter(Boolean); // Remove any null services
       return transformedServices.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
     },
     staleTime: 1000 * 60 * 5,
   });
+
+  // Add debugging and fallback
+  if (!serviceDetails) {
+    console.error('ServiceSingle: serviceDetails is undefined or null');
+    return (
+      <div className='service__details section-padding'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-12'>
+              <div className='alert alert-warning'>
+                <h4>Service not found</h4>
+                <p>The requested service could not be loaded.</p>
+                <Link href='/services' className='btn btn-primary'>
+                  Back to Services
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  console.log('ServiceSingle: Rendering service:', serviceDetails.title || serviceDetails.Title);
 
   return (
     <>
@@ -40,14 +75,22 @@ const ServicesSingleMain = ({ serviceDetails }) => {
                   <h6>Nasze Usługi</h6>
                   <div className='all__sidebar-item-category'>
                     <ul>
-                      {services.slice(0, 5).map(service => (
-                        <li key={service.id}>
-                          <Link href={`/services/${service.slug}`}>
-                            {service.title || 'No Title'}
-                            <i className='fa-regular fa-arrow-right'></i>
-                          </Link>
-                        </li>
-                      ))}
+                      {services.slice(0, 5).map(service => {
+                        // Skip services with invalid slugs
+                        if (!service.slug || service.slug === 'undefined') {
+                          console.warn('Skipping service with invalid slug:', service);
+                          return null;
+                        }
+
+                        return (
+                          <li key={service.id}>
+                            <Link href={`/uslugi/${service.slug}`}>
+                              {service.title || 'No Title'}
+                              <i className='fa-regular fa-arrow-right'></i>
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </div>
@@ -145,10 +188,18 @@ const ServicesSingleMain = ({ serviceDetails }) => {
             </div>
             <div className='col-xl-8 col-lg-8'>
               <div className='service__details-content'>
+                {/* Add service title for debugging */}
+
                 {serviceDetails?.content && (
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
                     {serviceDetails.content}
                   </ReactMarkdown>
+                )}
+
+                {!serviceDetails?.content && (
+                  <div className='alert alert-info'>
+                    <p>No content available for this service.</p>
+                  </div>
                 )}
                 {serviceDetails?.servicesFAQ && (
                   <>

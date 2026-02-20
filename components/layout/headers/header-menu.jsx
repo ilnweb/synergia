@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 
 const MainMenu = () => {
   return (
@@ -9,19 +8,19 @@ const MainMenu = () => {
           <Link href='/'>Strona główna</Link>
         </li>
         <li>
-          <Link href='/services'>Usługi </Link>
+          <Link href='/uslugi'>Usługi</Link>
         </li>
         <li>
-          <Link href='/about-us'>O nas</Link>
+          <Link href='/o-nas'>O nas</Link>
         </li>
         <li>
           <Link href='/blog'>Blog</Link>
         </li>
         <li>
-          <Link href='/projects'>Realizacje</Link>
+          <Link href='/realizacje'>Realizacje</Link>
         </li>
         <li>
-          <Link href='/contact'>Kontakt</Link>
+          <Link href='/kontakt'>Kontakt</Link>
         </li>
         {/* <li className='menu-item-has-children'>
           <Link href='#'>Pages</Link>
