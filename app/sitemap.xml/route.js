@@ -3,7 +3,10 @@ import { getServices } from '../actions/serviceActions.js';
 import { generateSlug } from '../../utils/slugUtils.js';
 
 export async function GET() {
-  const baseUrl = 'https://synergiaenergia.com';
+  const baseUrl =
+    process.env.NODE_ENV === 'production'
+      ? 'https://www.synergiaenergia.pl'
+      : 'http://localhost:3000';
   const staticPages = [
     {
       url: baseUrl,
