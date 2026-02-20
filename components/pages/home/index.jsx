@@ -24,7 +24,7 @@ const HomeOne = () => {
         pageTitle='Fotowoltaika i Odnawialne Źródła Energii | Synergia'
         pageDescription='Profesjonalne instalacje fotowoltaiczne, pompy ciepła, folie grzewcze i wiaty solarne w Polsce. Zmniejsz rachunki za prąd i ciepło z ekologicznymi rozwiązaniami energetycznymi. 3886 zakończonych projektów, 24456 kW zainstalowanej mocy.'
         keywords='fotowoltaika, panele słoneczne, pompy ciepła, odnawialne źródła energii, OZE, energia słoneczna, audyt energetyczny, folie grzewcze, wiaty solarne, instalacje fotowoltaiczne, energia odnawialna, ekologiczne ogrzewanie'
-        canonicalUrl='https://synergia.pl'
+        canonicalUrl='https://www.synergiaenergia.pl'
         ogImage='/assets/img/banner/banner-1.jpg'
       />
       <HeaderOne />
