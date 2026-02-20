@@ -15,7 +15,7 @@ const Consultation = () => {
                   help you with expert advice and support.
                 </p>
                 <div className='consultation__btn mt-35'>
-                  <Link href='/contact' className='theme-btn'>
+                  <Link href='/kontakt' className='theme-btn'>
                     Contact Us
                   </Link>
                 </div>

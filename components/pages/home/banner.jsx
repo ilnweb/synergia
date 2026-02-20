@@ -43,7 +43,7 @@ const BannerOne = () => {
                         Profesjonalne instalacje z gwarancją i dofinansowaniem.
                       </p>
                       <div className='banner__one-content-button'>
-                        <Link className='btn-one' href='/contact'>
+                        <Link className='btn-one' href='/kontakt'>
                           Dowiedz się więcej
                         </Link>
                       </div>
@@ -75,7 +75,7 @@ const BannerOne = () => {
                         ciepła i folie grzewcze to przyszłość ogrzewania.
                       </p>
                       <div className='banner__one-content-button'>
-                        <Link className='btn-one' href='/contact'>
+                        <Link className='btn-one' href='/kontakt'>
                           Sprawdź ofertę
                         </Link>
                       </div>
