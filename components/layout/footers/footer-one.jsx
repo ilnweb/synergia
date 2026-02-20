@@ -21,7 +21,7 @@ const FooterOne = () => {
                     <div className='footer__cta-area-left'>
                       <h3>Skontaktuj się z nami, a my zajmiemy się resztą!</h3>
                       <div className='footer__cta-area-left-btn'>
-                        <Link className='btn-one' href='/contact'>
+                        <Link className='btn-one' href='/kontakt'>
                           Zacznij już dziś
                         </Link>
                         <div className='footer__cta-area-left-btn-tel author'>
@@ -105,7 +105,7 @@ const FooterOne = () => {
                         <li>{/* <Link href='/testimonial'>Testimonials</Link> */}</li>
                         <li>{/* <Link href='/faq'>Faqs</Link> */}</li>
                         <li>
-                          <Link href='/contact'>Kontakt</Link>
+                          <Link href='/kontakt'>Kontakt</Link>
                         </li>
                       </ul>
                     </div>

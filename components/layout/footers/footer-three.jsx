@@ -77,7 +77,7 @@ const FooterThree = () => {
                           <Link href='/faq'>Faqs</Link>
                         </li>
                         <li>
-                          <Link href='/contact'>Contact Us</Link>
+                          <Link href='/kontakt'>Contact Us</Link>
                         </li>
                       </ul>
                     </div>

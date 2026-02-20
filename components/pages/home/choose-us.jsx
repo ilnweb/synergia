@@ -51,7 +51,7 @@ const ChooseUs = () => {
                   </div>
                 </div>
                 <div className='choose__us-area-bottom'>
-                  <Link className='btn-one' href='/contact'>
+                  <Link className='btn-one' href='/kontakt'>
                     Porozmawiajmy{' '}
                   </Link>
                 </div>
