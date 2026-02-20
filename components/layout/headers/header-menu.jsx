@@ -29,18 +29,18 @@ const MainMenu = () => {
               <Link href='#'>Services</Link>
               <ul className='sub-menu'>
                 <li>
-                  <Link href='/services'>Services 01</Link>
+                  <Link href='/uslugi'>Services 01</Link>
                 </li>
                 <li>
                   <Link href='/services-two'>Services 02</Link>
                 </li>
                 <li>
-                  <Link href='/services/panel-installation'>Services Details</Link>
+                  <Link href='/uslugi/panel-installation'>Services Details</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <Link href='/pricing-plans'>Price Plans</Link>
+              <Link href='/cennik'>Price Plans</Link>
             </li>
             <li>
               <Link href='/pricing-plans'>Price Plans</Link>

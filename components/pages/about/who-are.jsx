@@ -48,7 +48,7 @@ const WhoAre = ({ addClass = '' }) => {
                 </ul>
               </div>
               <div className='who-are__right-btn'>
-                <Link href='/about-us' className='theme-btn'>
+                <Link href='/o-nas' className='theme-btn'>
                   Learn More <i className='far fa-arrow-right'></i>
                 </Link>
               </div>

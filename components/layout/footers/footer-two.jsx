@@ -67,7 +67,7 @@ const FooterTwo = () => {
                     <div className='footer-widget-menu'>
                       <ul>
                         <li>
-                          <Link href='/about-us'>About Us</Link>
+                          <Link href='/o-nas'>About Us</Link>
                         </li>
                         <li>
                           <Link href='/blog'>Blog</Link>

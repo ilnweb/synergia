@@ -52,7 +52,7 @@ const ProjectItem = ({ currentProjectItems }) => {
             </div>
             <div className='project__content'>
               <h3 className='title' style={{ fontSize: '24px' }}>
-                <Link href={`/projects/${project.slug || project.id}`}>{project.title}</Link>
+                <Link href={`/realizacje/${project.slug || project.id}`}>{project.title}</Link>
               </h3>
               <div className='project-content'>
                 {project.content && (

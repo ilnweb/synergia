@@ -63,7 +63,7 @@ const AboutMain = () => {
                     energetycznego:
                   </span>
                 </div>
-                {/* <Link className='btn-one' href='/about-us'>
+                {/* <Link className='btn-one' href='/o-nas'>
                   Explore now
                 </Link> */}
               </div>
