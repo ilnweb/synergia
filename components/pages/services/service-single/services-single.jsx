@@ -51,7 +51,7 @@ const ServicesSingleMain = ({ serviceDetails }) => {
               <div className='alert alert-warning'>
                 <h4>Service not found</h4>
                 <p>The requested service could not be loaded.</p>
-                <Link href='/services' className='btn btn-primary'>
+                <Link href='/uslugi' className='btn btn-primary'>
                   Back to Services
                 </Link>
               </div>

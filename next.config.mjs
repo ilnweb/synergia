@@ -114,13 +114,43 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/kontakt',
-        destination: '/contact',
+        source: '/contact',
+        destination: '/kontakt',
         permanent: true,
       },
       {
-        source: '/kontakt/',
-        destination: '/contact',
+        source: '/contact/',
+        destination: '/kontakt',
+        permanent: true,
+      },
+      {
+        source: '/services',
+        destination: '/uslugi',
+        permanent: true,
+      },
+      {
+        source: '/services/',
+        destination: '/uslugi',
+        permanent: true,
+      },
+      {
+        source: '/projects',
+        destination: '/realizacje',
+        permanent: true,
+      },
+      {
+        source: '/projects/',
+        destination: '/realizacje',
+        permanent: true,
+      },
+      {
+        source: '/about-us',
+        destination: '/o-nas',
+        permanent: true,
+      },
+      {
+        source: '/about-us/',
+        destination: '/o-nas',
         permanent: true,
       },
       {

@@ -99,7 +99,7 @@ const FooterOne = () => {
                     <div className='footer-widget-menu'>
                       <ul>
                         <li>
-                          <Link href='/about-us'>O nas</Link>
+                          <Link href='/o-nas'>O nas</Link>
                         </li>
                         <li>{/* <Link href='/blog'>Blog</Link> */}</li>
                         <li>{/* <Link href='/testimonial'>Testimonials</Link> */}</li>
@@ -131,7 +131,7 @@ const FooterOne = () => {
                       Created by <span style={{ color: '#f33633' }}>DigitalSurf</span>
                     </li>
                     {/* <li>
-                      <Link href='/contact-two'>Terms and Conditions</Link>
+                      <Link href='/kontakt'>Terms and Conditions</Link>
                     </li> */}
                   </ul>
                 </div>
