@@ -6,6 +6,11 @@ export async function getBlogs() {
   const url = `${STRAPI_URL}/api/blogs?populate=*&sort=createdAt:desc`;
 
   try {
+    // Check if STRAPI_TOKEN is properly configured
+    if (!STRAPI_TOKEN || STRAPI_TOKEN === 'your-api-token-here') {
+      throw new Error('STRAPI_TOKEN is not properly configured in environment variables');
+    }
+
     const response = await fetch(url, {
       headers: {
         Authorization: `Bearer ${STRAPI_TOKEN}`,

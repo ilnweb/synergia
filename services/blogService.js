@@ -3,13 +3,21 @@ import { generateSlug } from '../utils/slugUtils.js';
 
 export const blogService = {
   // Fetch all blogs
-  getBlogs: async () => {
+  async getBlogs() {
+    const url = `${STRAPI_URL}/api/blogs?populate=*&sort=createdAt:desc`;
+
     try {
-      const response = await fetch(`${STRAPI_URL}/api/blogs?populate=*&sort=createdAt:desc`, {
+      // Check if STRAPI_TOKEN is properly configured
+      if (!STRAPI_TOKEN || STRAPI_TOKEN === 'your-api-token-here') {
+        throw new Error('STRAPI_TOKEN is not properly configured in environment variables');
+      }
+
+      const response = await fetch(url, {
         headers: {
           Authorization: `Bearer ${STRAPI_TOKEN}`,
           'Content-Type': 'application/json',
         },
+        cache: 'no-store',
       });
 
       if (!response.ok) {
@@ -25,18 +33,27 @@ export const blogService = {
   },
 
   // Fetch single blog by slug
-  getBlogBySlug: async slug => {
+  async getBlogBySlug(slug) {
+    const url = `${STRAPI_URL}/api/blogs?populate=*&sort=createdAt:desc`;
+
     try {
-      // First fetch all blogs
-      const response = await fetch(`${STRAPI_URL}/api/blogs?populate=*&sort=createdAt:desc`, {
+      // Check if STRAPI_TOKEN is properly configured
+      if (!STRAPI_TOKEN || STRAPI_TOKEN === 'your-api-token-here') {
+        throw new Error('STRAPI_TOKEN is not properly configured in environment variables');
+      }
+
+      const response = await fetch(url, {
         headers: {
           Authorization: `Bearer ${STRAPI_TOKEN}`,
           'Content-Type': 'application/json',
         },
+        cache: 'no-store',
       });
+
       if (!response.ok) {
         throw new Error('Failed to fetch blog');
       }
+
       const data = await response.json();
 
       // Generate slug for each blog and find the matching one
