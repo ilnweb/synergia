@@ -9,8 +9,6 @@ const ProjectGridMain = ({ initialProjects = [], error: serverError }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const projects = initialProjects || [];
 
-  console.log(projects);
-
   // Show error message if there was an error
   if (serverError) {
     return (

@@ -42,9 +42,7 @@ export const serviceService = {
       // Generate slug for each service and find the matching one
       const service = data.data.find(service => {
         const generatedSlug = generateSlug(service.title);
-        console.log(
-          `Service Service: "${service.title}" -> Slug: "${generatedSlug}" (looking for: "${slug}")`
-        );
+
         return generatedSlug === slug;
       });
 
