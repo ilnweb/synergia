@@ -16,7 +16,7 @@ export default async function ProjectsPage() {
           pageTitle='Realizacje | Synergia'
           pageDescription='Zobacz nasze zrealizowane projekty fotowoltaiczne, pompy ciepła i inne odnawialne źródła energii. Profesjonalne instalacje na terenie całej Polski.'
           keywords='realizacje, projekty, fotowoltaika, pompy ciepła, instalacje, odnawialne źródła energii'
-          canonicalUrl='https://synergia.pl/projekty'
+          canonicalUrl='https://synergia.pl/realizacje'
           ogImage='/assets/img/banner/banner-1.jpg'
         />
         <HeaderOne />
@@ -37,7 +37,7 @@ export default async function ProjectsPage() {
           pageTitle='Realizacje | Synergia'
           pageDescription='Zobacz nasze zrealizowane projekty fotowoltaiczne, pompy ciepła i inne odnawialne źródła energii. Profesjonalne instalacje na terenie całej Polski.'
           keywords='realizacje, projekty, fotowoltaika, pompy ciepła, instalacje, odnawialne źródła energii'
-          canonicalUrl='https://synergia.pl/projekty'
+          canonicalUrl='https://synergia.pl/realizacje'
           ogImage='/assets/img/banner/banner-1.jpg'
         />
         <HeaderOne />

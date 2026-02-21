@@ -1,17 +1,12 @@
+import { getBlogs } from '../actions/blogActions.js';
 import BlogGrid from '@/components/pages/blogs/blog';
-import { getBlogs } from '../actions/blogActions';
 
-export default async function Blog() {
+export default async function BlogPage() {
   try {
     const blogs = await getBlogs();
-
-    return <BlogGrid initialBlogs={blogs} error={null} />;
+    return <BlogGrid initialBlogs={blogs} />;
   } catch (error) {
-    return (
-      <BlogGrid
-        initialBlogs={[]}
-        error={error.message || 'Failed to load blog posts. Please try again later.'}
-      />
-    );
+    console.error('Error loading blog page:', error);
+    return <BlogGrid initialBlogs={[]} error={error.message} />;
   }
 }

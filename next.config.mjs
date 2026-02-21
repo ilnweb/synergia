@@ -299,7 +299,6 @@ const nextConfig = {
       if (fs.existsSync(redirectsPath)) {
         const redirectsData = JSON.parse(fs.readFileSync(redirectsPath, 'utf8'));
         generatedRedirects = redirectsData.redirects || [];
-        console.log(`✅ Loaded ${generatedRedirects.length} generated redirects from CSV`);
       }
     } catch (error) {
       console.warn('⚠️  Could not load generated redirects:', error.message);

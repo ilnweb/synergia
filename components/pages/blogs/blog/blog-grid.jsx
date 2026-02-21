@@ -4,12 +4,12 @@ import React, { useState } from 'react';
 import BlogItem from './blog-item';
 import Pagination from './pagination';
 import { STRAPI_URL } from '../../../../constants';
+import { generateSlug } from '../../../../utils/slugUtils';
 
 const BlogGridMain = ({ initialBlogs = [], error: serverError }) => {
   const blogItemShow = 5;
   const [currentPage, setCurrentPage] = useState(0);
   const blogs = initialBlogs || [];
-  console.log(blogs);
   // Show error message if there was an error
   if (serverError) {
     return (
@@ -48,13 +48,7 @@ const BlogGridMain = ({ initialBlogs = [], error: serverError }) => {
   const transformedBlogs = blogs.map((blog, index) => ({
     number: String(index + 1).padStart(2, '0'),
     id: blog.documentId || blog.id || `blog-${index}`,
-    slug: blog.Title
-      ? blog.Title.toLowerCase()
-          .replace(/[^a-z0-9\s-]/g, '')
-          .replace(/\s+/g, '-')
-          .replace(/-+/g, '-')
-          .trim('-')
-      : `blog-${index}`,
+    slug: generateSlug(blog.Title || blog.title || '', `blog-${index}`),
     date: blog.createdAt || new Date().toISOString(),
     comment: '0',
     title: blog.Title || 'Untitled Blog',

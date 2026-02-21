@@ -20,7 +20,6 @@ const ServicesSingleMain = ({ serviceDetails }) => {
           const serviceId = service.id || service.documentId || 'unknown';
           const fallback = `service-${serviceId}`;
           const slug = generateSlug(title, fallback) || fallback || `service-${serviceId}`;
-          console.log(`Service Single: "${title}" -> Slug: "${slug}" (ID: ${serviceId})`);
 
           // Ensure slug is never undefined or empty
           if (!slug || slug === 'undefined') {
@@ -61,8 +60,6 @@ const ServicesSingleMain = ({ serviceDetails }) => {
       </div>
     );
   }
-
-  console.log('ServiceSingle: Rendering service:', serviceDetails.title || serviceDetails.Title);
 
   return (
     <>

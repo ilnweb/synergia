@@ -26,7 +26,6 @@ const ServicesMain = () => {
           const serviceId = service.id || service.documentId || 'unknown';
           const fallback = `service-${serviceId}`;
           const slug = generateSlug(title, fallback) || fallback || `service-${serviceId}`;
-          console.log(`Service: "${title}" -> Slug: "${slug}" (ID: ${serviceId})`);
 
           // Ensure slug is never undefined or empty
           if (!slug || slug === 'undefined') {
@@ -46,8 +45,6 @@ const ServicesMain = () => {
     staleTime: 1000 * 60 * 5, // 5 minutes
     retry: 2,
   });
-
-  console.log(services);
 
   if (isLoading) {
     return (

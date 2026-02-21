@@ -1,4 +1,5 @@
-import { STRAPI_URL, STRAPI_TOKEN } from '../constants';
+import { STRAPI_URL, STRAPI_TOKEN } from '../constants/index.js';
+import { generateSlug } from '../utils/slugUtils.js';
 
 export const blogService = {
   // Fetch all blogs
@@ -40,13 +41,11 @@ export const blogService = {
 
       // Generate slug for each blog and find the matching one
       const blog = data.data.find(blog => {
-        const generatedSlug = blog.Title
-          ? blog.Title.toLowerCase()
-              .replace(/[^a-z0-9\s-]/g, '')
-              .replace(/\s+/g, '-')
-              .replace(/-+/g, '-')
-              .trim('-')
-          : '';
+        const title = blog.Title || blog.title || '';
+        const blogId = blog.id || blog.documentId || 'unknown';
+        const fallback = `blog-${blogId}`;
+        const generatedSlug = generateSlug(title, fallback);
+
         return generatedSlug === slug;
       });
 
