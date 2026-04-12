@@ -4,9 +4,9 @@ import HeaderOne from '@/components/layout/headers/header-one';
 import BreadCrumb from '../common/breadcrumb';
 import FooterOne from '@/components/layout/footers/footer-one';
 import ScrollToTop from '../common/scroll/scroll-to-top';
-import SwitchTab from '../common/dark-light';
 import Link from 'next/link';
 import FormArea from './form';
+import { COMPANY_NIP } from '@/constants';
 
 const ContactTwo = () => {
   return (
@@ -18,7 +18,6 @@ const ContactTwo = () => {
         canonicalUrl='https://www.synergiaenergia.pl/kontakt'
         ogImage='/assets/img/banner/banner-2.jpg'
       />
-      {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb
         title='Kontakt'
@@ -68,11 +67,18 @@ const ContactTwo = () => {
                     </h6>
                   </div>
                 </div>
-                <div className='col-md-6'>
+                <div className='col-md-6 md-mb-25'>
                   <div className='contact__one-item'>
                     <i className='flaticon-wall-clock'></i>
                     <span>Godziny otwarcia :</span>
                     <h6>Pon-Pt 09:00-17:00</h6>
+                  </div>
+                </div>
+                <div className='col-md-6 mt-25'>
+                  <div className='contact__one-item'>
+                    <i className='flaticon-trust'></i>
+                    <span>NIP :</span>
+                    <h6>{COMPANY_NIP}</h6>
                   </div>
                 </div>
               </div>

@@ -3,7 +3,6 @@ import SEO from '@/components/data/seo';
 import HeaderOne from '@/components/layout/headers/header-one';
 import FooterOne from '@/components/layout/footers/footer-one';
 import BreadCrumb from '@/components/pages/common/breadcrumb';
-import SwitchTab from '@/components/pages/common/dark-light';
 import { getProjects } from '../actions/projectActions';
 
 export default async function ProjectsPage() {
@@ -16,7 +15,7 @@ export default async function ProjectsPage() {
           pageTitle='Realizacje | Synergia'
           pageDescription='Zobacz nasze zrealizowane projekty fotowoltaiczne, pompy ciepła i inne odnawialne źródła energii. Profesjonalne instalacje na terenie całej Polski.'
           keywords='realizacje, projekty, fotowoltaika, pompy ciepła, instalacje, odnawialne źródła energii'
-          canonicalUrl='https://synergia.pl/realizacje'
+          canonicalUrl='https://www.synergiaenergia.pl/realizacje'
           ogImage='/assets/img/banner/banner-1.jpg'
         />
         <HeaderOne />
@@ -27,7 +26,6 @@ export default async function ProjectsPage() {
         />
         <ProjectGridMain initialProjects={projects} error={null} />
         <FooterOne />
-        <SwitchTab />
       </>
     );
   } catch (error) {
@@ -37,7 +35,7 @@ export default async function ProjectsPage() {
           pageTitle='Realizacje | Synergia'
           pageDescription='Zobacz nasze zrealizowane projekty fotowoltaiczne, pompy ciepła i inne odnawialne źródła energii. Profesjonalne instalacje na terenie całej Polski.'
           keywords='realizacje, projekty, fotowoltaika, pompy ciepła, instalacje, odnawialne źródła energii'
-          canonicalUrl='https://synergia.pl/realizacje'
+          canonicalUrl='https://www.synergiaenergia.pl/realizacje'
           ogImage='/assets/img/banner/banner-1.jpg'
         />
         <HeaderOne />
@@ -48,10 +46,9 @@ export default async function ProjectsPage() {
         />
         <ProjectGridMain
           initialProjects={[]}
-          error={error.message || 'Failed to load projects. Please try again later.'}
+          error={error.message || 'Nie udało się załadować projektów. Spróbuj ponownie później.'}
         />
         <FooterOne />
-        <SwitchTab />
       </>
     );
   }
