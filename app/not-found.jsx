@@ -11,12 +11,12 @@ const NotFound = () => {
               <h1>
                 4<span>0</span>4
               </h1>
-              <h2>Oops! Page not found.</h2>
+              <h2>Ups! Strona nie została znaleziona.</h2>
               <p>
-                The page you are looking for is not available or doesn't belong to this website!
+                Strona, której szukasz, nie istnieje lub nie należy do tej witryny!
               </p>
               <Link className='btn-one' href='/'>
-                Back to Home
+                Powrót do strony głównej
               </Link>
             </div>
           </div>

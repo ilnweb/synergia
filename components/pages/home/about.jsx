@@ -99,11 +99,6 @@ const About = () => {
                   </div>
                 </div>
                 <div className='about__one-right-bottom'>
-                  <div className='about__one-right-bottom-btn'>
-                    <Link className='btn-one' href='/about'>
-                      Unlock Power
-                    </Link>
-                  </div>
                   <div className='about__one-right-bottom-video'>
                     <div className='about__one-right-bottom-video-icon video video-pulse'>
                       <span onClick={openVideoModal}>

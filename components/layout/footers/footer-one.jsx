@@ -1,9 +1,8 @@
 import Social from '@/components/data/social';
 import Link from 'next/link';
-import logo from '../../../public/assets/img/logo-1.png';
 import ctaBg from '../../../public/assets/img/shape/shape-6.png';
-import avatar from '../../../public/assets/img/avatar/avatar-5.jpg';
 import footerBg from '../../../public/assets/img/shape/shape-13.png';
+import { COMPANY_NIP } from '@/constants';
 
 const FooterOne = () => {
   return (
@@ -35,14 +34,6 @@ const FooterOne = () => {
                       </div>
                     </div>
                   </div>
-                  {/* <div className='col-lg-3 lg-mt-25 d-none d-lg-block'>
-                    <div className='footer__cta-area-right t-right lg-t-center'>
-                      <div
-                        className='footer__cta-area-right-image dark_image'
-                        style={{ backgroundImage: `url(${avatar.src})` }}
-                      />
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>
@@ -68,6 +59,9 @@ const FooterOne = () => {
                       <i className='flaticon-placeholder'></i>Jana Nowaka-Jeziorańskiego 121, 25-408
                       Kielce
                     </Link>
+                  </p>
+                  <p className='mt-20' style={{ color: '#ffffff' }}>
+                    <strong>NIP:</strong> {COMPANY_NIP}
                   </p>
                   <div className='social__icon mt-60'>
                     <Social />
@@ -101,11 +95,11 @@ const FooterOne = () => {
                         <li>
                           <Link href='/o-nas'>O nas</Link>
                         </li>
-                        <li>{/* <Link href='/blog'>Blog</Link> */}</li>
-                        <li>{/* <Link href='/testimonial'>Testimonials</Link> */}</li>
-                        <li>{/* <Link href='/faq'>Faqs</Link> */}</li>
                         <li>
                           <Link href='/kontakt'>Kontakt</Link>
+                        </li>
+                        <li>
+                          <Link href='/polityka-prywatnosci'>Polityka Prywatności</Link>
                         </li>
                       </ul>
                     </div>
@@ -120,19 +114,18 @@ const FooterOne = () => {
             <div className='row'>
               <div className='col-lg-6'>
                 <p>
-                  Copyright 2025 - All Rights Reserved{' '}
-                  {/* <Link href='https://themeforest.net/user/themeori/portfolio'>ThemeOri</Link> */}
+                  Copyright 2025 - All Rights Reserved | NIP: {COMPANY_NIP}
                 </p>
               </div>
               <div className='col-lg-6'>
                 <div className='copyright__area-menu t-right lg-t-center lg-mt-5'>
                   <ul>
+                    <li>
+                      <Link href='/polityka-prywatnosci'>Polityka Prywatności</Link>
+                    </li>
                     <li style={{ color: '#f4f4f4' }}>
                       Created by <span style={{ color: '#f33633' }}>DigitalSurf</span>
                     </li>
-                    {/* <li>
-                      <Link href='/kontakt'>Terms and Conditions</Link>
-                    </li> */}
                   </ul>
                 </div>
               </div>

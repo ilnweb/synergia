@@ -10,40 +10,29 @@ const Pagination = ({
   if (totalPages <= 1) return null;
 
   return (
-    <div className='row mt-5'>
-      <div className='col-12'>
-        <div className='basic-pagination'>
-          <ul className='d-flex align-items-center'>
-            <li>
-              <button
-                onClick={handlePrevPage}
-                disabled={currentPage === 0}
-                className={`prev ${
-                  currentPage === 0 ? 'disabled' : ''
-                }`}
-              >
-                <i className='fa-regular fa-arrow-left'></i>
-              </button>
+    <div className='row t-center mt-55'>
+      <div className='col-xl-12'>
+        <div className='theme__pagination'>
+          <ul>
+            <li className={`${currentPage === 0 ? 'd-none' : ''}`}>
+              <span onClick={handlePrevPage}>
+                <i className='fa-regular fa-angle-left'></i>
+              </span>
             </li>
-
-            {[...Array(totalPages)].map((_, index) => (
-              <li key={index} className={currentPage === index ? 'active' : ''}>
-                <button onClick={() => setCurrentPage(index)}>
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <li key={index}>
+                <span
+                  className={`${currentPage === index ? 'active' : ''}`}
+                  onClick={() => setCurrentPage(index)}
+                >
                   {index + 1}
-                </button>
+                </span>
               </li>
             ))}
-
-            <li>
-              <button
-                onClick={handleNextPage}
-                disabled={currentPage >= totalPages - 1}
-                className={`next ${
-                  currentPage >= totalPages - 1 ? 'disabled' : ''
-                }`}
-              >
-                <i className='fa-regular fa-arrow-right'></i>
-              </button>
+            <li className={`${currentPage === totalPages - 1 ? 'd-none' : ''}`}>
+              <span onClick={handleNextPage}>
+                <i className='fa-regular fa-angle-right'></i>
+              </span>
             </li>
           </ul>
         </div>

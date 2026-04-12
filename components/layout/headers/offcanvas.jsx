@@ -21,19 +21,19 @@ const SideBar = ({ isOpen, setIsOpen, addClass }) => {
           </Link>
         </div>
         <p>
-          The insurance company assumes the financial risk of covering these events in exchange for
-          the premiums paid by the policyholder. There are many different types of insurance,
+          Synergia Energia to lider w dziedzinie odnawialnych źródeł energii. Specjalizujemy się w
+          instalacjach fotowoltaicznych, pompach ciepła i kompleksowych rozwiązaniach energetycznych.
         </p>
         <div className='header__area-menubar-right-sidebar-popup-contact'>
-          <h4 className='mb-30'>Get In Touch</h4>
+          <h4 className='mb-30'>Skontaktuj się z nami</h4>
           <div className='header__area-menubar-right-sidebar-popup-contact-item'>
             <div className='header__area-menubar-right-sidebar-popup-contact-item-icon'>
               <i className='fal fa-phone-alt icon-animation'></i>
             </div>
             <div className='header__area-menubar-right-sidebar-popup-contact-item-content'>
-              <span>Call Now</span>
+              <span>Zadzwoń teraz</span>
               <h6>
-                <Link href='tel:+125(895)658568'>+125 (895) 658 568</Link>
+                <Link href='tel:+48698454913'>+48 698 454 913</Link>
               </h6>
             </div>
           </div>
@@ -42,9 +42,9 @@ const SideBar = ({ isOpen, setIsOpen, addClass }) => {
               <i className='fal fa-envelope'></i>
             </div>
             <div className='header__area-menubar-right-sidebar-popup-contact-item-content'>
-              <span>Quick Email</span>
+              <span>Napisz do nas</span>
               <h6>
-                <Link href='mailto:info.help@gmail.com'>info.help@gmail.com</Link>
+                <Link href='mailto:biuro@synergiaenergia.pl'>biuro@synergiaenergia.pl</Link>
               </h6>
             </div>
           </div>
@@ -53,10 +53,13 @@ const SideBar = ({ isOpen, setIsOpen, addClass }) => {
               <i className='fal fa-map-marker-alt'></i>
             </div>
             <div className='header__area-menubar-right-sidebar-popup-contact-item-content'>
-              <span>Office Address</span>
+              <span>Adres biura</span>
               <h6>
-                <Link href='https://google.com/maps' target='_blank'>
-                  PV3M+X68 Welshpool United Kingdom
+                <Link
+                  href='https://www.google.com/maps/place/Synergia+energia/@50.890887,20.672871,996m/data=!3m1!1e3!4m6!3m5!1s0x471827b8062ebb57:0xce5a6c93a76ee922!8m2!3d50.8908871!4d20.6728707!16s%2Fg%2F11n85vxb7g?hl=pl&entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D'
+                  target='_blank'
+                >
+                  Jana Nowaka-Jeziorańskiego 121, 25-408 Kielce
                 </Link>
               </h6>
             </div>

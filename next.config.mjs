@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   images: {
     remotePatterns: [
       {
@@ -274,7 +277,7 @@ const nextConfig = {
       },
       {
         source: '/author/:slug*',
-        destination: '/about-us',
+        destination: '/o-nas',
         permanent: false,
       },
       {

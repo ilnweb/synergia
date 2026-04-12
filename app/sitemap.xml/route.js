@@ -44,6 +44,12 @@ export async function GET() {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/polityka-prywatnosci`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
   ];
 
   const dynamicPages = [];
@@ -85,15 +91,15 @@ export async function GET() {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allPages
-  .map(
-    page => `  <url>
+      .map(
+        page => `  <url>
     <loc>${page.url}</loc>
     <lastmod>${new Date(page.lastModified).toISOString()}</lastmod>
     <changefreq>${page.changeFrequency}</changefreq>
     <priority>${page.priority}</priority>
   </url>`
-  )
-  .join('\n')}
+      )
+      .join('\n')}
 </urlset>`;
 
   return new Response(sitemap, {
