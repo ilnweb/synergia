@@ -79,11 +79,6 @@ const HeaderOne = ({ addClass }) => {
                   <i className='flaticon-menu-2'></i>
                 </div>
               </div>
-              <div className='header__area-menubar-right-btn'>
-                <Link className='btn-two' href='/request-quote'>
-                  Talk with us
-                </Link>
-              </div>
               <div className='header__area-menubar-right-responsive-menu menu__bar'>
                 <i className='flaticon-menu-2' onClick={() => setMenuSidebar(true)}></i>
               </div>

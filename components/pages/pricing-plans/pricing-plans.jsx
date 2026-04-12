@@ -33,11 +33,6 @@ const PricingPlansMain = () => {
                   </li>
                 </ul>
               </div>
-              <div className='pricing__area-item-btn'>
-                <Link className='btn-two' href='/request-quote'>
-                  Purchase Plan
-                </Link>
-              </div>
             </div>
           </div>
           <div className='col-lg-4 col-md-6 md-mb-25'>
@@ -68,11 +63,6 @@ const PricingPlansMain = () => {
                   </li>
                 </ul>
               </div>
-              <div className='pricing__area-item-btn'>
-                <Link className='btn-two' href='/request-quote'>
-                  Purchase Plan
-                </Link>
-              </div>
             </div>
           </div>
           <div className='col-lg-4 col-md-6'>
@@ -101,11 +91,6 @@ const PricingPlansMain = () => {
                     <i className='flaticon-check'></i>24/7 Skilled Support
                   </li>
                 </ul>
-              </div>
-              <div className='pricing__area-item-btn'>
-                <Link className='btn-two' href='/request-quote'>
-                  Purchase Plan
-                </Link>
               </div>
             </div>
           </div>
