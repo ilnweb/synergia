@@ -27,108 +27,94 @@ const PrivacyPolicy = () => {
           <div className='row'>
             <div className='col-xl-12'>
               <div className='privacy-policy__content'>
-                <h2>Polityka Prywatności</h2>
+                <h2>Polityka Prywatności Synergia Cezary Broniś</h2>
                 <p className='mb-30'>
-                  <strong>Data ostatniej aktualizacji:</strong> {new Date().toLocaleDateString('pl-PL')}
+                  Niniejsza Polityka Prywatności określa zasady gromadzenia, przetwarzania i wykorzystywania
+                  danych osobowych pozyskanych od Państwa przez firmę <strong>Synergia Cezary Broniś</strong>{' '}
+                  za pośrednictwem strony internetowej <strong>synergiaenergia.pl</strong>.
                 </p>
 
                 <h3>1. Administrator Danych Osobowych</h3>
                 <p className='mb-30'>
-                  Administratorem danych osobowych jest Synergia Energia z siedzibą w Kielcach, ul. Jana
-                  Nowaka-Jeziorańskiego 121, 25-408 Kielce, NIP: {COMPANY_NIP}.
+                  Administratorem Państwa danych osobowych jest:<br />
+                  <strong>Synergia Cezary Broniś</strong><br />
+                  ul. Jana Nowaka-Jeziorańskiego 121<br />
+                  25-408 Kielce<br />
+                  NIP: 6572170309<br />
+                  Kontakt: tel. 698 454 913
                 </p>
 
-                <h3>2. Rodzaje Przetwarzanych Danych</h3>
-                <p className='mb-20'>Przetwarzamy następujące kategorie danych osobowych:</p>
+                <h3>2. Jakie dane przetwarzamy?</h3>
+                <p className='mb-20'>
+                  Przetwarzamy dane, które przekazują nam Państwo dobrowolnie w celu nawiązania kontaktu,
+                  wykonania usługi lub realizacji zapytania ofertowego. Są to najczęściej:
+                </p>
                 <ul className='mb-30'>
-                  <li>Dane identyfikacyjne (imię, nazwisko)</li>
-                  <li>Dane kontaktowe (adres e-mail, numer telefonu)</li>
-                  <li>Dane dotyczące korespondencji (treść wiadomości)</li>
-                  <li>Dane techniczne (adres IP, typ przeglądarki, system operacyjny)</li>
+                  <li>Imię i nazwisko</li>
+                  <li>Adres e-mail</li>
+                  <li>Numer telefonu</li>
+                  <li>Adres inwestycji (jeśli dotyczy realizacji usług)</li>
                 </ul>
 
-                <h3>3. Cele i Podstawy Prawne Przetwarzania Danych</h3>
-                <p className='mb-20'>Dane osobowe przetwarzamy w następujących celach:</p>
+                <h3>3. Cel i podstawa przetwarzania</h3>
+                <p className='mb-20'>Dane osobowe przetwarzane są w celu:</p>
                 <ul className='mb-30'>
                   <li>
-                    <strong>Obsługa zapytań kontaktowych</strong> - na podstawie prawnie uzasadnionego
-                    interesu administratora (art. 6 ust. 1 lit. f RODO)
+                    <strong>Realizacji usług:</strong> Podstawa prawna: niezbędność do wykonania umowy
+                    (art. 6 ust. 1 lit. b RODO).
                   </li>
                   <li>
-                    <strong>Realizacja umów i świadczenie usług</strong> - na podstawie wykonania umowy
-                    (art. 6 ust. 1 lit. b RODO)
+                    <strong>Odpowiedzi na zapytania:</strong> Podstawa prawna: prawnie uzasadniony interes
+                    administratora (art. 6 ust. 1 lit. f RODO), polegający na obsłudze komunikacji.
                   </li>
                   <li>
-                    <strong>Marketing bezpośredni</strong> - na podstawie prawnie uzasadnionego interesu
-                    administratora (art. 6 ust. 1 lit. f RODO) lub zgody (art. 6 ust. 1 lit. a RODO)
-                  </li>
-                  <li>
-                    <strong>Wypełnienie obowiązków prawnych</strong> - na podstawie obowiązku prawnego
-                    (art. 6 ust. 1 lit. c RODO)
+                    <strong>Wypełnienia obowiązków prawnych:</strong> (np. wystawienie faktury) Podstawa
+                    prawna: przepis prawa (art. 6 ust. 1 lit. c RODO).
                   </li>
                 </ul>
 
-                <h3>4. Odbiorcy Danych</h3>
-                <p className='mb-20'>Dane osobowe mogą być przekazywane następującym kategoriom odbiorców:</p>
-                <ul className='mb-30'>
-                  <li>Dostawcom usług IT i hostingu</li>
-                  <li>Dostawcom usług marketingowych</li>
-                  <li>Organom publicznym w zakresie wymaganym prawem</li>
-                </ul>
-
-                <h3>5. Okres Przechowywania Danych</h3>
+                <h3>4. Komu udostępniamy dane?</h3>
                 <p className='mb-30'>
-                  Dane osobowe przechowujemy przez okres niezbędny do realizacji celów, dla których zostały
-                  zebrane, a po tym czasie przez okres wymagany przepisami prawa lub do czasu wycofania
-                  zgody (jeśli przetwarzanie odbywa się na podstawie zgody).
+                  Państwa dane mogą być przekazywane podmiotom przetwarzającym dane w naszym imieniu, takim
+                  jak: dostawcy usług IT, firmy hostingowe, biuro księgowe oraz firmy kurierskie (jeśli jest
+                  to konieczne do realizacji usługi). Nie sprzedajemy ani nie udostępniamy danych osobowych
+                  podmiotom trzecim w celach marketingowych.
                 </p>
 
-                <h3>6. Prawa Osób, Których Dane Dotyczą</h3>
-                <p className='mb-20'>Przysługują Państwu następujące prawa:</p>
+                <h3>5. Okres przechowywania danych</h3>
+                <p className='mb-30'>
+                  Dane osobowe będą przechowywane przez okres niezbędny do realizacji usług, a po tym czasie
+                  przez okres wymagany przepisami prawa (np. przepisami podatkowymi dotyczącymi archiwizacji
+                  dokumentów księgowych) lub do momentu przedawnienia ewentualnych roszczeń.
+                </p>
+
+                <h3>6. Państwa prawa</h3>
+                <p className='mb-20'>
+                  Przysługują Państwu następujące prawa w związku z przetwarzaniem danych:
+                </p>
                 <ul className='mb-30'>
-                  <li>Prawo dostępu do danych osobowych</li>
-                  <li>Prawo do sprostowania danych</li>
-                  <li>Prawo do usunięcia danych</li>
-                  <li>Prawo do ograniczenia przetwarzania</li>
-                  <li>Prawo do przenoszenia danych</li>
-                  <li>Prawo do sprzeciwu wobec przetwarzania</li>
-                  <li>Prawo do cofnięcia zgody w dowolnym momencie</li>
-                  <li>Prawo do wniesienia skargi do organu nadzorczego (PUODO)</li>
+                  <li>Prawo dostępu do treści swoich danych oraz ich poprawiania.</li>
+                  <li>Prawo do usunięcia danych („prawo do bycia zapomnianym").</li>
+                  <li>Prawo do ograniczenia przetwarzania.</li>
+                  <li>Prawo do wniesienia sprzeciwu wobec przetwarzania danych.</li>
+                  <li>Prawo do przenoszenia danych.</li>
+                  <li>
+                    Prawo do wniesienia skargi do organu nadzorczego (Prezesa Urzędu Ochrony Danych
+                    Osobowych).
+                  </li>
                 </ul>
 
                 <h3>7. Pliki Cookies</h3>
-                <p className='mb-20'>
-                  Nasza strona internetowa wykorzystuje pliki cookies w celu:
-                </p>
-                <ul className='mb-30'>
-                  <li>Zapewnienia prawidłowego funkcjonowania strony</li>
-                  <li>Analizy ruchu na stronie (Google Analytics)</li>
-                  <li>Dostosowania treści do preferencji użytkowników</li>
-                </ul>
                 <p className='mb-30'>
-                  Użytkownik może w każdej chwili zmienić ustawienia dotyczące plików cookies w swojej
-                  przeglądarce internetowej.
+                  Nasza strona może wykorzystywać pliki cookies w celu poprawnego działania serwisu oraz
+                  analizy statystyk odwiedzin. Mogą Państwo w każdej chwili wyłączyć obsługę plików cookies
+                  w ustawieniach swojej przeglądarki internetowej.
                 </p>
 
-                <h3>8. Bezpieczeństwo Danych</h3>
+                <h3>8. Kontakt</h3>
                 <p className='mb-30'>
-                  Stosujemy odpowiednie środki techniczne i organizacyjne zapewniające bezpieczeństwo
-                  przetwarzanych danych osobowych, w tym ochronę przed nieuprawnionym dostępem, utratą czy
-                  zniszczeniem danych.
-                </p>
-
-                <h3>9. Kontakt w Sprawach Ochrony Danych</h3>
-                <p className='mb-30'>
-                  W sprawach dotyczących ochrony danych osobowych można kontaktować się z nami pod adresem
-                  e-mail: <a href='mailto:biuro@synergiaenergia.pl'>biuro@synergiaenergia.pl</a> lub
-                  telefonicznie: <a href='tel:+48698454913'>+48 698 454 913</a>.
-                </p>
-
-                <h3>10. Zmiany Polityki Prywatności</h3>
-                <p className='mb-30'>
-                  Zastrzegamy sobie prawo do wprowadzania zmian w niniejszej Polityce Prywatności. O
-                  wszelkich zmianach będziemy informować poprzez publikację zaktualizowanej wersji na tej
-                  stronie.
+                  W sprawach związanych z ochroną danych osobowych prosimy o kontakt pod numerem telefonu:{' '}
+                  <a href='tel:+48698454913'><strong>698 454 913</strong></a>.
                 </p>
               </div>
             </div>
