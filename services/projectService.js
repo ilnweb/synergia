@@ -2,20 +2,36 @@ import { STRAPI_URL, STRAPI_TOKEN } from '../constants';
 
 export const projectService = {
   async getProjects() {
+    const pageSize = 100; // Strapi's per-request max; loop below covers totals beyond this
+
     try {
-      const response = await fetch(`${STRAPI_URL}/api/projects?populate=*`, {
-        headers: {
-          Authorization: `Bearer ${STRAPI_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-      });
+      let page = 1;
+      let allProjects = [];
+      let pageCount = 1;
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch projects');
-      }
+      do {
+        const response = await fetch(
+          `${STRAPI_URL}/api/projects?populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
+          {
+            headers: {
+              Authorization: `Bearer ${STRAPI_TOKEN}`,
+              'Content-Type': 'application/json',
+            },
+            cache: 'no-store',
+          }
+        );
 
-      const data = await response.json();
-      return data.data;
+        if (!response.ok) {
+          throw new Error('Failed to fetch projects');
+        }
+
+        const data = await response.json();
+        allProjects = allProjects.concat(data.data || []);
+        pageCount = data.meta?.pagination?.pageCount || 1;
+        page += 1;
+      } while (page <= pageCount);
+
+      return allProjects;
     } catch (error) {
       console.error('Error fetching projects:', error);
       throw error;
