@@ -23,8 +23,8 @@ const HeaderOne = () => {
               <div className='topBar__one-left lg-t-center'>
                 <ul>
                   <li>
-                    <Link href='mailto:buiro@synergiaenergia.pl'>
-                      <i className='flaticon-envelope'></i>buiro@synergiaenergia.pl
+                    <Link href='mailto:biuro@synergiaenergia.pl'>
+                      <i className='flaticon-envelope'></i>biuro@synergiaenergia.pl
                     </Link>
                   </li>
                   <li>

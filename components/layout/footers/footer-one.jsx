@@ -82,7 +82,7 @@ const FooterOne = () => {
                     <h6>Email</h6>
                     <div className='footer__area-widget-info'>
                       <p>
-                        <Link href='mailto:hello.help@gmail.com'>buiro@synergiaenergia.pl</Link>
+                        <Link href='mailto:biuro@synergiaenergia.pl'>biuro@synergiaenergia.pl</Link>
                       </p>
                     </div>
                   </div>

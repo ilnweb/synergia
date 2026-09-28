@@ -32,7 +32,7 @@ const ContactUs = () => {
                 <i className='flaticon-mail'></i>
                 <span>Email Address :</span>
                 <h6>
-                  <Link href='mailto:help@gmail.com'>help@gmail.com</Link>
+                  <Link href='mailto:biuro@synergiaenergia.pl'>biuro@synergiaenergia.pl</Link>
                 </h6>
               </div>
             </div>
