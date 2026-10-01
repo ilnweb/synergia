@@ -45,7 +45,7 @@ const ContactTwo = () => {
                     <i className='flaticon-telephone-call'></i>
                     <span>Telefon :</span>
                     <h6>
-                      <Link href='tel:+48123445789'>+48 698 454 913</Link>
+                      <Link href='tel:+48698454913'>+48 698 454 913</Link>
                     </h6>
                   </div>
                 </div>
