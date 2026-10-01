@@ -83,7 +83,7 @@ const SEO = ({
       description: pageDescription,
       url: canonicalUrl,
       image: ogImage,
-      telephone: '+48 123 456 789',
+      telephone: '+48 698 454 913',
       address: {
         '@type': 'PostalAddress',
         addressCountry: 'PL',

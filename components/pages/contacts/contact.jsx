@@ -23,7 +23,7 @@ const ContactUs = () => {
                 <i className='flaticon-telephone-call'></i>
                 <span>Phone :</span>
                 <h6>
-                  <Link href='tel:+123(254)65858'>+123(254)658 58</Link>
+                  <Link href='tel:+48698454913'>+48 698 454 913</Link>
                 </h6>
               </div>
             </div>
