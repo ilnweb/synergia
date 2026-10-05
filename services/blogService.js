@@ -1,5 +1,5 @@
 import { STRAPI_URL, STRAPI_TOKEN } from '../constants/index.js';
-import { generateSlug } from '../utils/slugUtils.js';
+import { generateSlug, generateLegacySlug } from '../utils/slugUtils.js';
 
 export const blogService = {
   // Fetch all blogs
@@ -61,9 +61,7 @@ export const blogService = {
         const title = blog.Title || blog.title || '';
         const blogId = blog.id || blog.documentId || 'unknown';
         const fallback = `blog-${blogId}`;
-        const generatedSlug = generateSlug(title, fallback);
-
-        return generatedSlug === slug;
+        return generateSlug(title, fallback) === slug || generateLegacySlug(title, fallback) === slug;
       });
 
       return blog;
