@@ -1,5 +1,5 @@
 import { STRAPI_URL, STRAPI_TOKEN } from '../constants';
-import { generateSlug } from '../utils/slugUtils';
+import { generateSlug, generateLegacySlug } from '../utils/slugUtils';
 
 export const serviceService = {
   // Fetch all services
@@ -41,9 +41,7 @@ export const serviceService = {
 
       // Generate slug for each service and find the matching one
       const service = data.data.find(service => {
-        const generatedSlug = generateSlug(service.title);
-
-        return generatedSlug === slug;
+        return generateSlug(service.title) === slug || generateLegacySlug(service.title) === slug;
       });
 
       return service;

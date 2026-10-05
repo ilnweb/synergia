@@ -1,19 +1,37 @@
+const sanitize = text =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+const transliteratePolish = text =>
+  text
+    .replace(/ł/gi, match => (match === 'ł' ? 'l' : 'L'))
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '');
+
 /**
- * Generate a URL-friendly slug from a title
- * @param {string} title - The title to convert to slug
- * @param {string} fallback - Fallback slug if title is empty
- * @returns {string} - URL-friendly slug
+ * Generate a URL-friendly slug from a title, transliterating Polish
+ * diacritics (ą→a, ć→c, ę→e, ł→l, ń→n, ó→o, ś→s, ź/ż→z).
  */
 export const generateSlug = (title, fallback = '') => {
   if (!title || typeof title !== 'string') {
     return fallback;
   }
 
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
-    .replace(/^-+|-+$/g, '') // Remove all leading and trailing hyphens
-    .trim('-'); // Additional trim for safety
+  return sanitize(transliteratePolish(title));
+};
+
+/**
+ * Previous slug behaviour (diacritics dropped instead of transliterated).
+ * Only used so URLs generated before transliteration keep resolving.
+ */
+export const generateLegacySlug = (title, fallback = '') => {
+  if (!title || typeof title !== 'string') {
+    return fallback;
+  }
+
+  return sanitize(title);
 };
