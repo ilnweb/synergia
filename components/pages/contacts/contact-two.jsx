@@ -1,5 +1,4 @@
 'use client';
-import SEO from '@/components/data/seo';
 import HeaderOne from '@/components/layout/headers/header-one';
 import BreadCrumb from '../common/breadcrumb';
 import FooterOne from '@/components/layout/footers/footer-one';
@@ -11,13 +10,6 @@ import { COMPANY_NIP } from '@/constants';
 const ContactTwo = () => {
   return (
     <>
-      <SEO
-        pageTitle='Kontakt | Synergia Energia - Fotowoltaika i OZE'
-        pageDescription='Skontaktuj się z Synergia Energia - specjalistami od fotowoltaiki, pomp ciepła i odnawialnych źródeł energii. Zadzwoń +48 698 454 913, napisz biuro@synergiaenergia.pl. Warszawa, Pon-Pt 09:00-17:00. Profesjonalne doradztwo energetyczne.'
-        keywords='kontakt, Synergia Energia, fotowoltaika kontakt, pompy ciepła, odnawialne źródła energii, konsultacja energetyczna, Warszawa, telefon kontaktowy, email, doradztwo OZE, instalacje fotowoltaiczne'
-        canonicalUrl='https://www.synergiaenergia.pl/kontakt'
-        ogImage='/assets/img/banner/banner-2.jpg'
-      />
       <HeaderOne />
       <BreadCrumb
         title='Kontakt'

@@ -2,8 +2,7 @@
 import { useEffect } from 'react';
 import './globals.css';
 import QueryProvider from '../providers/QueryProvider';
-import { GoogleAnalytics } from '@next/third-parties/google';
-import { NEXT_PUBLIC_GA_ID } from '@/constants';
+import AnalyticsConsent from '@/components/layout/analytics-consent';
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -13,8 +12,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang='pl'>
       <head>
-        <link rel='icon' type='image/png' href='../favicon.ico' />
-
         {/* Preconnect to Google Fonts for faster loading */}
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
@@ -57,7 +54,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <QueryProvider>{children}</QueryProvider>
-        <GoogleAnalytics gaId={NEXT_PUBLIC_GA_ID} />
+        <AnalyticsConsent />
       </body>
     </html>
   );

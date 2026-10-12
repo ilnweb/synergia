@@ -57,3 +57,46 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* Hero slide headings that are h2 (single h1 per page) share the h1 styles */
+.banner__one-content h2.hero-title {
+  font-size: 100px;
+  line-height: 110px;
+  margin-bottom: 30px;
+}
+.banner__one .banner__one-content h2.hero-title {
+  animation-name: fadeInUp;
+  animation-fill-mode: both;
+}
+.banner__one .swiper-slide-active .banner__one-content h2.hero-title {
+  animation-delay: 0.6s;
+  animation-duration: 1s;
+}
+
+@media (max-width: 1199px) {
+  .banner__one-content h2.hero-title {
+    font-size: 80px;
+    line-height: 90px;
+  }
+}
+
+@media (max-width: 575px) {
+  .banner__one-content h2.hero-title {
+    font-size: 70px;
+    line-height: 80px;
+  }
+}
+
+@media (max-width: 460px) {
+  .banner__one-content h2.hero-title {
+    font-size: 54px;
+    line-height: 64px;
+  }
+}
+
+@media (max-width: 359px) {
+  .banner__one-content h2.hero-title {
+    font-size: 48px;
+    line-height: 58px;
+  }
+}

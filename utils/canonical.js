@@ -4,12 +4,15 @@ import { generateSlug } from './slugUtils.js';
 export const buildCanonical = (path = '/') =>
   `${NEXT_PUBLIC_BASE_URL}${path === '/' ? '' : path}`;
 
-export const blogCanonical = blog => {
-  const fallback = `blog-${blog.id || blog.documentId || 'unknown'}`;
-  return buildCanonical(`/blog/${generateSlug(blog.Title || blog.title || '', fallback)}`);
-};
+export const blogSlug = blog =>
+  generateSlug(blog.Title || blog.title || '', `blog-${blog.id || blog.documentId || 'unknown'}`);
 
-export const serviceCanonical = service => {
-  const fallback = `service-${service.id || service.documentId || 'unknown'}`;
-  return buildCanonical(`/uslugi/${generateSlug(service.title || '', fallback)}`);
-};
+export const serviceSlug = service =>
+  generateSlug(
+    service.title || '',
+    `service-${service.id || service.documentId || 'unknown'}`
+  );
+
+export const blogCanonical = blog => buildCanonical(`/blog/${blogSlug(blog)}`);
+
+export const serviceCanonical = service => buildCanonical(`/uslugi/${serviceSlug(service)}`);

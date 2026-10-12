@@ -10,6 +10,8 @@ const FormArea = () => {
     subject: '',
     message: '',
   });
+  const [honeypot, setHoneypot] = useState('');
+  const [consent, setConsent] = useState(false);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ success: null, message: '' });
@@ -25,8 +27,18 @@ const FormArea = () => {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    // 1. CLIENT-SIDE VALIDATION – BEFORE API CALL
-    const hasEmptyField = Object.values(formData).some(value => value.trim() === '');
+    // Bots fill the hidden field; pretend success without calling the webhook
+    if (honeypot) {
+      setSubmitStatus({
+        success: true,
+        message: 'Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.',
+      });
+      return;
+    }
+
+    // 1. CLIENT-SIDE VALIDATION – BEFORE API CALL (phone is optional)
+    const { phone, ...requiredFields } = formData;
+    const hasEmptyField = Object.values(requiredFields).some(value => value.trim() === '');
 
     if (hasEmptyField) {
       setSubmitStatus({
@@ -34,6 +46,14 @@ const FormArea = () => {
         message: 'Proszę uzupełnić wszystkie wymagane pola.',
       });
       return; // ⛔ prevents webhook call
+    }
+
+    if (!consent) {
+      setSubmitStatus({
+        success: false,
+        message: 'Zaznacz zgodę na przetwarzanie danych, aby wysłać wiadomość.',
+      });
+      return;
     }
 
     // 2. PROCEED ONLY IF FORM DATA IS VALID
@@ -63,6 +83,7 @@ const FormArea = () => {
           subject: '',
           message: '',
         });
+        setConsent(false);
       } else {
         const error = await response.text();
         throw new Error(error || 'Failed to send message');
@@ -166,6 +187,51 @@ const FormArea = () => {
                 required
               ></textarea>
             </div>
+          </div>
+          <div
+            aria-hidden='true'
+            style={{
+              position: 'absolute',
+              left: '-9999px',
+              width: '1px',
+              height: '1px',
+              overflow: 'hidden',
+            }}
+          >
+            <label htmlFor='website'>Nie wypełniaj tego pola</label>
+            <input
+              type='text'
+              id='website'
+              name='website'
+              tabIndex={-1}
+              autoComplete='off'
+              value={honeypot}
+              onChange={e => setHoneypot(e.target.value)}
+            />
+          </div>
+          <div className='col-md-12 mb-30'>
+            <label
+              htmlFor='consent'
+              style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}
+            >
+              <input
+                type='checkbox'
+                id='consent'
+                name='consent'
+                checked={consent}
+                onChange={e => setConsent(e.target.checked)}
+                style={{ marginTop: '5px', flexShrink: 0 }}
+                required
+              />
+              <span>
+                Wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na
+                wiadomość, zgodnie z{' '}
+                <a href='/polityka-prywatnosci' target='_blank' rel='noopener noreferrer'>
+                  polityką prywatności
+                </a>
+                . <span style={{ color: '#f33633' }}>*</span>
+              </span>
+            </label>
           </div>
           <div className='col-md-12'>
             <div className='contact__two-right-form-item'>

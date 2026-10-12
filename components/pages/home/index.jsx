@@ -1,5 +1,4 @@
 'use client';
-import SEO from '@/components/data/seo';
 import HeaderOne from '@/components/layout/headers/header-one';
 import Services from './services';
 import CtaArea from './cta';
@@ -8,19 +7,12 @@ import BannerOne from './banner';
 import ScrollToTop from '../common/scroll/scroll-to-top';
 import ChooseUs from './choose-us';
 
-const HomeOne = () => {
+const HomeOne = ({ initialServices }) => {
   return (
     <div>
-      <SEO
-        pageTitle='Fotowoltaika i Odnawialne Źródła Energii | Synergia'
-        pageDescription='Profesjonalne instalacje fotowoltaiczne, pompy ciepła, folie grzewcze i wiaty solarne w Polsce. Zmniejsz rachunki za prąd i ciepło z ekologicznymi rozwiązaniami energetycznymi. 3886 zakończonych projektów, 24456 kW zainstalowanej mocy.'
-        keywords='fotowoltaika, panele słoneczne, pompy ciepła, odnawialne źródła energii, OZE, energia słoneczna, audyt energetyczny, folie grzewcze, wiaty solarne, instalacje fotowoltaiczne, energia odnawialna, ekologiczne ogrzewanie'
-        canonicalUrl='https://www.synergiaenergia.pl'
-        ogImage='/assets/img/banner/banner-1.jpg'
-      />
       <HeaderOne />
       <BannerOne />
-      <Services />
+      <Services initialServices={initialServices} />
       <CtaArea />
       <ChooseUs />
       <FooterOne />

@@ -3,12 +3,12 @@
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 import Image from 'next/image';
-import { serviceService } from '@/services/serviceService';
+import { getServices } from '@/app/actions/serviceActions';
 import { STRAPI_URL } from '@/constants';
-import { generateSlug } from '@/utils/slugUtils';
+import { withServiceSlugs } from '@/utils/serviceUtils';
 import './services.css';
 
-const ServicesMain = () => {
+const ServicesMain = ({ initialServices }) => {
   const {
     data: services = [],
     isLoading,
@@ -16,32 +16,9 @@ const ServicesMain = () => {
     error,
     refetch,
   } = useQuery({
-    queryKey: ['services'],
-    queryFn: async () => {
-      const data = await serviceService.getServices();
-      // Transform services to include slug and sort by createdAt date (newest first)
-      const transformedServices = data
-        .map(service => {
-          const title = service.Title || service.title || 'Untitled Service';
-          const serviceId = service.id || service.documentId || 'unknown';
-          const fallback = `service-${serviceId}`;
-          const slug = generateSlug(title, fallback) || fallback || `service-${serviceId}`;
-
-          // Ensure slug is never undefined or empty
-          if (!slug || slug === 'undefined') {
-            console.error(`Invalid slug generated for service:`, service);
-            return null; // Filter out this service
-          }
-
-          return {
-            ...service,
-            slug,
-            title, // Ensure we have a normalized title field
-          };
-        })
-        .filter(Boolean); // Remove any null services
-      return transformedServices.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-    },
+    queryKey: ['services', 'newest'],
+    queryFn: async () => withServiceSlugs(await getServices(), 'newest'),
+    initialData: initialServices ? withServiceSlugs(initialServices, 'newest') : undefined,
     staleTime: 1000 * 60 * 5, // 5 minutes
     retry: 2,
   });
