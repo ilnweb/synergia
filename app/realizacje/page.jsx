@@ -4,6 +4,11 @@ import HeaderOne from '@/components/layout/headers/header-one';
 import FooterOne from '@/components/layout/footers/footer-one';
 import BreadCrumb from '@/components/pages/common/breadcrumb';
 import { getProjects } from '../actions/projectActions';
+import { buildCanonical } from '@/utils/canonical';
+
+export const metadata = {
+  alternates: { canonical: buildCanonical('/realizacje') },
+};
 
 export default async function ProjectsPage() {
   try {

@@ -1,5 +1,10 @@
 import { getBlogs } from '../actions/blogActions.js';
 import BlogGrid from '@/components/pages/blogs/blog';
+import { buildCanonical } from '@/utils/canonical';
+
+export const metadata = {
+  alternates: { canonical: buildCanonical('/blog') },
+};
 
 export default async function BlogPage() {
   try {

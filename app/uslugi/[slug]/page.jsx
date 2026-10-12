@@ -1,6 +1,16 @@
 import ServicesSingle from '@/components/pages/services/service-single';
 import { serviceService } from '@/services/serviceService';
 import { notFound } from 'next/navigation';
+import { serviceCanonical } from '@/utils/canonical';
+
+export async function generateMetadata({ params }) {
+  try {
+    const service = await serviceService.getServiceBySlug(params.slug);
+    return service ? { alternates: { canonical: serviceCanonical(service) } } : {};
+  } catch {
+    return {};
+  }
+}
 
 // Server component for proper 404 handling
 const ServicesDetail = async ({ params }) => {
