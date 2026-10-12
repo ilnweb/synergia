@@ -1,5 +1,4 @@
 'use client';
-import SEO from '@/components/data/seo';
 import HeaderOne from '@/components/layout/headers/header-one';
 import BreadCrumb from '../common/breadcrumb';
 import FooterOne from '@/components/layout/footers/footer-one';
@@ -9,13 +8,6 @@ import { COMPANY_NIP } from '@/constants';
 const PrivacyPolicy = () => {
   return (
     <>
-      <SEO
-        pageTitle='Polityka Prywatności | Synergia Energia'
-        pageDescription='Polityka prywatności Synergia Energia - informacje o przetwarzaniu danych osobowych, RODO, cookies i ochronie prywatności użytkowników.'
-        keywords='polityka prywatności, RODO, ochrona danych osobowych, cookies, Synergia Energia'
-        canonicalUrl='https://www.synergiaenergia.pl/polityka-prywatnosci'
-        ogImage='/assets/img/banner/banner-2.jpg'
-      />
       <HeaderOne />
       <BreadCrumb
         title='Polityka Prywatności'

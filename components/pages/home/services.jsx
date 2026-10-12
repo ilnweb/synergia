@@ -4,46 +4,23 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useQuery } from '@tanstack/react-query';
-import { serviceService } from '@/services/serviceService';
-import { generateSlug } from '@/utils/slugUtils';
+import { getServices } from '@/app/actions/serviceActions';
+import { withServiceSlugs } from '@/utils/serviceUtils';
 
 // Render icon from service data
 const ServiceIcon = ({ iconClass }) => {
   return iconClass ? <i className={iconClass}></i> : <i className='fa-regular fa-bolt'></i>;
 };
 
-const Services = () => {
+const Services = ({ initialServices }) => {
   const {
     data: services = [],
     isLoading,
     isError,
   } = useQuery({
-    queryKey: ['services'],
-    queryFn: async () => {
-      const data = await serviceService.getServices();
-      // Transform services to include slug and sort by createdAt date (oldest first)
-      const transformedServices = data
-        .map(service => {
-          const title = service.Title || service.title || 'Untitled Service';
-          const serviceId = service.id || service.documentId || 'unknown';
-          const fallback = `service-${serviceId}`;
-          const slug = generateSlug(title, fallback) || fallback || `service-${serviceId}`;
-
-          // Ensure slug is never undefined or empty
-          if (!slug || slug === 'undefined') {
-            console.error(`Invalid slug generated for service:`, service);
-            return null; // Filter out this service
-          }
-
-          return {
-            ...service,
-            slug,
-            title, // Ensure we have a normalized title field
-          };
-        })
-        .filter(Boolean); // Remove any null services
-      return transformedServices.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
-    },
+    queryKey: ['services', 'oldest'],
+    queryFn: async () => withServiceSlugs(await getServices(), 'oldest'),
+    initialData: initialServices ? withServiceSlugs(initialServices, 'oldest') : undefined,
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
 

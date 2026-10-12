@@ -1,4 +1,46 @@
 /** @type {import('next').NextConfig} */
+
+// Old (WordPress-era) addresses -> current pages. Every destination must exist.
+const legacyRedirects = {
+  '/contact': '/kontakt',
+  '/services': '/uslugi',
+  '/projects': '/realizacje',
+  '/about-us': '/o-nas',
+
+  '/fotowoltaika': '/uslugi/fotowoltaika',
+  '/fotowoltaika-lodz': '/uslugi/fotowoltaika',
+  '/fotowoltaika-swietokrzyskie': '/uslugi/fotowoltaika',
+  '/pompy-ciepla': '/uslugi/pompy-ciepla',
+  '/pompy-ciepla-kielce': '/uslugi/pompy-ciepla',
+  '/folie-maty-grzewcze': '/uslugi/folie-i-maty-grzewcze',
+  '/audyty-energetyczne': '/uslugi/audyty-i-swiadectwa',
+  '/rekuperacja-lodz': '/uslugi',
+
+  '/czy-pompa-ciepla-sie-oplaca':
+    '/blog/gruntowa-czy-powietrzna-pompa-ciepla-porownanie-koszty-i-stabilnosc-czyli-co-naprawde-oplaca-sie-wybrac',
+  '/pompa-ciepla-jak-prawidlowo-dobrac-moc':
+    '/blog/pompa-ciepla-w-wojewodztwie-swietokrzyskim-jak-dobrac-ile-kosztuje-i-kiedy-ma-sens',
+  '/moj-prad-6-0-budzet-przekroczony-ale-wciaz-mozesz-skladac-wniosek-na-instalacje-fotowoltaiczna':
+    '/blog/moj-prad-60-rewolucja-w-fotowoltaice',
+  '/moj-prad-6-0-w-swietokrzyskiem-jak-skorzystac-z-dofinansowania-na-fotowoltaike':
+    '/blog/moj-prad-60-rewolucja-w-fotowoltaice',
+  '/dofinansowanie-magazyny-energii-net-metering':
+    '/blog/magazyn-energii-do-fotowoltaiki-poradnik-2026',
+  '/audyt-energetyczny-w-swietokrzyskiem-sprawdz-ile-mozesz-zaoszczedzic':
+    '/blog/audyt-energetyczny-w-swietokrzyskiem',
+  '/swiadectwo-energetyczne-czym-jest-i-dlaczego-warto-je-miec':
+    '/blog/swiadectwo-charakterystyki-energetycznej-wszystko-co-musisz-wiedziec',
+  '/swiadectwo-energetyczne-a-audyt-energetyczny-roznice-i-obowiazki-w-woj-swietokrzyskim':
+    '/blog/swiadectwo-energetyczne-w-2026-roku-kiedy-jest-potrzebne',
+  '/ogrzewanie-kablami-grzewczymi-jak-dziala-i-dlaczego-warto-postawic-na-to-rozwiazanie':
+    '/uslugi/folie-i-maty-grzewcze',
+  '/ogrzewanie-elektryczne-pytania-i-odpowiedzi': '/uslugi/folie-i-maty-grzewcze',
+  '/ogrzewanie-elektryczne-pytania-i-odpowiedzi-2': '/uslugi/folie-i-maty-grzewcze',
+  '/najtanszy-dostawca-pradu-2024-w-swietokrzyskiem': '/blog',
+  '/najtanszy-prad-od-lipca-2024-taryfy-godziny-i-oszczednosci': '/blog',
+  '/taryfy-dynamiczne-na-prad': '/blog',
+};
+
 const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -13,302 +55,31 @@ const nextConfig = {
       },
     ],
   },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+        ],
+      },
+    ];
+  },
   async redirects() {
-    // High-priority Soft 404 URLs that need permanent 301 redirects
-    const highPriorityRedirects = [
-      {
-        source: '/rekuperacja-lodz',
-        destination: '/services/rekuperacja-lodz',
+    return [
+      ...Object.entries(legacyRedirects).map(([source, destination]) => ({
+        source,
+        destination,
         permanent: true,
-      },
-      {
-        source: '/rekuperacja-lodz/',
-        destination: '/services/rekuperacja-lodz',
-        permanent: true,
-      },
-      {
-        source: '/fotowoltaika-lodz',
-        destination: '/services/fotowoltaika-lodz',
-        permanent: true,
-      },
-      {
-        source: '/fotowoltaika-lodz/',
-        destination: '/services/fotowoltaika-lodz',
-        permanent: true,
-      },
-      {
-        source: '/czy-pompa-ciepla-sie-oplaca',
-        destination: '/blog/czy-pompa-ciepla-sie-oplaca',
-        permanent: true,
-      },
-      {
-        source: '/czy-pompa-ciepla-sie-oplaca/',
-        destination: '/blog/czy-pompa-ciepla-sie-oplaca',
-        permanent: true,
-      },
-      // Additional URLs from the provided list
-      {
-        source: '/folie-maty-grzewcze',
-        destination: '/services/folie-maty-grzewcze',
-        permanent: true,
-      },
-      {
-        source:
-          '/moj-prad-6-0-budzet-przekroczony-ale-wciaz-mozesz-skladac-wniosek-na-instalacje-fotowoltaiczna',
-        destination:
-          '/blog/moj-prad-6-0-budzet-przekroczony-ale-wciaz-mozesz-skladac-wniosek-na-instalacje-fotowoltaiczna',
-        permanent: true,
-      },
-      {
-        source:
-          '/moj-prad-6-0-budzet-przekroczony-ale-wciaz-mozesz-skladac-wniosek-na-instalacje-fotowoltaiczna/',
-        destination:
-          '/blog/moj-prad-6-0-budzet-przekroczony-ale-wciaz-mozesz-skladac-wniosek-na-instalacje-fotowoltaiczna',
-        permanent: true,
-      },
-      {
-        source: '/fotowoltaika',
-        destination: '/services/fotowoltaika',
-        permanent: true,
-      },
-      {
-        source: '/fotowoltaika/',
-        destination: '/services/fotowoltaika',
-        permanent: true,
-      },
-      {
-        source: '/pompy-ciepla',
-        destination: '/services/pompy-ciepla',
-        permanent: true,
-      },
-      {
-        source: '/pompy-ciepla/',
-        destination: '/services/pompy-ciepla',
-        permanent: true,
-      },
-      {
-        source: '/audyt-energetyczny-w-swietokrzyskiem-sprawdz-ile-mozesz-zaoszczedzic',
-        destination: '/blog/audyt-energetyczny-w-swietokrzyskiem-sprawdz-ile-mozesz-zaoszczedzic',
-        permanent: true,
-      },
-      {
-        source: '/audyt-energetyczny-w-swietokrzyskiem-sprawdz-ile-mozesz-zaoszczedzic/',
-        destination: '/blog/audyt-energetyczny-w-swietokrzyskiem-sprawdz-ile-mozesz-zaoszczedzic',
-        permanent: true,
-      },
-      {
-        source: '/pompa-ciepla-jak-prawidlowo-dobrac-moc',
-        destination: '/blog/pompa-ciepla-jak-prawidlowo-dobrac-moc',
-        permanent: true,
-      },
-      {
-        source: '/pompa-ciepla-jak-prawidlowo-dobrac-moc/',
-        destination: '/blog/pompa-ciepla-jak-prawidlowo-dobrac-moc',
-        permanent: true,
-      },
-      {
-        source: '/dofinansowanie-magazyny-energii-net-metering',
-        destination: '/blog/dofinansowanie-magazyny-energii-net-metering',
-        permanent: true,
-      },
-      {
-        source: '/dofinansowanie-magazyny-energii-net-metering/',
-        destination: '/blog/dofinansowanie-magazyny-energii-net-metering',
-        permanent: true,
-      },
-      {
-        source: '/contact',
-        destination: '/kontakt',
-        permanent: true,
-      },
-      {
-        source: '/contact/',
-        destination: '/kontakt',
-        permanent: true,
-      },
-      {
-        source: '/services',
-        destination: '/uslugi',
-        permanent: true,
-      },
-      {
-        source: '/services/',
-        destination: '/uslugi',
-        permanent: true,
-      },
-      {
-        source: '/projects',
-        destination: '/realizacje',
-        permanent: true,
-      },
-      {
-        source: '/projects/',
-        destination: '/realizacje',
-        permanent: true,
-      },
-      {
-        source: '/about-us',
-        destination: '/o-nas',
-        permanent: true,
-      },
-      {
-        source: '/about-us/',
-        destination: '/o-nas',
-        permanent: true,
-      },
-      {
-        source:
-          '/swiadectwo-energetyczne-a-audyt-energetyczny-roznice-i-obowiazki-w-woj-swietokrzyskim',
-        destination:
-          '/blog/swiadectwo-energetyczne-a-audyt-energetyczny-roznice-i-obowiazki-w-woj-swietokrzyskim',
-        permanent: true,
-      },
-      {
-        source:
-          '/swiadectwo-energetyczne-a-audyt-energetyczny-roznice-i-obowiazki-w-woj-swietokrzyskim/',
-        destination:
-          '/blog/swiadectwo-energetyczne-a-audyt-energetyczny-roznice-i-obowiazki-w-woj-swietokrzyskim',
-        permanent: true,
-      },
-      {
-        source: '/moj-prad-6-0-w-swietokrzyskiem-jak-skorzystac-z-dofinansowania-na-fotowoltaike',
-        destination:
-          '/blog/moj-prad-6-0-w-swietokrzyskiem-jak-skorzystac-z-dofinansowania-na-fotowoltaike',
-        permanent: true,
-      },
-      {
-        source: '/moj-prad-6-0-w-swietokrzyskiem-jak-skorzystac-z-dofinansowania-na-fotowoltaike/',
-        destination:
-          '/blog/moj-prad-6-0-w-swietokrzyskiem-jak-skorzystac-z-dofinansowania-na-fotowoltaike',
-        permanent: true,
-      },
-      {
-        source: '/fotowoltaika-swietokrzyskie',
-        destination: '/services/fotowoltaika-swietokrzyskie',
-        permanent: true,
-      },
-      {
-        source: '/fotowoltaika-swietokrzyskie/',
-        destination: '/services/fotowoltaika-swietokrzyskie',
-        permanent: true,
-      },
-      {
-        source: '/swiadectwo-energetyczne-czym-jest-i-dlaczego-warto-je-miec',
-        destination: '/blog/swiadectwo-energetyczne-czym-jest-i-dlaczego-warto-je-miec',
-        permanent: true,
-      },
-      {
-        source: '/swiadectwo-energetyczne-czym-jest-i-dlaczego-warto-je-miec/',
-        destination: '/blog/swiadectwo-energetyczne-czym-jest-i-dlaczego-warto-je-miec',
-        permanent: true,
-      },
-      {
-        source: '/najtanszy-dostawca-pradu-2024-w-swietokrzyskiem',
-        destination: '/blog/najtanszy-dostawca-pradu-2024-w-swietokrzyskiem',
-        permanent: true,
-      },
-      {
-        source: '/najtanszy-dostawca-pradu-2024-w-swietokrzyskiem/',
-        destination: '/blog/najtanszy-dostawca-pradu-2024-w-swietokrzyskiem',
-        permanent: true,
-      },
-      {
-        source:
-          '/ogrzewanie-kablami-grzewczymi-jak-dziala-i-dlaczego-warto-postawic-na-to-rozwiazanie',
-        destination:
-          '/blog/ogrzewanie-kablami-grzewczymi-jak-dziala-i-dlaczego-warto-postawic-na-to-rozwiazanie',
-        permanent: true,
-      },
-      {
-        source:
-          '/ogrzewanie-kablami-grzewczymi-jak-dziala-i-dlaczego-warto-postawic-na-to-rozwiazanie/',
-        destination:
-          '/blog/ogrzewanie-kablami-grzewczymi-jak-dziala-i-dlaczego-warto-postawic-na-to-rozwiazanie',
-        permanent: true,
-      },
-      {
-        source: '/najtanszy-prad-od-lipca-2024-taryfy-godziny-i-oszczednosci',
-        destination: '/blog/najtanszy-prad-od-lipca-2024-taryfy-godziny-i-oszczednosci',
-        permanent: true,
-      },
-      {
-        source: '/najtanszy-prad-od-lipca-2024-taryfy-godziny-i-oszczednosci/',
-        destination: '/blog/najtanszy-prad-od-lipca-2024-taryfy-godziny-i-oszczednosci',
-        permanent: true,
-      },
-      {
-        source: '/taryfy-dynamiczne-na-prad',
-        destination: '/blog/taryfy-dynamiczne-na-prad',
-        permanent: true,
-      },
-      {
-        source: '/taryfy-dynamiczne-na-prad/',
-        destination: '/blog/taryfy-dynamiczne-na-prad',
-        permanent: true,
-      },
-      {
-        source: '/ogrzewanie-elektryczne-pytania-i-odpowiedzi',
-        destination: '/blog/ogrzewanie-elektryczne-pytania-i-odpowiedzi',
-        permanent: true,
-      },
-      {
-        source: '/ogrzewanie-elektryczne-pytania-i-odpowiedzi/',
-        destination: '/blog/ogrzewanie-elektryczne-pytania-i-odpowiedzi',
-        permanent: true,
-      },
-      {
-        source: '/ogrzewanie-elektryczne-pytania-i-odpowiedzi-2',
-        destination: '/blog/ogrzewanie-elektryczne-pytania-i-odpowiedzi-2',
-        permanent: true,
-      },
+      })),
+      { source: '/services/:slug', destination: '/uslugi/:slug', permanent: true },
+      { source: '/category/:slug*', destination: '/blog', permanent: false },
+      { source: '/tag/:slug*', destination: '/blog', permanent: false },
+      { source: '/author/:slug*', destination: '/o-nas', permanent: false },
     ];
-
-    // WordPress pattern redirects
-    const wordpressRedirects = [
-      {
-        source: '/category/:slug*',
-        destination: '/blog',
-        permanent: false,
-      },
-      {
-        source: '/tag/:slug*',
-        destination: '/blog',
-        permanent: false,
-      },
-      {
-        source: '/author/:slug*',
-        destination: '/o-nas',
-        permanent: false,
-      },
-      {
-        source: '/wp-admin/:path*',
-        destination: '/404-error',
-        permanent: false,
-      },
-      {
-        source: '/wp-login.php',
-        destination: '/404-error',
-        permanent: false,
-      },
-    ];
-
-    // Try to load generated redirects from CSV processing
-    let generatedRedirects = [];
-    try {
-      const fs = await import('fs');
-      const path = await import('path');
-      const redirectsPath = path.join(process.cwd(), 'redirects-output.json');
-
-      if (fs.existsSync(redirectsPath)) {
-        const redirectsData = JSON.parse(fs.readFileSync(redirectsPath, 'utf8'));
-        generatedRedirects = redirectsData.redirects || [];
-      }
-    } catch (error) {
-      console.warn('⚠️  Could not load generated redirects:', error.message);
-    }
-
-    // Combine all redirects
-    return [...highPriorityRedirects, ...wordpressRedirects, ...generatedRedirects];
   },
 };
 

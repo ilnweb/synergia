@@ -1,5 +1,4 @@
 'use client';
-import SEO from '@/components/data/seo';
 import HeaderOne from '@/components/layout/headers/header-one';
 import BreadCrumb from '../../common/breadcrumb';
 import FooterOne from '@/components/layout/footers/footer-one';
@@ -10,7 +9,6 @@ import SwitchTab from '../../common/dark-light';
 const PortfolioTowColumns = () => {
   return (
     <>
-      <SEO pageTitle='Portfolio Grid - 02 Columns' />
       {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb title='02 Columns' innerTitle='Portfolio Grid' />

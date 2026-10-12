@@ -1,14 +1,17 @@
 import ProjectGridMain from '@/components/pages/projects/project/project-grid';
-import SEO from '@/components/data/seo';
 import HeaderOne from '@/components/layout/headers/header-one';
 import FooterOne from '@/components/layout/footers/footer-one';
 import BreadCrumb from '@/components/pages/common/breadcrumb';
 import { getProjects } from '../actions/projectActions';
-import { buildCanonical } from '@/utils/canonical';
+import { buildMetadata } from '@/utils/metadata';
 
-export const metadata = {
-  alternates: { canonical: buildCanonical('/realizacje') },
-};
+export const metadata = buildMetadata({
+  path: '/realizacje',
+  title: 'Realizacje',
+  description:
+    'Zobacz nasze zrealizowane projekty fotowoltaiczne, pompy ciepła i inne odnawialne źródła energii. Profesjonalne instalacje na terenie całej Polski.',
+  image: '/assets/img/banner/banner-1.jpg',
+});
 
 export default async function ProjectsPage() {
   try {
@@ -16,13 +19,6 @@ export default async function ProjectsPage() {
 
     return (
       <>
-        <SEO
-          pageTitle='Realizacje | Synergia'
-          pageDescription='Zobacz nasze zrealizowane projekty fotowoltaiczne, pompy ciepła i inne odnawialne źródła energii. Profesjonalne instalacje na terenie całej Polski.'
-          keywords='realizacje, projekty, fotowoltaika, pompy ciepła, instalacje, odnawialne źródła energii'
-          canonicalUrl='https://www.synergiaenergia.pl/realizacje'
-          ogImage='/assets/img/banner/banner-1.jpg'
-        />
         <HeaderOne />
         <BreadCrumb
           title='Realizacje'
@@ -36,13 +32,6 @@ export default async function ProjectsPage() {
   } catch (error) {
     return (
       <>
-        <SEO
-          pageTitle='Realizacje | Synergia'
-          pageDescription='Zobacz nasze zrealizowane projekty fotowoltaiczne, pompy ciepła i inne odnawialne źródła energii. Profesjonalne instalacje na terenie całej Polski.'
-          keywords='realizacje, projekty, fotowoltaika, pompy ciepła, instalacje, odnawialne źródła energii'
-          canonicalUrl='https://www.synergiaenergia.pl/realizacje'
-          ogImage='/assets/img/banner/banner-1.jpg'
-        />
         <HeaderOne />
         <BreadCrumb
           title='Realizacje'

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { STRAPI_URL } from '../../../../constants';
 import { useQuery } from '@tanstack/react-query';
-import { blogService } from '@/services/blogService';
+import { getRecentBlogs } from '@/app/actions/blogActions';
 import { generateSlug } from '@/utils/slugUtils';
 import dayjs from 'dayjs';
 
@@ -11,8 +11,8 @@ const BlogSidebar = () => {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['blog-all'],
-    queryFn: () => blogService.getBlogs(),
+    queryKey: ['blog-recent'],
+    queryFn: () => getRecentBlogs(3),
   });
 
   const firstThreePosts = (blogPosts?.slice(0, 3) || []).map(blogPost => ({

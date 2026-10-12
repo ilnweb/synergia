@@ -1,54 +1,18 @@
-import { STRAPI_URL, STRAPI_TOKEN } from '../constants';
-import { generateSlug, generateLegacySlug } from '../utils/slugUtils';
+import 'server-only';
+import { strapiFetchAll } from '../lib/strapi.server.js';
+import { generateSlug, generateLegacySlug } from '../utils/slugUtils.js';
 
 export const serviceService = {
-  // Fetch all services
-  getServices: async () => {
-    try {
-      const response = await fetch(`${STRAPI_URL}/api/services?populate=*&sort=createdAt:desc`, {
-        headers: {
-          Authorization: `Bearer ${STRAPI_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch services');
-      }
-
-      const data = await response.json();
-      return data.data;
-    } catch (error) {
-      console.error('Error fetching services:', error);
-      throw error;
-    }
+  getServices() {
+    return strapiFetchAll('services');
   },
 
-  // Fetch single service by slug
-  getServiceBySlug: async slug => {
-    try {
-      // First fetch all services
-      const response = await fetch(`${STRAPI_URL}/api/services?populate=*&sort=createdAt:desc`, {
-        headers: {
-          Authorization: `Bearer ${STRAPI_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-      });
-      if (!response.ok) {
-        throw new Error('Failed to fetch services');
-      }
-      const data = await response.json();
+  async getServiceBySlug(slug) {
+    const services = await strapiFetchAll('services');
 
-      // Generate slug for each service and find the matching one
-      const service = data.data.find(service => {
-        return generateSlug(service.title) === slug || generateLegacySlug(service.title) === slug;
-      });
-
-      return service;
-    } catch (error) {
-      console.error(`Error fetching service with slug ${slug}:`, error);
-      throw error;
-    }
+    return services.find(
+      service => generateSlug(service.title) === slug || generateLegacySlug(service.title) === slug
+    );
   },
 };
 

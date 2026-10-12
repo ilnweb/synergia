@@ -66,10 +66,10 @@ const BannerOne = () => {
                   <div className='col-xl-7'>
                     <div className='banner__one-content'>
                       <span className='subtitle-one'>Ekologiczna Energia</span>
-                      <h1>
+                      <h2 className='hero-title'>
                         Pełna
                         <br /> Niezależność
-                      </h1>
+                      </h2>
                       <p>
                         Produkuj własny prąd z słońca i ciesz się niezależnością energetyczną. Pompy
                         ciepła i folie grzewcze to przyszłość ogrzewania.

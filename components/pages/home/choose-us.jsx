@@ -56,7 +56,7 @@ const ChooseUs = () => {
                   </Link>
                 </div>
                 <div className='choose__us-area-image dark_image'>
-                  <img src={image.src} alt='image' />
+                  <img src={image.src} alt='Technik w kasku dotyka panelu fotowoltaicznego' />
                 </div>
               </div>
             </div>

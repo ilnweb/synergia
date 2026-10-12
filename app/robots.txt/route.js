@@ -6,21 +6,7 @@ export function GET() {
 
   const robotsTxt = `User-agent: *
 Allow: /
-Disallow: /admin/
 Disallow: /api/
-Disallow: /about-us/
-Disallow: /portfolio/
-Disallow: /projects/
-Disallow: /pricing-plans/
-Disallow: /services-two/
-Disallow: /team/
-Disallow: /team-two/
-Disallow: /team-three/
-Disallow: /testimonial/
-Disallow: /faq/
-Disallow: /request-quote/
-Disallow: /blog-standard/
-Disallow: /[not-found]/
 
 Sitemap: ${baseUrl}/sitemap.xml`;
 

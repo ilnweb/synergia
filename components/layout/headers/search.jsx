@@ -7,7 +7,7 @@ const Search = ({ isOpen, setIsOpen, addClass }) => {
         className={`header__area-menubar-right-search-box ${addClass} ${isOpen ? 'active' : ''}`}
       >
         <form>
-          <input type='search' placeholder='Search Here.....' />
+          <input type='search' placeholder='Szukaj...' />
           <button type='submit' aria-label='Szukaj'>
             <i className='fal fa-search'></i>
           </button>

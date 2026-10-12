@@ -1,35 +1,47 @@
+import { cache } from 'react';
 import ServicesSingle from '@/components/pages/services/service-single';
 import { serviceService } from '@/services/serviceService';
-import { notFound } from 'next/navigation';
-import { serviceCanonical } from '@/utils/canonical';
+import { notFound, permanentRedirect } from 'next/navigation';
+import { serviceCanonical, serviceSlug } from '@/utils/canonical';
+import { buildMetadata } from '@/utils/metadata';
+import { STRAPI_URL } from '@/constants';
+
+const findService = cache(async slug => {
+  try {
+    return await serviceService.getServiceBySlug(slug);
+  } catch (error) {
+    console.error('Error fetching service:', error);
+    return null;
+  }
+});
 
 export async function generateMetadata({ params }) {
-  try {
-    const service = await serviceService.getServiceBySlug(params.slug);
-    return service ? { alternates: { canonical: serviceCanonical(service) } } : {};
-  } catch {
-    return {};
-  }
+  const service = await findService(params.slug);
+  if (!service) return {};
+
+  const imagePath = service.headerImage?.formats?.medium?.url || service.headerImage?.url;
+
+  return buildMetadata({
+    title: service.title || 'Usługa',
+    description: service.shortDescription,
+    canonical: serviceCanonical(service),
+    image: imagePath ? `${STRAPI_URL}${imagePath}` : undefined,
+  });
 }
 
 // Server component for proper 404 handling
 const ServicesDetail = async ({ params }) => {
-  const { slug } = params;
+  const service = await findService(params.slug);
 
-  try {
-    // Fetch service data on server side
-    const service = await serviceService.getServiceBySlug(slug);
-
-    // If service is not found, return proper 404
-    if (!service) {
-      notFound();
-    }
-
-    return <ServicesSingle serviceDetails={service} />;
-  } catch (error) {
-    console.error('Error fetching service:', error);
+  if (!service) {
     notFound();
   }
+
+  if (params.slug !== serviceSlug(service)) {
+    permanentRedirect(`/uslugi/${serviceSlug(service)}`);
+  }
+
+  return <ServicesSingle serviceDetails={service} />;
 };
 
 export default ServicesDetail;

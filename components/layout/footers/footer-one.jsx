@@ -3,6 +3,7 @@ import Link from 'next/link';
 import ctaBg from '../../../public/assets/img/shape/shape-6.png';
 import footerBg from '../../../public/assets/img/shape/shape-13.png';
 import { COMPANY_NIP } from '@/constants';
+import CookieSettingsLink from '@/components/layout/cookie-settings-link';
 
 const FooterOne = () => {
   return (
@@ -114,7 +115,7 @@ const FooterOne = () => {
             <div className='row'>
               <div className='col-lg-6'>
                 <p>
-                  Copyright 2025 - All Rights Reserved | NIP: {COMPANY_NIP}
+                  Copyright {new Date().getFullYear()} - All Rights Reserved | NIP: {COMPANY_NIP}
                 </p>
               </div>
               <div className='col-lg-6'>
@@ -122,6 +123,9 @@ const FooterOne = () => {
                   <ul>
                     <li>
                       <Link href='/polityka-prywatnosci'>Polityka Prywatności</Link>
+                    </li>
+                    <li>
+                      <CookieSettingsLink />
                     </li>
                     <li style={{ color: '#f4f4f4' }}>
                       Created by <span style={{ color: '#f33633' }}>DigitalSurf</span>
