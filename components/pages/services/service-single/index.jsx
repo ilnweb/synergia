@@ -7,11 +7,12 @@ import ScrollToTop from '../../common/scroll/scroll-to-top';
 import FooterOne from '@/components/layout/footers/footer-one';
 import SwitchTab from '../../common/dark-light';
 import { STRAPI_URL } from '@/constants';
+import { serviceCanonical } from '@/utils/canonical';
 
 const ServicesSingle = ({ serviceDetails }) => {
   return (
     <>
-      <SEO pageTitle={serviceDetails?.title} />
+      <SEO pageTitle={serviceDetails?.title} canonicalUrl={serviceCanonical(serviceDetails)} />
       {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb

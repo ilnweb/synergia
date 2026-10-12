@@ -1,14 +1,19 @@
 'use client';
 import { useEffect } from 'react';
 import Head from 'next/head';
+import { usePathname } from 'next/navigation';
+import { buildCanonical } from '@/utils/canonical';
 
 const SEO = ({
   pageTitle = 'Fotowoltaika i Odnawialne Źródła Energii',
   pageDescription = 'Profesjonalne instalacje fotowoltaiczne, pompy ciepła, folie grzewcze i wiaty solarne. Zmniejsz rachunki za prąd i ciepło z ekologicznymi rozwiązaniami energetycznymi.',
   keywords = 'fotowoltaika, panele słoneczne, pompy ciepła, odnawialne źródła energii, OZE, energia słoneczna, audyt energetyczny, folie grzewcze, wiaty solarne',
-  canonicalUrl = 'https://synergia.pl',
+  canonicalUrl: canonicalUrlProp,
   ogImage = '/assets/img/banner/banner-1.jpg',
 }) => {
+  const pathname = usePathname();
+  const canonicalUrl = canonicalUrlProp || buildCanonical(pathname || '/');
+
   useEffect(() => {
     document.title = `${pageTitle} - Synergia - Fotowoltaika i Odnawialne Źródła Energii`;
 

@@ -8,6 +8,7 @@ import FooterOne from '@/components/layout/footers/footer-one';
 import ScrollToTop from '../../common/scroll/scroll-to-top';
 import SwitchTab from '../../common/dark-light';
 import { STRAPI_URL } from '../../../../constants';
+import { blogCanonical } from '@/utils/canonical';
 
 const BlogDetails = ({ singleData }) => {
   // Handle both Strapi v5 flat structure and legacy structure
@@ -18,7 +19,7 @@ const BlogDetails = ({ singleData }) => {
 
   return (
     <>
-      <SEO pageTitle={blog.Title || 'Blog Details'} />
+      <SEO pageTitle={blog.Title || 'Blog Details'} canonicalUrl={blogCanonical(blog)} />
       {/* <SwitchTab /> */}
       <HeaderOne />
       <BreadCrumb
